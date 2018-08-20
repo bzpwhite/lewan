@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>勇往科技</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/iview/dist/styles/iview.css">
+	<script type="text/javascript" src="https://vuejs.org/js/vue.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/iview/dist/iview.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/waves.min.css">
+	<script type="text/javascript" src="js/waves.min.js"></script>
+	<style>
+		#app{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+</head>
+
+<body>
+    <div id="app">
+		<card class="waves-effect" style="width:320px;margin-top: 20px;">
+			<a style="text-align:center;display: block;" href="https://github.com/laixiao/yongwang">
+				<img src="img/GitHub.png" />
+			</a>
+		</card>
+		
+        <card class="waves-effect" style="width:320px;margin-top: 20px;" >
+            <a style="text-align:center;display: block;" href="https://github.com/laixiao/yongwang/blob/master/1.%E5%85%A5%E8%81%8C%E6%96%87%E6%A1%A3.md">
+                <h2 >入职文档</h2>
+            </a>
+        </card>
+
+        <card class="waves-effect" style="width:320px;margin-top: 20px;">
+            <a style="text-align:center;display: block;" href="https://github.com/laixiao/yongwang/blob/master/2.%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83.md">
+				<h2 >技术规范</h2>
+            </a>
+        </card>
+
+        <card class="waves-effect" style="width:320px;margin-top: 20px;">
+            <a style="text-align:center;display: block;" href="https://game.zuiqiangyingyu.net/wb_webview/common/doc/api/index.html">
+				<h2 >api接口文档</h2>
+            </a>
+        </card>
+		
+		<card class="waves-effect" style="width:320px;margin-top: 50px;border: 1px red solid;">
+			<a style="text-align:center;display: block;" href="https://laixiao.github.io/yongwang/CocosCode/dist/index_prod.html">
+				<h2 >Cocos代码片</h2>
+			</a>
+		</card>
+		
+		
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                visible: false
+            },
+            methods: {
+                show: function () {
+                    this.visible = true;
+                }
+            }
+        })
+		Waves.displayEffect();
+		
+    </script>
+</body>
+
+</html>
