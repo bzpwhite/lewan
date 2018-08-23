@@ -1,3 +1,5 @@
+# [常用链接][https://github.com/laixiao/lewan/blob/master/%E4%B9%90%E7%8E%A9%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5.md]
+
 ## 一、简介
 Cocos小游戏sdk、Cocos小游戏sdk文档、Cocos小游戏开发示例；
 
@@ -30,3 +32,4 @@ sdk.Get("https://xxx.xxx", { user_id: user_id }, function (d) {
 ## 三、其他
 - sdk文档：https://laixiao.github.io/lewan/html/api/index.html
 - 登录图片： https://laixiao.github.io/lewan/html/img/btn_start.png
+[https://github.com/laixiao/lewan/blob/master/%E4%B9%90%E7%8E%A9%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5.md]: https://github.com/laixiao/lewan/blob/master/%E4%B9%90%E7%8E%A9%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5.md "常用链接"
