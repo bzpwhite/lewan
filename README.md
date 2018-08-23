@@ -4,7 +4,9 @@ Cocos小游戏sdk、Cocos小游戏sdk文档、Cocos小游戏开发示例；
 
 ## 二、使用
 **1、Cocos小游戏开发示例：**
+
 下载源码直接导入cocos creator即可。
+
 （排行榜示例 仅支持creator2.0.1及以上版本）
 
 **2、Cocos小游戏sdk：**
