@@ -16,8 +16,8 @@ cc.Class({
             debug: true,         //.是否开启调试
             app_name: "xiao_xiao_yu_tang",     //.游戏唯一标识
             version: "1.0.0",   //.游戏版本
-        }, ()=>{
-            console.log('sdk初始化完成')
+        }, (res)=>{
+            console.log('sdk初始化结果：', res)
         })
         
         // //.初始化腾讯统计
