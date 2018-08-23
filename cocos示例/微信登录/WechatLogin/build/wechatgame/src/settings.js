@@ -1,0 +1,1 @@
+window._CCSettings={platform:"wechatgame",groupList:["default"],collisionMatrix:[[true]],rawAssets:{assets:{}},assetTypes:[],launchScene:"db://assets/Scene/demo.fire",scenes:[{url:"db://assets/Scene/demo.fire",uuid:0}],packedAssets:{"0e7353a28":[0,"41D7kWhyFGY7q4NDlzkazn"]},md5AssetsMap:{},orientation:"",subpackages:{},uuids:["2dL3kvpAxJu6GJ7RdqJG5J"]};

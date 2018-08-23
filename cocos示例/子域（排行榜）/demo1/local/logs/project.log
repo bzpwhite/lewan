@@ -1,0 +1,480 @@
+2018-08-20T02:22:24.029Z - normal: Load ~/.CocosCreator/settings.json
+2018-08-20T02:22:24.029Z - normal: checking language setting...
+2018-08-20T02:22:24.029Z - normal: Language: zh
+2018-08-20T02:22:25.492Z - success: protocol editor-framework registered
+2018-08-20T02:22:25.492Z - success: protocol app registered
+2018-08-20T02:22:25.492Z - success: protocol theme registered
+2018-08-20T02:22:25.492Z - success: protocol packages registered
+2018-08-20T02:22:25.492Z - success: protocol unpack registerred
+2018-08-20T02:22:25.492Z - success: protocol disable-commonjs registerred
+2018-08-20T02:22:25.726Z - normal: connected!
+2018-08-20T02:22:25.726Z - normal: Check project C:\Users\lx\Desktop\demo1
+2018-08-20T02:22:25.741Z - normal: Initializing project C:\Users\lx\Desktop\demo1
+2018-08-20T02:22:25.741Z - normal: Initializing Cocos2d
+2018-08-20T02:22:26.351Z - normal: Initializing Asset Database
+2018-08-20T02:22:26.382Z - success: protocol uuid registerred
+2018-08-20T02:22:26.382Z - success: protocol db registerred
+2018-08-20T02:22:26.382Z - success: protocol thumbnail registerred
+2018-08-20T02:22:26.382Z - normal: Loading editor/builtin packages
+2018-08-20T02:22:26.507Z - success: assets loaded
+2018-08-20T02:22:26.523Z - success: builder loaded
+2018-08-20T02:22:26.523Z - success: cocos-analytics loaded
+2018-08-20T02:22:26.523Z - success: console loaded
+2018-08-20T02:22:26.554Z - success: fb-instant-games loaded
+2018-08-20T02:22:26.554Z - success: hierarchy loaded
+2018-08-20T02:22:26.569Z - success: inspector loaded
+2018-08-20T02:22:26.569Z - success: keystore loaded
+2018-08-20T02:22:26.569Z - success: node-library loaded
+2018-08-20T02:22:26.569Z - success: package-asset loaded
+2018-08-20T02:22:26.569Z - success: preferences loaded
+2018-08-20T02:22:26.569Z - success: project-exporter loaded
+2018-08-20T02:22:26.585Z - success: project-importer loaded
+2018-08-20T02:22:26.585Z - success: project-settings loaded
+2018-08-20T02:22:26.585Z - success: ui-kit loaded
+2018-08-20T02:22:26.601Z - success: scene loaded
+2018-08-20T02:22:26.601Z - success: sprite-editor loaded
+2018-08-20T02:22:26.601Z - success: store loaded
+2018-08-20T02:22:26.601Z - success: timeline loaded
+2018-08-20T02:22:26.601Z - normal: Loading builtin packages
+2018-08-20T02:22:26.601Z - success: asset-db-debugger loaded
+2018-08-20T02:22:26.601Z - success: code-editor loaded
+2018-08-20T02:22:26.601Z - success: color-picker loaded
+2018-08-20T02:22:26.601Z - success: jsb-adapter loaded
+2018-08-20T02:22:26.616Z - success: package-manager loaded
+2018-08-20T02:22:26.616Z - success: qqplay-adapter loaded
+2018-08-20T02:22:26.616Z - success: sdkbox loaded
+2018-08-20T02:22:26.616Z - success: tester loaded
+2018-08-20T02:22:26.616Z - success: ui-grid loaded
+2018-08-20T02:22:26.616Z - success: ui-kit-preview-extra loaded
+2018-08-20T02:22:26.616Z - success: ui-kit-preview loaded
+2018-08-20T02:22:26.616Z - success: ui-tree loaded
+2018-08-20T02:22:26.616Z - success: weapp-adapter loaded
+2018-08-20T02:22:27.616Z - normal: Loading packages
+2018-08-20T02:22:27.616Z - normal: Watching packages
+2018-08-20T02:22:27.917Z - normal: Run Application
+2018-08-20T02:22:28.355Z - success: preview server running at http://localhost:7456
+2018-08-20T02:22:47.411Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "C:\\Users\\lx\\Desktop\\demo1\\build",
+  "debug": false,
+  "dest": "C:\\Users\\lx\\Desktop\\demo1\\build\\wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "Rank",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx1990cf9754a1483d",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "wechatgame-subcontext"
+  },
+  "xxteaKey": "549fa419-f2e1-40",
+  "zipCompressJs": true,
+  "project": "C:\\Users\\lx\\Desktop\\demo1",
+  "projectName": "Rank",
+  "debugBuildWorker": false
+}
+2018-08-20T02:22:47.413Z - normal: Building C:\Users\lx\Desktop\demo1
+2018-08-20T02:22:47.413Z - normal: Destination C:\Users\lx\Desktop\demo1\build\wechatgame
+2018-08-20T02:22:47.663Z - normal: Delete C:\Users\lx\Desktop\demo1\build\wechatgame\**\*
+2018-08-20T02:22:49.441Z - normal: Start building assets
+2018-08-20T02:22:49.441Z - normal: Start spawn build-worker
+2018-08-20T02:22:50.076Z - normal: Finish spawn build-worker
+2018-08-20T02:22:50.076Z - normal: Start init build-worker
+2018-08-20T02:22:52.996Z - normal: Finish init build-worker
+2018-08-20T02:22:52.996Z - normal: Start build-assets in worker
+2018-08-20T02:22:53.194Z - normal: Finish build-assets in worker
+2018-08-20T02:22:53.202Z - normal: Finish building assets
+2018-08-20T02:22:53.206Z - normal: Start building plugin scripts
+2018-08-20T02:22:53.212Z - normal: Generating main.js from D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\static\build-templates\shares\main.js
+2018-08-20T02:22:54.230Z - normal: Built to "C:\Users\lx\Desktop\demo1\build\wechatgame" successfully
+2018-08-20T02:23:46.777Z - normal: Initializing...
+
+2018-08-20T02:23:46.781Z - normal: idePortFile: C:\Users\lx\AppData\Local\微信web开发者工具\User Data\Default\.ide
+
+2018-08-20T02:23:47.796Z - normal: starting ide...
+
+2018-08-20T02:23:51.977Z - normal: IDE server has started, listening on http://127.0.0.1:56346
+
+2018-08-20T02:23:51.980Z - normal: initialization finished
+
+2018-08-20T02:23:52.147Z - error: StatusCodeError: 400 - "{\"code\":40000,\"error\":\"错误 需要重新登录\"}"
+
+    at Socket.<anonymous> (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\wechat-game.js:1:900)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:191:7)
+    at readableAddChunk (_stream_readable.js:178:18)
+    at Socket.Readable.push (_stream_readable.js:136:10)
+    at Pipe.onread (net.js:560:20)
+2018-08-20T02:24:32.433Z - normal: Initializing...
+
+2018-08-20T02:24:32.438Z - normal: idePortFile: C:\Users\lx\AppData\Local\微信web开发者工具\User Data\Default\.ide
+
+2018-08-20T02:24:32.453Z - normal: IDE server has started, listening on http://127.0.0.1:56346
+
+2018-08-20T02:24:32.454Z - normal: initialization finished
+
+2018-08-20T02:24:33.137Z - normal: open IDE success
+
+2018-08-20T02:25:32.994Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "C:\\Users\\lx\\Desktop\\demo1\\build",
+  "debug": false,
+  "dest": "C:\\Users\\lx\\Desktop\\demo1\\build\\wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "Rank",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx1990cf9754a1483d",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "wechatgame-subcontext"
+  },
+  "xxteaKey": "549fa419-f2e1-40",
+  "zipCompressJs": true,
+  "project": "C:\\Users\\lx\\Desktop\\demo1",
+  "projectName": "Rank",
+  "debugBuildWorker": false
+}
+2018-08-20T02:25:32.996Z - normal: Building C:\Users\lx\Desktop\demo1
+2018-08-20T02:25:32.996Z - normal: Destination C:\Users\lx\Desktop\demo1\build\wechatgame
+2018-08-20T02:25:32.997Z - normal: Delete C:\Users\lx\Desktop\demo1\build\wechatgame\**\*
+2018-08-20T02:25:34.754Z - normal: Start building assets
+2018-08-20T02:25:34.755Z - normal: Start spawn build-worker
+2018-08-20T02:25:35.392Z - normal: Finish spawn build-worker
+2018-08-20T02:25:35.393Z - normal: Start init build-worker
+2018-08-20T02:25:38.435Z - normal: Finish init build-worker
+2018-08-20T02:25:38.435Z - normal: Start build-assets in worker
+2018-08-20T02:25:38.679Z - normal: Finish build-assets in worker
+2018-08-20T02:25:38.686Z - normal: Finish building assets
+2018-08-20T02:25:38.692Z - normal: Start building plugin scripts
+2018-08-20T02:25:38.697Z - normal: Generating main.js from D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\static\build-templates\shares\main.js
+2018-08-20T02:25:39.542Z - normal: Built to "C:\Users\lx\Desktop\demo1\build\wechatgame" successfully
+2018-08-20T02:25:58.032Z - normal: Initializing...
+
+2018-08-20T02:25:58.037Z - normal: idePortFile: C:\Users\lx\AppData\Local\微信web开发者工具\User Data\Default\.ide
+
+2018-08-20T02:25:59.053Z - normal: starting ide...
+
+2018-08-20T02:26:03.266Z - normal: IDE server has started, listening on http://127.0.0.1:37917
+
+2018-08-20T02:26:03.270Z - normal: initialization finished
+
+2018-08-20T02:26:03.566Z - normal: open IDE success
+
+2018-08-20T02:27:15.147Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "C:\\Users\\lx\\Desktop\\demo1\\build",
+  "debug": false,
+  "dest": "C:\\Users\\lx\\Desktop\\demo1\\build\\wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "Rank",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx1990cf9754a1483d",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "wechatgame-subcontext"
+  },
+  "xxteaKey": "549fa419-f2e1-40",
+  "zipCompressJs": true,
+  "project": "C:\\Users\\lx\\Desktop\\demo1",
+  "projectName": "Rank",
+  "debugBuildWorker": false
+}
+2018-08-20T02:27:15.147Z - normal: Building C:\Users\lx\Desktop\demo1
+2018-08-20T02:27:15.147Z - normal: Destination C:\Users\lx\Desktop\demo1\build\wechatgame
+2018-08-20T02:27:15.148Z - normal: Delete C:\Users\lx\Desktop\demo1\build\wechatgame\**\*
+2018-08-20T02:27:16.907Z - normal: Start building assets
+2018-08-20T02:27:16.907Z - normal: Start spawn build-worker
+2018-08-20T02:27:17.547Z - normal: Finish spawn build-worker
+2018-08-20T02:27:17.547Z - normal: Start init build-worker
+2018-08-20T02:27:20.709Z - normal: Finish init build-worker
+2018-08-20T02:27:20.709Z - normal: Start build-assets in worker
+2018-08-20T02:27:20.923Z - normal: Finish build-assets in worker
+2018-08-20T02:27:20.930Z - normal: Finish building assets
+2018-08-20T02:27:20.933Z - normal: Start building plugin scripts
+2018-08-20T02:27:20.938Z - normal: Generating main.js from D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\static\build-templates\shares\main.js
+2018-08-20T02:27:21.878Z - normal: Built to "C:\Users\lx\Desktop\demo1\build\wechatgame" successfully
+2018-08-20T02:28:43.160Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "C:\\Users\\lx\\Desktop\\demo1\\build",
+  "debug": false,
+  "dest": "C:\\Users\\lx\\Desktop\\demo1\\build\\wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "Rank",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx1990cf9754a1483d",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "wechatgame-subcontext"
+  },
+  "xxteaKey": "549fa419-f2e1-40",
+  "zipCompressJs": true,
+  "project": "C:\\Users\\lx\\Desktop\\demo1",
+  "projectName": "Rank",
+  "debugBuildWorker": false
+}
+2018-08-20T02:28:43.163Z - normal: Building C:\Users\lx\Desktop\demo1
+2018-08-20T02:28:43.163Z - normal: Destination C:\Users\lx\Desktop\demo1\build\wechatgame
+2018-08-20T02:28:43.164Z - normal: Delete C:\Users\lx\Desktop\demo1\build\wechatgame\**\*
+2018-08-20T02:28:45.030Z - normal: Start building assets
+2018-08-20T02:28:45.030Z - normal: Start spawn build-worker
+2018-08-20T02:28:45.730Z - normal: Finish spawn build-worker
+2018-08-20T02:28:45.730Z - normal: Start init build-worker
+2018-08-20T02:28:48.798Z - normal: Finish init build-worker
+2018-08-20T02:28:48.798Z - normal: Start build-assets in worker
+2018-08-20T02:28:48.997Z - normal: Finish build-assets in worker
+2018-08-20T02:28:49.003Z - normal: Finish building assets
+2018-08-20T02:28:49.008Z - normal: Start building plugin scripts
+2018-08-20T02:28:49.012Z - normal: Generating main.js from D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\static\build-templates\shares\main.js
+2018-08-20T02:28:49.916Z - normal: Built to "C:\Users\lx\Desktop\demo1\build\wechatgame" successfully
+2018-08-20T02:28:52.506Z - normal: Initializing...
+
+2018-08-20T02:28:52.510Z - normal: idePortFile: C:\Users\lx\AppData\Local\微信web开发者工具\User Data\Default\.ide
+
+2018-08-20T02:28:52.522Z - normal: IDE server has started, listening on http://127.0.0.1:37917
+initialization finished
+
+2018-08-20T02:28:53.183Z - normal: open IDE success
+
+2018-08-20T02:38:17.979Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "C:\\Users\\lx\\Desktop\\demo1\\build",
+  "debug": false,
+  "dest": "C:\\Users\\lx\\Desktop\\demo1\\build\\wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "Rank",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx1990cf9754a1483d",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "wechatgame-subcontext"
+  },
+  "xxteaKey": "549fa419-f2e1-40",
+  "zipCompressJs": true,
+  "project": "C:\\Users\\lx\\Desktop\\demo1",
+  "projectName": "Rank",
+  "debugBuildWorker": false
+}
+2018-08-20T02:38:17.982Z - normal: Building C:\Users\lx\Desktop\demo1
+2018-08-20T02:38:17.982Z - normal: Destination C:\Users\lx\Desktop\demo1\build\wechatgame
+2018-08-20T02:38:17.985Z - normal: Delete C:\Users\lx\Desktop\demo1\build\wechatgame\**\*
+2018-08-20T02:38:19.877Z - normal: Start building assets
+2018-08-20T02:38:19.877Z - normal: Start spawn build-worker
+2018-08-20T02:38:20.553Z - normal: Finish spawn build-worker
+2018-08-20T02:38:20.553Z - normal: Start init build-worker
+2018-08-20T02:38:23.529Z - normal: Finish init build-worker
+2018-08-20T02:38:23.529Z - normal: Start build-assets in worker
+2018-08-20T02:38:23.756Z - normal: Finish build-assets in worker
+2018-08-20T02:38:23.765Z - normal: Finish building assets
+2018-08-20T02:38:23.772Z - normal: Start building plugin scripts
+2018-08-20T02:38:23.776Z - normal: Generating main.js from D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\static\build-templates\shares\main.js
+2018-08-20T02:38:24.864Z - normal: Built to "C:\Users\lx\Desktop\demo1\build\wechatgame" successfully
+2018-08-20T02:43:37.903Z - info: shutdown preview server

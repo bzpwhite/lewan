@@ -1,0 +1,91 @@
+2018-08-23T02:01:33.929Z - normal: Load ~/.CocosCreator/settings.json
+2018-08-23T02:01:33.932Z - normal: checking language setting...
+2018-08-23T02:01:33.932Z - normal: Language: zh
+2018-08-23T02:01:35.576Z - success: protocol editor-framework registered
+2018-08-23T02:01:35.576Z - success: protocol app registered
+2018-08-23T02:01:35.576Z - success: protocol theme registered
+2018-08-23T02:01:35.576Z - success: protocol packages registered
+2018-08-23T02:01:35.577Z - success: protocol unpack registerred
+2018-08-23T02:01:35.577Z - success: protocol disable-commonjs registerred
+2018-08-23T02:01:35.782Z - normal: connected!
+2018-08-23T02:01:35.790Z - normal: Check project C:\Users\lx\Documents\Action
+2018-08-23T02:01:35.803Z - normal: Initializing project C:\Users\lx\Documents\Action
+2018-08-23T02:01:35.813Z - normal: Initializing Cocos2d
+2018-08-23T02:01:36.466Z - normal: Initializing Asset Database
+2018-08-23T02:01:36.520Z - success: protocol uuid registerred
+2018-08-23T02:01:36.520Z - success: protocol db registerred
+2018-08-23T02:01:36.520Z - success: protocol thumbnail registerred
+2018-08-23T02:01:36.520Z - normal: Loading editor/builtin packages
+2018-08-23T02:01:36.676Z - success: assets loaded
+2018-08-23T02:01:36.679Z - success: builder loaded
+2018-08-23T02:01:36.682Z - success: cocos-analytics loaded
+2018-08-23T02:01:36.685Z - success: console loaded
+2018-08-23T02:01:36.721Z - success: fb-instant-games loaded
+2018-08-23T02:01:36.724Z - success: hierarchy loaded
+2018-08-23T02:01:36.727Z - success: inspector loaded
+2018-08-23T02:01:36.729Z - success: keystore loaded
+2018-08-23T02:01:36.733Z - success: node-library loaded
+2018-08-23T02:01:36.735Z - success: package-asset loaded
+2018-08-23T02:01:36.736Z - success: preferences loaded
+2018-08-23T02:01:36.737Z - success: project-exporter loaded
+2018-08-23T02:01:36.756Z - success: project-importer loaded
+2018-08-23T02:01:36.759Z - success: project-settings loaded
+2018-08-23T02:01:36.762Z - success: ui-kit loaded
+2018-08-23T02:01:36.765Z - success: scene loaded
+2018-08-23T02:01:36.766Z - success: sprite-editor loaded
+2018-08-23T02:01:36.769Z - success: store loaded
+2018-08-23T02:01:36.772Z - success: timeline loaded
+2018-08-23T02:01:36.772Z - normal: Loading builtin packages
+2018-08-23T02:01:36.776Z - success: asset-db-debugger loaded
+2018-08-23T02:01:36.778Z - success: code-editor loaded
+2018-08-23T02:01:36.779Z - success: color-picker loaded
+2018-08-23T02:01:36.780Z - success: jsb-adapter loaded
+2018-08-23T02:01:36.783Z - success: package-manager loaded
+2018-08-23T02:01:36.784Z - success: qqplay-adapter loaded
+2018-08-23T02:01:36.789Z - success: sdkbox loaded
+2018-08-23T02:01:36.792Z - success: tester loaded
+2018-08-23T02:01:36.793Z - success: ui-grid loaded
+2018-08-23T02:01:36.795Z - success: ui-kit-preview-extra loaded
+2018-08-23T02:01:36.796Z - success: ui-kit-preview loaded
+2018-08-23T02:01:36.798Z - success: ui-tree loaded
+2018-08-23T02:01:36.798Z - success: weapp-adapter loaded
+2018-08-23T02:01:38.093Z - normal: Loading packages
+2018-08-23T02:01:38.099Z - success: resource loaded
+2018-08-23T02:01:38.099Z - normal: Watching packages
+2018-08-23T02:01:38.477Z - normal: Run Application
+2018-08-23T02:01:39.489Z - success: preview server running at http://localhost:7457
+2018-08-23T02:01:50.805Z - error: Failed to reset layout: Error: Failed to close panel scene
+    at Object.e._unloadAll (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor-framework\lib\renderer\panel.js:1:2087)
+    at r.waterfall.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor-framework\lib\renderer\ui\utils\dock-utils.js:1:5916)
+    at fn (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\node_modules\async\lib\async.js:746:34)
+    at D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\node_modules\async\lib\async.js:1213:16
+    at D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\node_modules\async\lib\async.js:166:37
+    at D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\node_modules\async\lib\async.js:706:43
+    at D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\node_modules\async\lib\async.js:167:37
+    at Object.async.waterfall (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\node_modules\async\lib\async.js:710:44)
+    at Object.e.reset (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor-framework\lib\renderer\ui\utils\dock-utils.js:1:5899)
+    at EventEmitter.t.ipcRenderer.on (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor-framework\lib\renderer\ui\utils\dock-utils.js:1:8429)
+    at e.reset.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor-framework\lib\renderer\ui\utils\dock-utils.js:1:8453)
+    at r.waterfall.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor-framework\lib\renderer\ui\utils\dock-utils.js:1:7375)
+    at D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\node_modules\async\lib\async.js:52:16
+    at D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\node_modules\async\lib\async.js:696:30
+    at D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\node_modules\async\lib\async.js:167:37
+    at Immediate.<anonymous> (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\node_modules\async\lib\async.js:1206:34)
+    at runCallback (timers.js:672:20)
+    at tryOnImmediate (timers.js:645:5)
+    at processImmediate [as _immediateCallback] (timers.js:617:5)
+2018-08-23T02:02:19.300Z - warn: cc.Class will automatically call super constructor of cc.circleMoveAction, you should not call it manually.
+2018-08-23T02:05:22.856Z - warn: cc.Class will automatically call super constructor of cc.CircleAction, you should not call it manually.
+2018-08-23T02:06:34.432Z - warn: cc.Class will automatically call super constructor of cc.CircleAction, you should not call it manually.
+2018-08-23T02:07:35.333Z - warn: cc.Class will automatically call super constructor of cc.CircleAction, you should not call it manually.
+2018-08-23T02:08:48.552Z - warn: cc.Class will automatically call super constructor of cc.circleMoveAction, you should not call it manually.
+2018-08-23T02:09:10.905Z - warn: cc.Class will automatically call super constructor of cc.circleMoveAction, you should not call it manually.
+2018-08-23T02:09:15.859Z - warn: cc.Class will automatically call super constructor of cc.circleMoveAction, you should not call it manually.
+2018-08-23T02:09:38.172Z - warn: cc.Class will automatically call super constructor of cc.circleMoveAction, you should not call it manually.
+2018-08-23T02:10:08.235Z - warn: cc.Class will automatically call super constructor of cc.circleMoveAction, you should not call it manually.
+2018-08-23T02:10:13.395Z - warn: cc.Class will automatically call super constructor of cc.circleMoveAction, you should not call it manually.
+2018-08-23T02:11:47.568Z - warn: cc.Class will automatically call super constructor of cc.circleMoveAction, you should not call it manually.
+2018-08-23T02:15:38.473Z - warn: cc.Class will automatically call super constructor of cc.circleMoveAction, you should not call it manually.
+2018-08-23T02:17:19.914Z - warn: cc.Class will automatically call super constructor of cc.circleMoveAction, you should not call it manually.
+2018-08-23T02:17:27.594Z - warn: cc.Class will automatically call super constructor of cc.circleMoveAction, you should not call it manually.
+2018-08-23T02:18:50.585Z - warn: cc.Class will automatically call super constructor of cc.circleMoveAction, you should not call it manually.

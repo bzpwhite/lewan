@@ -1,0 +1,59 @@
+2018-08-21T08:42:54.847Z - normal: Load ~/.CocosCreator/settings.json
+2018-08-21T08:42:54.851Z - normal: checking language setting...
+2018-08-21T08:42:54.851Z - normal: Language: zh
+2018-08-21T08:42:56.401Z - success: protocol editor-framework registered
+2018-08-21T08:42:56.401Z - success: protocol app registered
+2018-08-21T08:42:56.401Z - success: protocol theme registered
+2018-08-21T08:42:56.401Z - success: protocol packages registered
+2018-08-21T08:42:56.401Z - success: protocol unpack registerred
+2018-08-21T08:42:56.402Z - success: protocol disable-commonjs registerred
+2018-08-21T08:42:56.615Z - normal: connected!
+2018-08-21T08:42:56.624Z - normal: Check project C:\Users\lx\Documents\Toast
+2018-08-21T08:42:56.637Z - normal: Initializing project C:\Users\lx\Documents\Toast
+2018-08-21T08:42:56.651Z - normal: Initializing Cocos2d
+2018-08-21T08:42:57.286Z - normal: Initializing Asset Database
+2018-08-21T08:42:57.327Z - success: protocol uuid registerred
+2018-08-21T08:42:57.327Z - success: protocol db registerred
+2018-08-21T08:42:57.327Z - success: protocol thumbnail registerred
+2018-08-21T08:42:57.327Z - normal: Loading editor/builtin packages
+2018-08-21T08:42:57.477Z - success: assets loaded
+2018-08-21T08:42:57.479Z - success: builder loaded
+2018-08-21T08:42:57.482Z - success: cocos-analytics loaded
+2018-08-21T08:42:57.484Z - success: console loaded
+2018-08-21T08:42:57.516Z - success: fb-instant-games loaded
+2018-08-21T08:42:57.520Z - success: hierarchy loaded
+2018-08-21T08:42:57.522Z - success: inspector loaded
+2018-08-21T08:42:57.523Z - success: keystore loaded
+2018-08-21T08:42:57.527Z - success: node-library loaded
+2018-08-21T08:42:57.528Z - success: package-asset loaded
+2018-08-21T08:42:57.530Z - success: preferences loaded
+2018-08-21T08:42:57.531Z - success: project-exporter loaded
+2018-08-21T08:42:57.548Z - success: project-importer loaded
+2018-08-21T08:42:57.552Z - success: project-settings loaded
+2018-08-21T08:42:57.556Z - success: ui-kit loaded
+2018-08-21T08:42:57.562Z - success: scene loaded
+2018-08-21T08:42:57.565Z - success: sprite-editor loaded
+2018-08-21T08:42:57.571Z - success: store loaded
+2018-08-21T08:42:57.577Z - success: timeline loaded
+2018-08-21T08:42:57.578Z - normal: Loading builtin packages
+2018-08-21T08:42:57.581Z - success: asset-db-debugger loaded
+2018-08-21T08:42:57.582Z - success: code-editor loaded
+2018-08-21T08:42:57.583Z - success: color-picker loaded
+2018-08-21T08:42:57.583Z - success: jsb-adapter loaded
+2018-08-21T08:42:57.585Z - success: package-manager loaded
+2018-08-21T08:42:57.586Z - success: qqplay-adapter loaded
+2018-08-21T08:42:57.590Z - success: sdkbox loaded
+2018-08-21T08:42:57.593Z - success: tester loaded
+2018-08-21T08:42:57.594Z - success: ui-grid loaded
+2018-08-21T08:42:57.596Z - success: ui-kit-preview-extra loaded
+2018-08-21T08:42:57.597Z - success: ui-kit-preview loaded
+2018-08-21T08:42:57.600Z - success: ui-tree loaded
+2018-08-21T08:42:57.600Z - success: weapp-adapter loaded
+2018-08-21T08:42:58.666Z - normal: Loading packages
+2018-08-21T08:42:58.674Z - success: resource loaded
+2018-08-21T08:42:58.674Z - normal: Watching packages
+2018-08-21T08:42:59.032Z - normal: Run Application
+2018-08-21T08:42:59.705Z - success: preview server running at http://localhost:7458
+2018-08-21T08:43:44.866Z - warn: [db-task][refresh] Backup unused meta file: db://assets/Component/Toast/Toast.meta
+2018-08-21T08:43:44.868Z - warn: [db-task][refresh] Backup unused meta file: db://assets/Demo/Scene/Scene.meta
+2018-08-21T08:43:44.873Z - warn: [db-task][refresh] Backup unused meta file: db://assets/Demo/Texture/Texture.meta
