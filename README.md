@@ -11,9 +11,11 @@ Cocos小游戏sdk、Cocos小游戏sdk文档、Cocos小游戏开发示例；
 **2.初始化sdk（在游戏启动场景中）**
 ```javascript
 sdk.init({
-    debug: true,        //.是否开启调试
-    app_name: "yt",     //.游戏唯一标识
+    debug: true,         //.是否开启调试
+    app_name: "xiao_xiao_yu_tang",     //.游戏唯一标识
     version: "1.0.0",   //.游戏版本
+}, ()=>{
+    console.log('sdk初始化完成')
 })
 ```
 

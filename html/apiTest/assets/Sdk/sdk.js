@@ -18,8 +18,8 @@ var sdk = {
     game: "",
     version: "",
 
-    login: 'https://login.llewan.com/Login/common',
-    // login: 'http://mock.eolinker.com/RiwKeAE4fb4e33cce254aee8509dbdd47b3898870569465?uri=https://login.llewan.com/Login/common',
+    // login: 'https://login.llewan.com/Login/common',
+    login: 'http://mock.eolinker.com/RiwKeAE4fb4e33cce254aee8509dbdd47b3898870569465?uri=https://login.llewan.com/Login/common',
     
 
     /**
