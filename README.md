@@ -1,7 +1,8 @@
-##一、简介
+## 一、简介
 Cocos小游戏sdk、Cocos小游戏sdk文档、Cocos小游戏开发示例；
 
-##二、使用
+
+## 二、使用
 **1、Cocos小游戏开发示例：**
 下载源码直接导入cocos creator即可。
 （排行榜示例 仅支持creator2.0.1及以上版本）
@@ -24,6 +25,6 @@ sdk.Get("https://xxx.xxx", { user_id: user_id }, function (d) {
 });
 ```
 
-##三、其他
+## 三、其他
 - sdk文档：https://laixiao.github.io/lewan/html/api/index.html
 - 登录图片： https://laixiao.github.io/lewan/html/img/btn_start.png
