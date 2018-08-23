@@ -20,7 +20,7 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "app_name",
+            "field": "game",
             "description": "<p>游戏标识</p>"
           },
           {
@@ -37,13 +37,13 @@ define({ "api": [
       "examples": [
         {
           "title": "示例:",
-          "content": "sdk.init({\n    debug: true,        //.是否开启调试\n    app_name: \"yt\",     //.游戏唯一标识\n    version: \"1.0.0\",   //.游戏版本\n})",
+          "content": "sdk.init({\n    debug: true,        //.是否开启调试\n    game: \"项目名全拼\",     //.游戏唯一标识\n    version: \"1.0.0\",   //.游戏版本\n})",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/assets/Sdk/sdk.js",
     "groupTitle": "Get_Start"
   },
   {
@@ -67,7 +67,7 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "app_name",
+            "field": "game",
             "description": "<p>游戏标识</p>"
           },
           {
@@ -84,13 +84,13 @@ define({ "api": [
       "examples": [
         {
           "title": "示例:",
-          "content": "sdk.init({\n    debug: true,        //.是否开启调试\n    app_name: \"yt\",     //.游戏唯一标识\n    version: \"1.0.0\",   //.游戏版本\n})",
+          "content": "sdk.init({\n    debug: true,        //.是否开启调试\n    game: \"项目名全拼\",     //.游戏唯一标识\n    version: \"1.0.0\",   //.游戏版本\n})",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
     "groupTitle": "Get_Start"
   },
   {
@@ -114,7 +114,7 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "app_name",
+            "field": "game",
             "description": "<p>游戏标识</p>"
           },
           {
@@ -131,226 +131,13 @@ define({ "api": [
       "examples": [
         {
           "title": "示例:",
-          "content": "sdk.init({\n    debug: true,        //.是否开启调试\n    app_name: \"yt\",     //.游戏唯一标识\n    version: \"1.0.0\",   //.游戏版本\n})",
+          "content": "sdk.init({\n    debug: true,        //.是否开启调试\n    game: \"项目名全拼\",     //.游戏唯一标识\n    version: \"1.0.0\",   //.游戏版本\n})",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
-    "groupTitle": "Get_Start"
-  },
-  {
-    "group": "Get_Start",
-    "name": "initmta",
-    "type": "初始化腾讯统计sdk",
-    "url": "参考链接http://mta.qq.com/wechat_mini/manage/ctr_sdk_help?app_id=500625714",
-    "title": "initmta（初始化统计）",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Object",
-            "optional": false,
-            "field": "args",
-            "description": "<p>参数</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "示例:",
-          "content": "//.简单\nmta.App.init({\n    \"appID\":\"500618042\",\n    \"eventID\":\"500618044\"\n});\n//.高级\nmta.App.init({\n    \"appID\":\"500618042\",\n    \"eventID\":\"500618044\", // 高级功能-自定义事件统计ID，配置开通后在初始化处填写\n    \"lauchOpts\":options, //渠道分析,需在onLaunch方法传入options,如onLaunch:function(options){...}\n    \"statPullDownFresh\":true, // 使用分析-下拉刷新次数/人数，必须先开通自定义事件，并配置了合法的eventID\n    \"statShareApp\":true, // 使用分析-分享次数/人数，必须先开通自定义事件，并配置了合法的eventID\n    \"statReachBottom\":true // 使用分析-页面触底次数/人数，必须先开通自定义事件，并配置了合法的eventID\n});",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
-    "groupTitle": "Get_Start"
-  },
-  {
-    "group": "Get_Start",
-    "name": "initmta",
-    "type": "初始化腾讯统计sdk",
-    "url": "参考链接http://mta.qq.com/wechat_mini/manage/ctr_sdk_help?app_id=500625714",
-    "title": "initmta（初始化统计）",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Object",
-            "optional": false,
-            "field": "args",
-            "description": "<p>参数</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "示例:",
-          "content": "//.简单\nmta.App.init({\n    \"appID\":\"500618042\",\n    \"eventID\":\"500618044\"\n});\n//.高级\nmta.App.init({\n    \"appID\":\"500618042\",\n    \"eventID\":\"500618044\", // 高级功能-自定义事件统计ID，配置开通后在初始化处填写\n    \"lauchOpts\":options, //渠道分析,需在onLaunch方法传入options,如onLaunch:function(options){...}\n    \"statPullDownFresh\":true, // 使用分析-下拉刷新次数/人数，必须先开通自定义事件，并配置了合法的eventID\n    \"statShareApp\":true, // 使用分析-分享次数/人数，必须先开通自定义事件，并配置了合法的eventID\n    \"statReachBottom\":true // 使用分析-页面触底次数/人数，必须先开通自定义事件，并配置了合法的eventID\n});",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
-    "groupTitle": "Get_Start"
-  },
-  {
-    "group": "Get_Start",
-    "name": "initmta",
-    "type": "初始化腾讯统计sdk",
-    "url": "参考链接http://mta.qq.com/wechat_mini/manage/ctr_sdk_help?app_id=500625714",
-    "title": "initmta（初始化统计）",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Object",
-            "optional": false,
-            "field": "args",
-            "description": "<p>参数</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "示例:",
-          "content": "//.简单\nmta.App.init({\n    \"appID\":\"500618042\",\n    \"eventID\":\"500618044\"\n});\n//.高级\nmta.App.init({\n    \"appID\":\"500618042\",\n    \"eventID\":\"500618044\", // 高级功能-自定义事件统计ID，配置开通后在初始化处填写\n    \"lauchOpts\":options, //渠道分析,需在onLaunch方法传入options,如onLaunch:function(options){...}\n    \"statPullDownFresh\":true, // 使用分析-下拉刷新次数/人数，必须先开通自定义事件，并配置了合法的eventID\n    \"statShareApp\":true, // 使用分析-分享次数/人数，必须先开通自定义事件，并配置了合法的eventID\n    \"statReachBottom\":true // 使用分析-页面触底次数/人数，必须先开通自定义事件，并配置了合法的eventID\n});",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
-    "groupTitle": "Get_Start"
-  },
-  {
-    "group": "Get_Start",
-    "name": "setmta",
-    "type": "统计埋点",
-    "url": "统计埋点",
-    "title": "setmta（统计埋点）",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "name",
-            "description": "<p>腾讯后台查询</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "value",
-            "description": "<p>腾讯后台查询</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "示例:",
-          "content": "sdk.setmta(\"click\",\"p003\")",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
-    "groupTitle": "Get_Start"
-  },
-  {
-    "group": "Get_Start",
-    "name": "setmta",
-    "type": "统计埋点",
-    "url": "统计埋点",
-    "title": "setmta（统计埋点）",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "name",
-            "description": "<p>腾讯后台查询</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "value",
-            "description": "<p>腾讯后台查询</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "示例:",
-          "content": "sdk.setmta(\"click\",\"p003\")",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
-    "groupTitle": "Get_Start"
-  },
-  {
-    "group": "Get_Start",
-    "name": "setmta",
-    "type": "统计埋点",
-    "url": "统计埋点",
-    "title": "setmta（统计埋点）",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "name",
-            "description": "<p>腾讯后台查询</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "value",
-            "description": "<p>腾讯后台查询</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "示例:",
-          "content": "sdk.setmta(\"click\",\"p003\")",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
     "groupTitle": "Get_Start"
   },
   {
@@ -396,7 +183,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -442,7 +229,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
     "groupTitle": "sdk"
   },
   {
@@ -488,7 +275,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -528,13 +315,13 @@ define({ "api": [
       "examples": [
         {
           "title": "示例:",
-          "content": "sdk.Post(sdk.ip1 + sdk.common, { user_id: user_id }, function (d) {\n    console.log(d)\n});",
+          "content": "sdk.Post(sdk.ip + sdk.common, { user_id: user_id }, function (d) {\n    console.log(d)\n});",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
     "groupTitle": "sdk"
   },
   {
@@ -574,13 +361,13 @@ define({ "api": [
       "examples": [
         {
           "title": "示例:",
-          "content": "sdk.Post(sdk.ip1 + sdk.common, { user_id: user_id }, function (d) {\n    console.log(d)\n});",
+          "content": "sdk.Post(sdk.ip + sdk.common, { user_id: user_id }, function (d) {\n    console.log(d)\n});",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -620,13 +407,13 @@ define({ "api": [
       "examples": [
         {
           "title": "示例:",
-          "content": "sdk.Post(sdk.ip1 + sdk.common, { user_id: user_id }, function (d) {\n    console.log(d)\n});",
+          "content": "sdk.Post(sdk.ip + sdk.common, { user_id: user_id }, function (d) {\n    console.log(d)\n});",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "filename": "apiTest/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -645,7 +432,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -664,7 +451,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -683,7 +470,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
     "groupTitle": "sdk"
   },
   {
@@ -722,7 +509,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -761,7 +548,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "filename": "apiTest/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -800,7 +587,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
     "groupTitle": "sdk"
   },
   {
@@ -832,7 +619,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -864,7 +651,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -896,7 +683,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
     "groupTitle": "sdk"
   },
   {
@@ -928,7 +715,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -960,7 +747,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "filename": "apiTest/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -992,7 +779,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
     "groupTitle": "sdk"
   },
   {
@@ -1024,7 +811,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1056,7 +843,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1088,7 +875,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
     "groupTitle": "sdk"
   },
   {
@@ -1127,7 +914,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1166,7 +953,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1205,7 +992,124 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "groupTitle": "sdk"
+  },
+  {
+    "group": "sdk",
+    "name": "getMyRank3",
+    "type": "微信登录",
+    "url": "微信登录",
+    "title": "WeChatLogin（微信登录）",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "ListData",
+            "description": "<p>要排序的微信子域数据</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "me",
+            "description": "<p>我的子域信息</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "示例:",
+          "content": "wx.getUserInfo({\n      openIdList: ['selfOpenId'],\n      lang: 'zh_CN',\n      success(res){\n         //.Top3\n         var dList = sdk.getMyRank3(dataList,res.data[0]);\n         console.log(dList)\n      },\n      fail(error) {\n         console.log(error)\n      }\n})",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "groupTitle": "sdk"
+  },
+  {
+    "group": "sdk",
+    "name": "getMyRank3",
+    "type": "微信登录",
+    "url": "微信登录",
+    "title": "WeChatLogin（微信登录）",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "ListData",
+            "description": "<p>要排序的微信子域数据</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "me",
+            "description": "<p>我的子域信息</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "示例:",
+          "content": "wx.getUserInfo({\n      openIdList: ['selfOpenId'],\n      lang: 'zh_CN',\n      success(res){\n         //.Top3\n         var dList = sdk.getMyRank3(dataList,res.data[0]);\n         console.log(dList)\n      },\n      fail(error) {\n         console.log(error)\n      }\n})",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apiTest/assets/Sdk/sdk.js",
+    "groupTitle": "sdk"
+  },
+  {
+    "group": "sdk",
+    "name": "getMyRank3",
+    "type": "微信登录",
+    "url": "微信登录",
+    "title": "WeChatLogin（微信登录）",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "ListData",
+            "description": "<p>要排序的微信子域数据</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "me",
+            "description": "<p>我的子域信息</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "示例:",
+          "content": "wx.getUserInfo({\n      openIdList: ['selfOpenId'],\n      lang: 'zh_CN',\n      success(res){\n         //.Top3\n         var dList = sdk.getMyRank3(dataList,res.data[0]);\n         console.log(dList)\n      },\n      fail(error) {\n         console.log(error)\n      }\n})",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1244,7 +1148,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1283,7 +1187,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
     "groupTitle": "sdk"
   },
   {
@@ -1322,7 +1226,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "filename": "apiTest/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1354,7 +1258,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1386,7 +1290,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
     "groupTitle": "sdk"
   },
   {
@@ -1418,7 +1322,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1457,7 +1361,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1496,7 +1400,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1535,7 +1439,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
     "groupTitle": "sdk"
   },
   {
@@ -1567,7 +1471,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1599,7 +1503,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
     "groupTitle": "sdk"
   },
   {
@@ -1631,7 +1535,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1663,7 +1567,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1695,7 +1599,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
     "groupTitle": "sdk"
   },
   {
@@ -1727,7 +1631,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1766,7 +1670,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1805,7 +1709,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
     "groupTitle": "sdk"
   },
   {
@@ -1844,7 +1748,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1890,7 +1794,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1936,7 +1840,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/temp/quick-scripts/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1982,7 +1886,337 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../demo/assets/Demo/Script/sdk/sdk.js",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
     "groupTitle": "sdk"
+  },
+  {
+    "group": "statistics",
+    "name": "initmta",
+    "type": "初始化腾讯统计sdk",
+    "url": "参考链接http://mta.qq.com/wechat_mini/manage/ctr_sdk_help?app_id=500625714",
+    "title": "initmta（腾讯统计）",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Object",
+            "optional": false,
+            "field": "args",
+            "description": "<p>参数</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "示例:",
+          "content": "//.简单\nmta.App.init({\n    \"appID\":\"500618042\",\n    \"eventID\":\"500618044\"\n});\n//.高级\nmta.App.init({\n    \"appID\":\"500618042\",\n    \"eventID\":\"500618044\", // 高级功能-自定义事件统计ID，配置开通后在初始化处填写\n    \"lauchOpts\":options, //渠道分析,需在onLaunch方法传入options,如onLaunch:function(options){...}\n    \"statPullDownFresh\":true, // 使用分析-下拉刷新次数/人数，必须先开通自定义事件，并配置了合法的eventID\n    \"statShareApp\":true, // 使用分析-分享次数/人数，必须先开通自定义事件，并配置了合法的eventID\n    \"statReachBottom\":true // 使用分析-页面触底次数/人数，必须先开通自定义事件，并配置了合法的eventID\n});",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "groupTitle": "statistics"
+  },
+  {
+    "group": "statistics",
+    "name": "initmta",
+    "type": "初始化腾讯统计sdk",
+    "url": "参考链接http://mta.qq.com/wechat_mini/manage/ctr_sdk_help?app_id=500625714",
+    "title": "initmta（腾讯统计）",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Object",
+            "optional": false,
+            "field": "args",
+            "description": "<p>参数</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "示例:",
+          "content": "//.简单\nmta.App.init({\n    \"appID\":\"500618042\",\n    \"eventID\":\"500618044\"\n});\n//.高级\nmta.App.init({\n    \"appID\":\"500618042\",\n    \"eventID\":\"500618044\", // 高级功能-自定义事件统计ID，配置开通后在初始化处填写\n    \"lauchOpts\":options, //渠道分析,需在onLaunch方法传入options,如onLaunch:function(options){...}\n    \"statPullDownFresh\":true, // 使用分析-下拉刷新次数/人数，必须先开通自定义事件，并配置了合法的eventID\n    \"statShareApp\":true, // 使用分析-分享次数/人数，必须先开通自定义事件，并配置了合法的eventID\n    \"statReachBottom\":true // 使用分析-页面触底次数/人数，必须先开通自定义事件，并配置了合法的eventID\n});",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apiTest/assets/Sdk/sdk.js",
+    "groupTitle": "statistics"
+  },
+  {
+    "group": "statistics",
+    "name": "initmta",
+    "type": "初始化腾讯统计sdk",
+    "url": "参考链接http://mta.qq.com/wechat_mini/manage/ctr_sdk_help?app_id=500625714",
+    "title": "initmta（腾讯统计）",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Object",
+            "optional": false,
+            "field": "args",
+            "description": "<p>参数</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "示例:",
+          "content": "//.简单\nmta.App.init({\n    \"appID\":\"500618042\",\n    \"eventID\":\"500618044\"\n});\n//.高级\nmta.App.init({\n    \"appID\":\"500618042\",\n    \"eventID\":\"500618044\", // 高级功能-自定义事件统计ID，配置开通后在初始化处填写\n    \"lauchOpts\":options, //渠道分析,需在onLaunch方法传入options,如onLaunch:function(options){...}\n    \"statPullDownFresh\":true, // 使用分析-下拉刷新次数/人数，必须先开通自定义事件，并配置了合法的eventID\n    \"statShareApp\":true, // 使用分析-分享次数/人数，必须先开通自定义事件，并配置了合法的eventID\n    \"statReachBottom\":true // 使用分析-页面触底次数/人数，必须先开通自定义事件，并配置了合法的eventID\n});",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "groupTitle": "statistics"
+  },
+  {
+    "group": "statistics",
+    "name": "setAld",
+    "type": "阿拉丁埋点",
+    "url": "统计埋点",
+    "title": "setAld（阿拉丁埋点）",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>阿拉丁后台查询</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "value",
+            "description": "<p>阿拉丁后台查询</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "示例:",
+          "content": "sdk.setAld(\"click\",\"p003\")",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "groupTitle": "statistics"
+  },
+  {
+    "group": "statistics",
+    "name": "setAld",
+    "type": "阿拉丁埋点",
+    "url": "统计埋点",
+    "title": "setAld（阿拉丁埋点）",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>阿拉丁后台查询</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "value",
+            "description": "<p>阿拉丁后台查询</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "示例:",
+          "content": "sdk.setAld(\"click\",\"p003\")",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "groupTitle": "statistics"
+  },
+  {
+    "group": "statistics",
+    "name": "setAld",
+    "type": "阿拉丁埋点",
+    "url": "统计埋点",
+    "title": "setAld",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>阿拉丁后台查询</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "value",
+            "description": "<p>阿拉丁后台查询</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "示例:",
+          "content": "sdk.setAld(\"click\",\"p003\")",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apiTest/assets/Sdk/sdk.js",
+    "groupTitle": "statistics"
+  },
+  {
+    "group": "statistics",
+    "name": "setmta",
+    "type": "腾讯统计埋点",
+    "url": "统计埋点",
+    "title": "setmta（腾讯统计埋点）",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>腾讯后台查询</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "value",
+            "description": "<p>腾讯后台查询</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "示例:",
+          "content": "sdk.setmta(\"click\",\"p003\")",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "groupTitle": "statistics"
+  },
+  {
+    "group": "statistics",
+    "name": "setmta",
+    "type": "腾讯统计埋点",
+    "url": "统计埋点",
+    "title": "setmta",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>腾讯后台查询</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "value",
+            "description": "<p>腾讯后台查询</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "示例:",
+          "content": "sdk.setmta(\"click\",\"p003\")",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apiTest/assets/Sdk/sdk.js",
+    "groupTitle": "statistics"
+  },
+  {
+    "group": "statistics",
+    "name": "setmta",
+    "type": "腾讯统计埋点",
+    "url": "统计埋点",
+    "title": "setmta（腾讯统计埋点）",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>腾讯后台查询</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "value",
+            "description": "<p>腾讯后台查询</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "示例:",
+          "content": "sdk.setmta(\"click\",\"p003\")",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apiTest/library/imports/37/375a3fad-9df1-493c-b070-344bfbbf2f14.js",
+    "groupTitle": "statistics"
   }
 ] });
