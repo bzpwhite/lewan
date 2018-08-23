@@ -33,12 +33,14 @@ var sdk = {
      * 
      * @apiSuccessExample {json} 示例:
      * sdk.init({
-     *     debug: true,        //.是否开启调试
-     *     game: "项目名全拼",     //.游戏唯一标识
+     *     debug: true,         //.是否开启调试
+     *     app_name: "xiao_xiao_yu_tang",     //.游戏唯一标识
      *     version: "1.0.0",   //.游戏版本
+     * }, ()=>{
+     *     console.log('sdk初始化完成')
      * })
      */
-    init(args){
+    init(args, callback){
         if(args.debug){
             this.debug = args.debug;
         }
@@ -49,6 +51,7 @@ var sdk = {
             this.version = args.version;
         }
         this.checkUpdate();
+        callback();
     },
     /**
      * @apiGroup sdk

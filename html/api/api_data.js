@@ -37,7 +37,7 @@ define({ "api": [
       "examples": [
         {
           "title": "示例:",
-          "content": "sdk.init({\n    debug: true,        //.是否开启调试\n    game: \"项目名全拼\",     //.游戏唯一标识\n    version: \"1.0.0\",   //.游戏版本\n})",
+          "content": "sdk.init({\n    debug: true,         //.是否开启调试\n    app_name: \"xiao_xiao_yu_tang\",     //.游戏唯一标识\n    version: \"1.0.0\",   //.游戏版本\n}, ()=>{\n    console.log('sdk初始化完成')\n})",
           "type": "json"
         }
       ]
@@ -90,7 +90,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "Get_Start"
   },
   {
@@ -275,7 +275,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -367,7 +367,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -432,7 +432,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -509,7 +509,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -619,7 +619,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -715,7 +715,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -811,7 +811,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -914,7 +914,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1109,7 +1109,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1148,7 +1148,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1322,7 +1322,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1361,7 +1361,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1535,7 +1535,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1631,7 +1631,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1748,7 +1748,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1794,7 +1794,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "sdk"
   },
   {
@@ -1982,7 +1982,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "statistics"
   },
   {
@@ -1990,7 +1990,7 @@ define({ "api": [
     "name": "setAld",
     "type": "阿拉丁埋点",
     "url": "统计埋点",
-    "title": "setAld（阿拉丁埋点）",
+    "title": "setAld",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2021,7 +2021,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "statistics"
   },
   {
@@ -2029,7 +2029,7 @@ define({ "api": [
     "name": "setAld",
     "type": "阿拉丁埋点",
     "url": "统计埋点",
-    "title": "setAld（阿拉丁埋点）",
+    "title": "setAld",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2107,7 +2107,7 @@ define({ "api": [
     "name": "setmta",
     "type": "腾讯统计埋点",
     "url": "统计埋点",
-    "title": "setmta（腾讯统计埋点）",
+    "title": "setmta",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2138,7 +2138,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "apiTest/temp/quick-scripts/assets/sdk/sdk.js",
+    "filename": "apiTest/temp/quick-scripts/assets/Sdk/sdk.js",
     "groupTitle": "statistics"
   },
   {
@@ -2185,7 +2185,7 @@ define({ "api": [
     "name": "setmta",
     "type": "腾讯统计埋点",
     "url": "统计埋点",
-    "title": "setmta（腾讯统计埋点）",
+    "title": "setmta",
     "parameter": {
       "fields": {
         "Parameter": [
