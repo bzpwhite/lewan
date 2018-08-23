@@ -1,271 +1,80 @@
-2018-08-23T04:50:08.862Z - normal: Load ~/.CocosCreator/settings.json
-2018-08-23T04:50:08.867Z - normal: checking language setting...
-2018-08-23T04:50:08.867Z - normal: Language: zh
-2018-08-23T04:50:10.490Z - success: protocol editor-framework registered
-2018-08-23T04:50:10.491Z - success: protocol app registered
-2018-08-23T04:50:10.491Z - success: protocol theme registered
-2018-08-23T04:50:10.491Z - success: protocol packages registered
-2018-08-23T04:50:10.491Z - success: protocol unpack registerred
-2018-08-23T04:50:10.491Z - success: protocol disable-commonjs registerred
-2018-08-23T04:50:10.696Z - normal: connected!
-2018-08-23T04:50:10.706Z - normal: Check project D:\lx\git\github\lewan\html\apiTest
-2018-08-23T04:50:10.717Z - normal: Initializing project D:\lx\git\github\lewan\html\apiTest
-2018-08-23T04:50:10.727Z - normal: Initializing Cocos2d
-2018-08-23T04:50:11.384Z - normal: Initializing Asset Database
-2018-08-23T04:50:11.441Z - success: protocol uuid registerred
-2018-08-23T04:50:11.442Z - success: protocol db registerred
-2018-08-23T04:50:11.442Z - success: protocol thumbnail registerred
-2018-08-23T04:50:11.442Z - normal: Loading editor/builtin packages
-2018-08-23T04:50:11.587Z - success: assets loaded
-2018-08-23T04:50:11.590Z - success: builder loaded
-2018-08-23T04:50:11.593Z - success: cocos-analytics loaded
-2018-08-23T04:50:11.595Z - success: console loaded
-2018-08-23T04:50:11.628Z - success: fb-instant-games loaded
-2018-08-23T04:50:11.632Z - success: hierarchy loaded
-2018-08-23T04:50:11.634Z - success: inspector loaded
-2018-08-23T04:50:11.636Z - success: keystore loaded
-2018-08-23T04:50:11.643Z - success: node-library loaded
-2018-08-23T04:50:11.644Z - success: package-asset loaded
-2018-08-23T04:50:11.645Z - success: preferences loaded
-2018-08-23T04:50:11.646Z - success: project-exporter loaded
-2018-08-23T04:50:11.661Z - success: project-importer loaded
-2018-08-23T04:50:11.663Z - success: project-settings loaded
-2018-08-23T04:50:11.665Z - success: ui-kit loaded
-2018-08-23T04:50:11.668Z - success: scene loaded
-2018-08-23T04:50:11.669Z - success: sprite-editor loaded
-2018-08-23T04:50:11.673Z - success: store loaded
-2018-08-23T04:50:11.677Z - success: timeline loaded
-2018-08-23T04:50:11.678Z - normal: Loading builtin packages
-2018-08-23T04:50:11.680Z - success: asset-db-debugger loaded
-2018-08-23T04:50:11.681Z - success: code-editor loaded
-2018-08-23T04:50:11.682Z - success: color-picker loaded
-2018-08-23T04:50:11.682Z - success: jsb-adapter loaded
-2018-08-23T04:50:11.684Z - success: package-manager loaded
-2018-08-23T04:50:11.685Z - success: qqplay-adapter loaded
-2018-08-23T04:50:11.691Z - success: sdkbox loaded
-2018-08-23T04:50:11.693Z - success: tester loaded
-2018-08-23T04:50:11.695Z - success: ui-grid loaded
-2018-08-23T04:50:11.696Z - success: ui-kit-preview-extra loaded
-2018-08-23T04:50:11.698Z - success: ui-kit-preview loaded
-2018-08-23T04:50:11.699Z - success: ui-tree loaded
-2018-08-23T04:50:11.699Z - success: weapp-adapter loaded
-2018-08-23T04:50:12.861Z - normal: Loading packages
-2018-08-23T04:50:12.866Z - success: resource loaded
-2018-08-23T04:50:12.866Z - normal: Watching packages
-2018-08-23T04:50:13.252Z - normal: Run Application
-2018-08-23T04:50:13.736Z - success: preview server running at http://localhost:7457
-2018-08-23T09:14:21.571Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T09:14:21.578Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T09:21:18.464Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T09:21:18.472Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T09:34:07.313Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T09:34:07.321Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T09:45:31.234Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T09:45:31.246Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T09:53:56.991Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T09:53:56.996Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T09:54:50.230Z - failed: [db-task][import] Failed to copy file C:\Users\lx\AppData\Local\Temp\360zip$Temp\360$0\ald-game.js. Error: ENOENT: no such file or directory, lstat 'C:\Users\lx\AppData\Local\Temp\360zip$Temp\360$0\ald-game.js'
-2018-08-23T09:54:50.231Z - failed: [db-task][import] Failed to copy file C:\Users\lx\AppData\Local\Temp\360zip$Temp\360$0\ald-game-conf.js. Error: ENOENT: no such file or directory, lstat 'C:\Users\lx\AppData\Local\Temp\360zip$Temp\360$0\ald-game-conf.js'
-2018-08-23T09:54:58.613Z - failed: load script [D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js] failed : ReferenceError: wx is not defined
-    at D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:80:5
-    at D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:83:4
-    at __define (D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:155:2)
-    at D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:160:13
-    at Object.<anonymous> (D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:167:11)
-    at Object.<anonymous> (D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:170:3)
+2018-08-23T15:42:50.491Z - normal: Load ~/.CocosCreator/settings.json
+2018-08-23T15:42:50.507Z - normal: checking language setting...
+2018-08-23T15:42:50.507Z - normal: Language: zh
+2018-08-23T15:42:53.177Z - success: protocol editor-framework registered
+2018-08-23T15:42:53.178Z - success: protocol app registered
+2018-08-23T15:42:53.178Z - success: protocol theme registered
+2018-08-23T15:42:53.178Z - success: protocol packages registered
+2018-08-23T15:42:53.178Z - success: protocol unpack registerred
+2018-08-23T15:42:53.178Z - success: protocol disable-commonjs registerred
+2018-08-23T15:42:53.396Z - normal: connected!
+2018-08-23T15:42:53.399Z - normal: Check project D:\laixiao\git\github\lewan\html\apiTest
+2018-08-23T15:42:53.402Z - normal: Initializing Cocos2d
+2018-08-23T15:42:53.855Z - normal: Initializing Asset Database
+2018-08-23T15:42:53.917Z - success: protocol uuid registerred
+2018-08-23T15:42:53.918Z - success: protocol db registerred
+2018-08-23T15:42:53.918Z - success: protocol thumbnail registerred
+2018-08-23T15:42:53.918Z - normal: Loading editor/builtin packages
+2018-08-23T15:42:53.963Z - success: anysdk loaded
+2018-08-23T15:42:54.177Z - success: assets loaded
+2018-08-23T15:42:54.180Z - success: builder loaded
+2018-08-23T15:42:54.183Z - success: cocos-analytics loaded
+2018-08-23T15:42:54.190Z - success: console loaded
+2018-08-23T15:42:54.240Z - success: fb-instant-games loaded
+2018-08-23T15:42:54.256Z - success: hierarchy loaded
+2018-08-23T15:42:54.256Z - success: inspector loaded
+2018-08-23T15:42:54.256Z - success: keystore loaded
+2018-08-23T15:42:54.256Z - success: node-library loaded
+2018-08-23T15:42:54.271Z - success: package-asset loaded
+2018-08-23T15:42:54.271Z - success: preferences loaded
+2018-08-23T15:42:54.271Z - success: project-exporter loaded
+2018-08-23T15:42:54.302Z - success: project-importer loaded
+2018-08-23T15:42:54.302Z - success: project-settings loaded
+2018-08-23T15:42:54.302Z - success: ui-kit loaded
+2018-08-23T15:42:54.302Z - success: ui-grid loaded
+2018-08-23T15:42:54.318Z - success: scene loaded
+2018-08-23T15:42:54.318Z - success: sprite-editor loaded
+2018-08-23T15:42:54.318Z - success: store loaded
+2018-08-23T15:42:54.346Z - success: timeline loaded
+2018-08-23T15:42:54.347Z - normal: Loading builtin packages
+2018-08-23T15:42:54.357Z - success: asset-db-debugger loaded
+2018-08-23T15:42:54.360Z - success: code-editor loaded
+2018-08-23T15:42:54.360Z - success: color-picker loaded
+2018-08-23T15:42:54.364Z - success: package-manager loaded
+2018-08-23T15:42:54.368Z - success: qqplay-adapter loaded
+2018-08-23T15:42:54.375Z - success: sdkbox loaded
+2018-08-23T15:42:54.380Z - success: tester loaded
+2018-08-23T15:42:54.384Z - success: ui-kit-preview-extra loaded
+2018-08-23T15:42:54.387Z - success: ui-kit-preview loaded
+2018-08-23T15:42:54.389Z - success: ui-tree loaded
+2018-08-23T15:42:54.390Z - success: weapp-adapter loaded
+2018-08-23T15:42:56.357Z - normal: Initializing project D:\laixiao\git\github\lewan\html\apiTest
+2018-08-23T15:42:56.357Z - normal: Loading packages
+2018-08-23T15:42:56.374Z - success: resource loaded
+2018-08-23T15:42:56.375Z - normal: Watching packages
+2018-08-23T15:42:57.040Z - normal: Run Application
+2018-08-23T15:42:59.475Z - success: preview server running at http://localhost:7456
+2018-08-23T15:43:07.373Z - normal: 1.9.3
+2018-08-23T15:43:08.037Z - failed: load script [D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js] failed : ReferenceError: wx is not defined
+    at D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:80:5
+    at D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:83:4
+    at __define (D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:155:2)
+    at D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:160:13
+    at Object.<anonymous> (D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:167:11)
+    at Object.<anonymous> (D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:170:3)
     at Module._compile (module.js:571:32)
     at Object.Module._extensions..js (module.js:580:10)
     at Module.load (module.js:488:32)
     at tryModuleLoad (module.js:447:12)
-2018-08-23T09:54:58.622Z - failed: load script [mta] failed : Error: Cannot find module 'mta'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\electron.asar\common\reset-search-paths.js:35:12)
-    at Function.s._resolveFilename (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\page\project-scripts.js:1:941)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\page\project-scripts.js:1:589)
-    at D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\sdk.js:1:342
-    at __define (D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\sdk.js:17:11)
-    at D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\sdk.js:813:13
-2018-08-23T10:02:08.486Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T10:02:08.493Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T10:05:52.152Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T10:05:52.158Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T10:10:07.530Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T10:10:07.540Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T10:36:05.535Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T10:36:05.540Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T10:44:20.311Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T10:44:20.318Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T10:45:15.656Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T10:45:15.658Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T10:57:24.688Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T10:57:24.694Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T11:04:42.435Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T11:04:42.442Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T11:25:20.880Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T11:25:20.887Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T11:38:16.636Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T11:38:16.641Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T12:09:22.819Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T12:09:22.825Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T12:31:24.886Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T12:31:24.892Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T12:36:33.123Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T12:36:33.133Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T12:38:02.504Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\md5.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T12:38:02.507Z - error: Error: ENOENT: no such file or directory, open 'D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\mta.js'
-    at process.on.e (D:\lx\cocos\install\2\CocosCreator_v2.0.1-beta.2\resources\app.asar\editor\core\editor-init.js:1:345)
-    at emitOne (events.js:101:20)
-    at process.emit (events.js:191:7)
-    at process._fatalException (bootstrap_node.js:308:26)
-2018-08-23T12:38:12.652Z - info: shutdown preview server
+2018-08-23T15:43:08.049Z - failed: load script [ald-game] failed : ReferenceError: wx is not defined
+    at D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:80:5
+    at D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:83:4
+    at __define (D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:155:2)
+    at D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:160:13
+    at Object.<anonymous> (D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:167:11)
+    at Object.<anonymous> (D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:170:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+2018-08-23T15:45:28.141Z - info: shutdown preview server

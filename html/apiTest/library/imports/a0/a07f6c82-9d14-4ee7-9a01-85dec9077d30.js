@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, 'a07f6yCnRRO55oBhd7JB30w', 'md5');
-// Demo/Script/sdk/md5.js
+// Sdk/md5.js
 
 'use strict';
 

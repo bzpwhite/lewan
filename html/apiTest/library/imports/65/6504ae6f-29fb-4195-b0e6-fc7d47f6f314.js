@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '6504a5vKftBlbDm/H1H9vMU', 'mta');
-// Demo/Script/sdk/mta.js
+// Sdk/mta.js
 
 "use strict";
 
