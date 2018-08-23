@@ -5,8 +5,8 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 494,
-      "y": 108,
+      "x": 191,
+      "y": 33,
       "width": 1247,
       "height": 870,
       "layout": {
@@ -18,7 +18,7 @@
             ],
             "height": 750,
             "type": "panel",
-            "width": 206.796875
+            "width": 207
           },
           {
             "active": 3,
@@ -30,7 +30,7 @@
             ],
             "height": 750,
             "type": "panel",
-            "width": 509.1875
+            "width": 509
           },
           {
             "active": 0,

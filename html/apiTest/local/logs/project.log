@@ -1,61 +1,61 @@
-2018-08-23T15:42:50.491Z - normal: Load ~/.CocosCreator/settings.json
-2018-08-23T15:42:50.507Z - normal: checking language setting...
-2018-08-23T15:42:50.507Z - normal: Language: zh
-2018-08-23T15:42:53.177Z - success: protocol editor-framework registered
-2018-08-23T15:42:53.178Z - success: protocol app registered
-2018-08-23T15:42:53.178Z - success: protocol theme registered
-2018-08-23T15:42:53.178Z - success: protocol packages registered
-2018-08-23T15:42:53.178Z - success: protocol unpack registerred
-2018-08-23T15:42:53.178Z - success: protocol disable-commonjs registerred
-2018-08-23T15:42:53.396Z - normal: connected!
-2018-08-23T15:42:53.399Z - normal: Check project D:\laixiao\git\github\lewan\html\apiTest
-2018-08-23T15:42:53.402Z - normal: Initializing Cocos2d
-2018-08-23T15:42:53.855Z - normal: Initializing Asset Database
-2018-08-23T15:42:53.917Z - success: protocol uuid registerred
-2018-08-23T15:42:53.918Z - success: protocol db registerred
-2018-08-23T15:42:53.918Z - success: protocol thumbnail registerred
-2018-08-23T15:42:53.918Z - normal: Loading editor/builtin packages
-2018-08-23T15:42:53.963Z - success: anysdk loaded
-2018-08-23T15:42:54.177Z - success: assets loaded
-2018-08-23T15:42:54.180Z - success: builder loaded
-2018-08-23T15:42:54.183Z - success: cocos-analytics loaded
-2018-08-23T15:42:54.190Z - success: console loaded
-2018-08-23T15:42:54.240Z - success: fb-instant-games loaded
-2018-08-23T15:42:54.256Z - success: hierarchy loaded
-2018-08-23T15:42:54.256Z - success: inspector loaded
-2018-08-23T15:42:54.256Z - success: keystore loaded
-2018-08-23T15:42:54.256Z - success: node-library loaded
-2018-08-23T15:42:54.271Z - success: package-asset loaded
-2018-08-23T15:42:54.271Z - success: preferences loaded
-2018-08-23T15:42:54.271Z - success: project-exporter loaded
-2018-08-23T15:42:54.302Z - success: project-importer loaded
-2018-08-23T15:42:54.302Z - success: project-settings loaded
-2018-08-23T15:42:54.302Z - success: ui-kit loaded
-2018-08-23T15:42:54.302Z - success: ui-grid loaded
-2018-08-23T15:42:54.318Z - success: scene loaded
-2018-08-23T15:42:54.318Z - success: sprite-editor loaded
-2018-08-23T15:42:54.318Z - success: store loaded
-2018-08-23T15:42:54.346Z - success: timeline loaded
-2018-08-23T15:42:54.347Z - normal: Loading builtin packages
-2018-08-23T15:42:54.357Z - success: asset-db-debugger loaded
-2018-08-23T15:42:54.360Z - success: code-editor loaded
-2018-08-23T15:42:54.360Z - success: color-picker loaded
-2018-08-23T15:42:54.364Z - success: package-manager loaded
-2018-08-23T15:42:54.368Z - success: qqplay-adapter loaded
-2018-08-23T15:42:54.375Z - success: sdkbox loaded
-2018-08-23T15:42:54.380Z - success: tester loaded
-2018-08-23T15:42:54.384Z - success: ui-kit-preview-extra loaded
-2018-08-23T15:42:54.387Z - success: ui-kit-preview loaded
-2018-08-23T15:42:54.389Z - success: ui-tree loaded
-2018-08-23T15:42:54.390Z - success: weapp-adapter loaded
-2018-08-23T15:42:56.357Z - normal: Initializing project D:\laixiao\git\github\lewan\html\apiTest
-2018-08-23T15:42:56.357Z - normal: Loading packages
-2018-08-23T15:42:56.374Z - success: resource loaded
-2018-08-23T15:42:56.375Z - normal: Watching packages
-2018-08-23T15:42:57.040Z - normal: Run Application
-2018-08-23T15:42:59.475Z - success: preview server running at http://localhost:7456
-2018-08-23T15:43:07.373Z - normal: 1.9.3
-2018-08-23T15:43:08.037Z - failed: load script [D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js] failed : ReferenceError: wx is not defined
+2018-08-23T15:48:22.032Z - normal: Load ~/.CocosCreator/settings.json
+2018-08-23T15:48:22.048Z - normal: checking language setting...
+2018-08-23T15:48:22.048Z - normal: Language: zh
+2018-08-23T15:48:24.344Z - success: protocol editor-framework registered
+2018-08-23T15:48:24.344Z - success: protocol app registered
+2018-08-23T15:48:24.344Z - success: protocol theme registered
+2018-08-23T15:48:24.344Z - success: protocol packages registered
+2018-08-23T15:48:24.344Z - success: protocol unpack registerred
+2018-08-23T15:48:24.344Z - success: protocol disable-commonjs registerred
+2018-08-23T15:48:24.578Z - normal: connected!
+2018-08-23T15:48:24.594Z - normal: Check project D:\laixiao\git\github\lewan\html\apiTest
+2018-08-23T15:48:24.594Z - normal: Initializing Cocos2d
+2018-08-23T15:48:24.968Z - normal: Initializing Asset Database
+2018-08-23T15:48:25.025Z - success: protocol uuid registerred
+2018-08-23T15:48:25.025Z - success: protocol db registerred
+2018-08-23T15:48:25.025Z - success: protocol thumbnail registerred
+2018-08-23T15:48:25.025Z - normal: Loading editor/builtin packages
+2018-08-23T15:48:25.069Z - success: anysdk loaded
+2018-08-23T15:48:25.255Z - success: assets loaded
+2018-08-23T15:48:25.256Z - success: builder loaded
+2018-08-23T15:48:25.256Z - success: cocos-analytics loaded
+2018-08-23T15:48:25.266Z - success: console loaded
+2018-08-23T15:48:25.335Z - success: fb-instant-games loaded
+2018-08-23T15:48:25.335Z - success: hierarchy loaded
+2018-08-23T15:48:25.345Z - success: inspector loaded
+2018-08-23T15:48:25.345Z - success: keystore loaded
+2018-08-23T15:48:25.359Z - success: node-library loaded
+2018-08-23T15:48:25.359Z - success: package-asset loaded
+2018-08-23T15:48:25.366Z - success: preferences loaded
+2018-08-23T15:48:25.366Z - success: project-exporter loaded
+2018-08-23T15:48:25.389Z - success: project-importer loaded
+2018-08-23T15:48:25.395Z - success: project-settings loaded
+2018-08-23T15:48:25.395Z - success: ui-kit loaded
+2018-08-23T15:48:25.405Z - success: ui-grid loaded
+2018-08-23T15:48:25.409Z - success: scene loaded
+2018-08-23T15:48:25.409Z - success: sprite-editor loaded
+2018-08-23T15:48:25.415Z - success: store loaded
+2018-08-23T15:48:25.429Z - success: timeline loaded
+2018-08-23T15:48:25.429Z - normal: Loading builtin packages
+2018-08-23T15:48:25.435Z - success: asset-db-debugger loaded
+2018-08-23T15:48:25.435Z - success: code-editor loaded
+2018-08-23T15:48:25.435Z - success: color-picker loaded
+2018-08-23T15:48:25.435Z - success: package-manager loaded
+2018-08-23T15:48:25.445Z - success: qqplay-adapter loaded
+2018-08-23T15:48:25.455Z - success: sdkbox loaded
+2018-08-23T15:48:25.455Z - success: tester loaded
+2018-08-23T15:48:25.455Z - success: ui-kit-preview-extra loaded
+2018-08-23T15:48:25.455Z - success: ui-kit-preview loaded
+2018-08-23T15:48:25.466Z - success: ui-tree loaded
+2018-08-23T15:48:25.466Z - success: weapp-adapter loaded
+2018-08-23T15:48:27.306Z - normal: Initializing project D:\laixiao\git\github\lewan\html\apiTest
+2018-08-23T15:48:27.306Z - normal: Loading packages
+2018-08-23T15:48:27.322Z - success: resource loaded
+2018-08-23T15:48:27.322Z - normal: Watching packages
+2018-08-23T15:48:27.931Z - normal: Run Application
+2018-08-23T15:48:28.603Z - success: preview server running at http://localhost:7456
+2018-08-23T15:48:35.950Z - normal: 1.9.3
+2018-08-23T15:48:36.587Z - failed: load script [D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js] failed : ReferenceError: wx is not defined
     at D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:80:5
     at D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:83:4
     at __define (D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:155:2)
@@ -66,7 +66,7 @@
     at Object.Module._extensions..js (module.js:580:10)
     at Module.load (module.js:488:32)
     at tryModuleLoad (module.js:447:12)
-2018-08-23T15:43:08.049Z - failed: load script [ald-game] failed : ReferenceError: wx is not defined
+2018-08-23T15:48:36.598Z - failed: load script [ald-game] failed : ReferenceError: wx is not defined
     at D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:80:5
     at D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:83:4
     at __define (D:\laixiao\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:155:2)
@@ -77,4 +77,4 @@
     at Object.Module._extensions..js (module.js:580:10)
     at Module.load (module.js:488:32)
     at tryModuleLoad (module.js:447:12)
-2018-08-23T15:45:28.141Z - info: shutdown preview server
+2018-08-23T16:26:36.243Z - info: shutdown preview server

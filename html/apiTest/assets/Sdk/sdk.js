@@ -79,6 +79,7 @@ var sdk = {
         this.initShare();
 
     },
+    //.初始化分享
     initShare(){
         var self = this;
         //.获取后台分享信息
@@ -86,39 +87,38 @@ var sdk = {
             if (d && d.c == 1) {
                 self.ShareList = d.d;
             }else{
-                console.log("获取后台分享信息失败：",d)
+                console.log("获取后台分享信息失败，5s后再次请求：",d)
+                setTimeout(() => {
+                    self.initShare();
+                }, 5000);
             }
         });
     },
+    //.根据权重随机获取指定type类型的分享信息。
     getShareByWeight(type){
         if(this.ShareList.length > 0){
-            var info = {};
+            //1.获取某种type的集合
             var tArray = [];
-            for (var i = 0; i < share_list.length; i++) {
-                if (type == share_list[i].position) {
-                    share_list[i].weight = parseInt(share_list[i].weight);
-                    tArray.push(share_list[i]);
+            for (var i = 0; i < ShareList.length; i++) {
+                if (type == ShareList[i].type) {
+                    ShareList[i].weight = parseInt(ShareList[i].weight);
+                    tArray.push(ShareList[i]);
                 }
             }
+            //2.根据权重配比：从i集合（权重越大占比越多）中随机获取。
             var iArray = [];
             for (var i = 0; i < tArray.length; i++) {
                 for (var j = 0; j < tArray[i].weight; j++) {
                     iArray.push(i);
                 }
             }
-            var rI = iArray[parseInt(Math.random() * iArray.length)];
-            if(tArray[rI]){
-                info.title = tArray[rI].title;
-                info.imageUrl = tArray[rI].image;
-            }else{
-                info.title = "小小鱼塘";
-                info.imageUrl = "";
+            var i = iArray[parseInt(Math.random() * iArray.length)];
+            //3.结果处理：正则替换昵称
+            var item = tArray[i];
+            if(item.title.indexOf("&nickName") != -1){
+                item.title = item.title.replace(/&nickName/g, this.getUser().nickName);
             }
-            //.正则替换昵称
-            if(info.title.indexOf("&nick") != -1){
-                info.title = info.title.replace(/&nick/g, this.getUser().nickname);
-            }
-            return info;
+            return item;
         }else{
             this.initShare();
             return null;
@@ -127,32 +127,79 @@ var sdk = {
     /**
      * @apiGroup C
      * @apiName shareAppMessage
-     * @api {分享} 微信分享 shareAppMessage(分享)
+     * @api {分享} 主动拉起微信分享 shareAppMessage(分享)
      * @apiParam {int} type 后台自定义的分享类型；例如：0：右上角分享(只读)、1：普通分享 2：分享加金币
      * 
      * @apiSuccessExample {json} 示例:
-     * sdk.shareAppMessage  (1);
+     * sdk.shareAppMessage({type: 1});
      */
-    shareAppMessage(type){
-        
+    shareAppMessage(obj){
+        //.默认1：普通分享
+        var tpye = 1;
+        if(obj.type){
+            tpye = obj.type;
+        }
+        var shareInfo = this.getShareByWeight(tpye)
+
+        if(obj.title){
+            shareInfo.title = obj.title;
+        }
+        if(obj.imageUrl){
+            shareInfo.imageUrl = obj.imageUrl;
+        }
+        if(obj.query){
+            shareInfo.query += obj.query;
+        }
+        if(obj.success){
+            shareInfo.success = obj.success;
+        }
+        if(obj.fail){
+            shareInfo.fail = obj.fail;
+        }
+        console.log('==shareAppMessage根据权重随机的分享信息==', shareInfo)
+        if (cc.sys.platform === cc.sys.WECHAT_GAME) {
+            wx.shareAppMessage(shareInfo)
+        }
     },
-    onShareAppMessage(type){
+    /**
+     * @apiGroup C
+     * @apiName onShareAppMessage
+     * @api {分享} 注册微信右上角分享 onShareAppMessage(分享)
+     * @apiParam {int} type 后台自定义的分享类型；例如：0：右上角分享(只读)、1：普通分享 2：分享加金币
+     * 
+     * @apiSuccessExample {json} 示例:
+     * sdk.onShareAppMessage({type: 0});
+     */
+    onShareAppMessage(obj){
+        var self = this;
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
             //.微信右上角分享
             wx.showShareMenu({withShareTicket:true})
             wx.onShareAppMessage(function(res){
-                var shareItem = self.getShareByWeight();
-                return {
-                    title: shareItem.title,
-                    imageUrl: shareItem.imageUrl,
-                    query: shareItem.query,
-                    success(res){
-                        console.log(res)
-                    },
-                    fail(res){
-                        console.log(res)
-                    } 
+                //.默认0：右上角分享
+                var tpye = 0;
+                if(obj.type){
+                    tpye = obj.type;
                 }
+                var shareInfo = self.getShareByWeight(tpye)
+
+                if(obj.title){
+                    shareInfo.title = obj.title;
+                }
+                if(obj.imageUrl){
+                    shareInfo.imageUrl = obj.imageUrl;
+                }
+                if(obj.query){
+                    shareInfo.query += obj.query;
+                }
+                if(obj.success){
+                    shareInfo.success = obj.success;
+                }
+                if(obj.fail){
+                    shareInfo.fail = obj.fail;
+                }
+                console.log('==onShareAppMessage根据权重随机的分享信息==', shareInfo)
+                return shareInfo;
             })
         }
     },
