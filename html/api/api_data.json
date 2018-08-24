@@ -444,6 +444,38 @@
   },
   {
     "group": "C",
+    "name": "onShareAppMessage",
+    "type": "分享",
+    "url": "注册微信右上角分享",
+    "title": "onShareAppMessage(分享)",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "type",
+            "description": "<p>后台自定义的分享类型；例如：0：右上角分享(只读)、1：普通分享 2：分享加金币</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "示例:",
+          "content": "sdk.onShareAppMessage({type: 0});",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apiTest/assets/Sdk/sdk.js",
+    "groupTitle": "C"
+  },
+  {
+    "group": "C",
     "name": "postMessage",
     "type": "主域向子域发送消息",
     "url": "主域向子域发送消息",
@@ -517,7 +549,7 @@
     "group": "C",
     "name": "shareAppMessage",
     "type": "分享",
-    "url": "微信分享",
+    "url": "主动拉起微信分享",
     "title": "shareAppMessage(分享)",
     "parameter": {
       "fields": {
@@ -536,7 +568,7 @@
       "examples": [
         {
           "title": "示例:",
-          "content": "sdk.shareAppMessage  (1);",
+          "content": "sdk.shareAppMessage({type: 1});",
           "type": "json"
         }
       ]
