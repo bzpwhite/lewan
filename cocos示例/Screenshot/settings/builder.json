@@ -9,7 +9,7 @@
   "inlineSpriteFrames": true,
   "inlineSpriteFrames_native": true,
   "jailbreakPlatform": false,
-  "md5Cache": false,
+  "md5Cache": true,
   "mergeStartScene": false,
   "oauthLoginServer": "",
   "optimizeHotUpdate": false,
@@ -19,15 +19,15 @@
     "portrait": false,
     "upsideDown": false
   },
-  "packageName": "org.cocos2d.helloworld",
+  "packageName": "org.cocos2d.NewProject",
   "privateKey": "",
   "qqplay": {
     "REMOTE_SERVER_ROOT": "",
     "orientation": "portrait"
   },
-  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
-  "title": "demo",
-  "webOrientation": "auto",
+  "startScene": "124c908a-816e-4a99-b8ec-0317ca1e16df",
+  "title": "NewProject",
+  "webOrientation": "landscape",
   "wechatgame": {
     "REMOTE_SERVER_ROOT": "",
     "appid": "wx1990cf9754a1483d",
@@ -35,7 +35,6 @@
     "orientation": "portrait",
     "subContext": ""
   },
-  "xxteaKey": "6333ff63-e93b-42",
-  "zipCompressJs": true,
-  "renderMode": "0"
+  "xxteaKey": "6e534156-fd25-48",
+  "zipCompressJs": true
 }

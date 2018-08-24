@@ -53,4 +53,16 @@ cc.Class({
     },
 
     // update (dt) {},
+
+    saveImage(){
+        // sdk.saveImageToPhotosAlbum({ })
+        
+        // wx.saveImageToPhotosAlbum({});
+
+        // wx.downloadFile();
+
+    }
+    
+    
+
 });
