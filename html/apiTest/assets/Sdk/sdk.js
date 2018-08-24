@@ -33,7 +33,7 @@ var sdk = {
     /**
      * @apiGroup A
      * @apiName init
-     * @api {初始化sdk} 使用勇往sdk前，必须先初始化一次才能使用 init（初始化sdk）
+     * @api {初始化sdk} 使用sdk前，必须先初始化一次才能使用 init（初始化sdk）
      *
      * @apiParam {String} game 游戏标识
      * @apiParam {String} version 版本

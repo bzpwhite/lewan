@@ -3,7 +3,7 @@ define({ "api": [
     "group": "A",
     "name": "init",
     "type": "初始化sdk",
-    "url": "使用勇往sdk前，必须先初始化一次才能使用",
+    "url": "使用sdk前，必须先初始化一次才能使用",
     "title": "init（初始化sdk）",
     "parameter": {
       "fields": {
