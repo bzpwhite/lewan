@@ -12,13 +12,17 @@ cc.Class({
         cc.debug.setDisplayStats(false);
 
         //.初始化游戏
-        sdk.init({
-            debug: true,         //.是否开启调试
-            app_name: "xiao_xiao_yu_tang",     //.游戏唯一标识
-            version: "1.0.0",   //.游戏版本
-        }, (res)=>{
-            console.log('sdk初始化结果：', res)
-        })
+        // sdk.init({
+        //     debug: true,        //.是否开启调试
+        // }, (res)=>{
+        //     // console.log('sdk初始化结果：', res)
+        //     var d = sdk.getConfig1();
+        //     console.log("运营配置：", d)
+
+        //     var d = sdk.getConfig1();
+        //     console.log("程序配置：", d)
+
+        // })
         
         // //.初始化腾讯统计
         // sdk.initmta({

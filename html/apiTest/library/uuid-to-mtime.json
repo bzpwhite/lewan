@@ -30,8 +30,8 @@
     "relativePath": "Scene"
   },
   "2d2f792f-a40c-49bb-a189-ed176a246e49": {
-    "asset": 1534844012707,
-    "meta": 1535076180951,
+    "asset": 1535081438149,
+    "meta": 1535081438172,
     "relativePath": "Scene\\demo.fire"
   },
   "4734c20c-0db8-4eb2-92ea-e692f4d70934": {
@@ -269,21 +269,6 @@
     "meta": 1535076181211,
     "relativePath": "Sdk\\ald-game.js"
   },
-  "1d32b1b6-29dc-4aae-81a3-ec3c3ed4bae9": {
-    "asset": 1535018177162,
-    "meta": 1535076181102,
-    "relativePath": "Sdk\\ald-game-conf.js"
-  },
-  "2d3ea0ed-45ad-43ee-9c17-8e9553d33585": {
-    "asset": 1535023342165,
-    "meta": 1535076180951,
-    "relativePath": "Script\\demo.js"
-  },
-  "375a3fad-9df1-493c-b070-344bfbbf2f14": {
-    "asset": 1535076154982,
-    "meta": 1535076181376,
-    "relativePath": "Sdk\\sdk.js"
-  },
   "edd215b9-2796-4a05-aaf5-81f96c9281ce": {
     "asset": 1534384382619,
     "meta": 1535076180463,
@@ -303,5 +288,30 @@
     "asset": 1534384382713,
     "meta": 1535076180594,
     "relativePath": "prefab\\tiledtile.prefab"
+  },
+  "1d32b1b6-29dc-4aae-81a3-ec3c3ed4bae9": {
+    "asset": 1535082464470,
+    "meta": 1535082472863,
+    "relativePath": "Sdk\\ald-game-conf.js"
+  },
+  "2d3ea0ed-45ad-43ee-9c17-8e9553d33585": {
+    "asset": 1535093012928,
+    "meta": 1535093151346,
+    "relativePath": "Script\\demo.js"
+  },
+  "45bf5ac7-9fc1-4771-94e0-558919a788fa": {
+    "asset": 1535093071438,
+    "meta": 1535093151351,
+    "relativePath": "Script\\test.js"
+  },
+  "6f49714f-d0f6-4a7b-8520-30ecd092a2ff": {
+    "asset": 1535093045678,
+    "meta": 1535093151586,
+    "relativePath": "Sdk\\sdk_conf.js"
+  },
+  "375a3fad-9df1-493c-b070-344bfbbf2f14": {
+    "asset": 1535093074203,
+    "meta": 1535093151587,
+    "relativePath": "Sdk\\sdk.js"
   }
 }

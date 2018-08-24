@@ -4,22 +4,24 @@
 2.按照格式弄好后，执行命令
     apidoc -i ./apiTest/assets/Sdk -o api/
     
-
+    在小程序后台添加合法域名：
+        https://glog.aldwx.com
+        https://game.llewan.com
+        https://login.llewan.com
+        https://mock.eolinker.com
  */
 
 var md5 = require("md5");
 var mta = require("mta");
 var aldgame = require("ald-game");
+var sdk_conf = require("sdk_conf");
 var sdk = { 
     md5: md5,
     mta: mta,
-    // ip1: "https://login.llewan.com",
-    ip1: 'http://mock.eolinker.com/RiwKeAE4fb4e33cce254aee8509dbdd47b3898870569465?uri=https://login.llewan.com',
-    ip2: "https://game.llewan.com",
-
+    ip1: "https://login.llewan.com:1799",
+    // ip1: 'http://mock.eolinker.com/RiwKeAE4fb4e33cce254aee8509dbdd47b3898870569465?uri=https://login.llewan.com',
+    ip2: "https://game.llewan.com:1899",
     debug: false,                            //是否开启调试
-    game: "",
-    version: "",
 
     login: '/Login/common',
     Config: '/Config/common',
@@ -30,35 +32,28 @@ var sdk = {
     Share: "/Share/common",
     ShareList: [],
 
+    BannerAd: null,
+    VideoAd: null,
+
     /**
      * @apiGroup A
      * @apiName init
      * @api {初始化sdk} 使用sdk前，必须先初始化一次才能使用 init（初始化sdk）
      *
-     * @apiParam {String} game 游戏标识
-     * @apiParam {String} version 版本
      * @apiParam {Boolean} [debug=false] 是否开启调试
      * 
      * @apiSuccessExample {json} 示例:
      * //.初始化游戏
      *   sdk.init({
-            debug: true,         //.是否开启调试
-            app_name: "xiao_xiao_yu_tang",     //.游戏唯一标识
-            version: "1.0.0",   //.游戏版本
-        }, (res)=>{
-            console.log('sdk初始化结果：', res)
-        })
+     *       debug: true,        //.是否开启调试
+     *   }, (res)=>{
+     *       console.log('sdk初始化结果：', res)
+     *   })
      */
     init(args, callback){
         var self = this;
         if(args.debug){
             this.debug = args.debug;
-        }
-        if(args.game){
-            this.game = args.game;
-        }
-        if(args.version){
-            this.version = args.version;
         }
         this.checkUpdate();
 
@@ -87,10 +82,10 @@ var sdk = {
             if (d && d.c == 1) {
                 self.ShareList = d.d;
             }else{
-                console.log("获取后台分享信息失败，5s后再次请求：",d)
+                console.log("获取后台分享信息失败，10s后再次请求：",d)
                 setTimeout(() => {
                     self.initShare();
-                }, 5000);
+                }, 10000);
             }
         });
     },
@@ -288,8 +283,8 @@ var sdk = {
     Get(url, reqData, callback) {
         var self = this;
 
-        reqData.game = this.game;
-        reqData.version = this.version;
+        reqData.game = sdk_conf.game;
+        reqData.version = sdk_conf.version;
         url += "?";
         for (var item in reqData) {
             url += item + "=" + reqData[item] + "&";
@@ -335,8 +330,8 @@ var sdk = {
     Post: function (url, reqData, callback) {
         var self = this;
         
-        reqData.game = this.game;
-        reqData.version = this.version;
+        reqData.game = sdk_conf.game;
+        reqData.version = sdk_conf.version;
         //1.拼接请求参数
         var param = "";
         for (var item in reqData) {
@@ -409,7 +404,7 @@ var sdk = {
      * var d = sdk.getConfig1();
      */
     getConfig1(){
-        return ConfigData.config1;
+        return this.ConfigData.config1;
     },
     /**
      * @apiGroup C
@@ -421,7 +416,7 @@ var sdk = {
      * var d = sdk.getConfig2();
      */
     getConfig2(){
-        return ConfigData.config2;
+        return this.ConfigData.config2;
     },
 
     
@@ -819,8 +814,73 @@ var sdk = {
             }
         }
     },
-
-
+    /**
+     * @apiGroup C
+     * @apiName createBannerAd
+     * @api {微信登录} 创建banner广告组件 createBannerAd（广告）
+     * @apiParam {String} adUnitId 广告单元id	
+     * @apiParam {String} style banner 广告组件的样式
+     * 
+     * @apiSuccessExample {json} 示例:
+     * //.参考文档：https://developers.weixin.qq.com/minigame/dev/document/ad/wx.createBannerAd.html
+     *  var bannerAd = sdk.createBannerAd({
+     *      style:{
+     *          left: 0,
+     *          top: 0,
+     *          width: 100,
+     *          height: 200
+     *      }
+     *  });
+     *  bannerAd.show()
+     * 
+     */
+    createBannerAd(obj){
+        if (cc.sys.platform === cc.sys.WECHAT_GAME) {
+            if(this.BannerAd){
+                return this.BannerAd;
+            }else{
+                this.BannerAd = wx.createBannerAd({
+                    adUnitId: sdk_conf.bannerAdUnitId,
+                    style: obj.style,
+                })
+                this.BannerAd.onLoad(function(res){
+                    console.log("BannerAd广告加载事件：", res)
+                });
+                this.BannerAd.onError(function(res){
+                    console.log("BannerAd广告错误事件：", res)
+                });
+                return this.BannerAd;
+            }
+        }
+    },
+    /**
+     * @apiGroup C
+     * @apiName createRewardedVideoAd
+     * @api {微信登录} 创建banner广告组件 createRewardedVideoAd（广告）
+     * @apiParam {String} adUnitId 广告单元id	
+     * 
+     * @apiSuccessExample {json} 示例:
+     * //.参考文档：https://developers.weixin.qq.com/minigame/dev/document/ad/wx.createRewardedVideoAd.html
+     *  var videoAd = sdk.createRewardedVideoAd();
+     *  videoAd.load().then(() => videoAd.show());
+     * 
+     */
+    createRewardedVideoAd(){
+        if (cc.sys.platform === cc.sys.WECHAT_GAME) {
+            if(this.VideoAd){
+                return this.VideoAd;
+            }else{
+                this.VideoAd = wx.createRewardedVideoAd({ adUnitId: sdk_conf.videoAdUnitId })
+                this.VideoAd.onLoad(function(res){
+                    console.log("VideoAd广告加载事件：", res)
+                });
+                this.VideoAd.onError(function(res){
+                    console.log("VideoAd广告错误事件：", res)
+                });
+                return this.VideoAd;
+            }
+        }
+    },
     
 
 };

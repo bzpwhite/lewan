@@ -10,20 +10,6 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "game",
-            "description": "<p>游戏标识</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "version",
-            "description": "<p>版本</p>"
-          },
-          {
-            "group": "Parameter",
             "type": "Boolean",
             "optional": true,
             "field": "debug",
@@ -37,7 +23,7 @@ define({ "api": [
       "examples": [
         {
           "title": "示例:",
-          "content": "//.初始化游戏\n  sdk.init({\n            debug: true,         //.是否开启调试\n            app_name: \"xiao_xiao_yu_tang\",     //.游戏唯一标识\n            version: \"1.0.0\",   //.游戏版本\n        }, (res)=>{\n            console.log('sdk初始化结果：', res)\n        })",
+          "content": "//.初始化游戏\n  sdk.init({\n      debug: true,        //.是否开启调试\n  }, (res)=>{\n      console.log('sdk初始化结果：', res)\n  })",
           "type": "json"
         }
       ]
@@ -251,6 +237,45 @@ define({ "api": [
   },
   {
     "group": "C",
+    "name": "createBannerAd",
+    "type": "微信登录",
+    "url": "创建banner广告组件",
+    "title": "createBannerAd（广告）",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "adUnitId",
+            "description": "<p>广告单元id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "style",
+            "description": "<p>banner 广告组件的样式</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "示例:",
+          "content": "//.参考文档：https://developers.weixin.qq.com/minigame/dev/document/ad/wx.createBannerAd.html\n var bannerAd = sdk.createBannerAd({\n     style:{\n         left: 0,\n         top: 0,\n         width: 100,\n         height: 200\n     }\n });\n bannerAd.show()",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apiTest/assets/Sdk/sdk.js",
+    "groupTitle": "C"
+  },
+  {
+    "group": "C",
     "name": "createImage",
     "type": "显示网络图片",
     "url": "微信小游戏加载图片",
@@ -280,6 +305,38 @@ define({ "api": [
         {
           "title": "示例:",
           "content": "var data = sdk.createImage(advs);",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apiTest/assets/Sdk/sdk.js",
+    "groupTitle": "C"
+  },
+  {
+    "group": "C",
+    "name": "createRewardedVideoAd",
+    "type": "微信登录",
+    "url": "创建banner广告组件",
+    "title": "createRewardedVideoAd（广告）",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "adUnitId",
+            "description": "<p>广告单元id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "示例:",
+          "content": "//.参考文档：https://developers.weixin.qq.com/minigame/dev/document/ad/wx.createRewardedVideoAd.html\n var videoAd = sdk.createRewardedVideoAd();\n videoAd.load().then(() => videoAd.show());",
           "type": "json"
         }
       ]

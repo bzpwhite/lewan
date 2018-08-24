@@ -12,10 +12,11 @@ Cocos小游戏sdk、Cocos小游戏sdk文档、Cocos小游戏开发示例；
 ```javascript
 sdk.init({
     debug: true,         //.是否开启调试
-    app_name: "xiao_xiao_yu_tang",     //.游戏唯一标识
-    version: "1.0.0",   //.游戏版本
 }, (res)=>{
     console.log('sdk初始化结果：', res)
+    var d = sdk.getConfig1();
+    console.log("运营配置信息", d)
+
 })
 ```
 
