@@ -13,8 +13,8 @@
 
 var md5 = require("md5");
 var mta = require("mta");
-var aldgame = require("ald-game");
 var sdk_conf = require("sdk_conf");
+var aldgame = require("ald-game");
 var sdk = { 
     md5: md5,
     mta: mta,
@@ -55,7 +55,7 @@ var sdk = {
         if(args.debug){
             this.debug = args.debug;
         }
-        this.checkUpdate();
+        // this.checkUpdate();
 
         //.获取后台配置信息
         this.Get(this.ip2 + this.Config, {}, function (d) {
@@ -404,7 +404,7 @@ var sdk = {
      * var d = sdk.getConfig1();
      */
     getConfig1(){
-        return this.ConfigData.config1;
+        return JSON.parse(this.ConfigData.config1);
     },
     /**
      * @apiGroup C
@@ -416,7 +416,7 @@ var sdk = {
      * var d = sdk.getConfig2();
      */
     getConfig2(){
-        return this.ConfigData.config2;
+        return JSON.parse(this.ConfigData.config2);
     },
 
     
@@ -881,32 +881,36 @@ var sdk = {
             }
         }
     },
-    Screenshot(camera){
+    Screenshot(camera, callback){
         var self = this;
         //1.判断是否授权
         wx.getSetting({
             success(res){
-                console.log("授权状态", res.authSetting['scope.writePhotosAlbum'])
+                // console.log("授权状态", res.authSetting['scope.writePhotosAlbum'])
                 if(res.authSetting['scope.writePhotosAlbum']){
-                    self.capture(camera);
+                    self.capture(camera, callback);
                 }else{
-                    console.log("未授权", res)
+                    // console.log("未授权", res)
                     wx.authorize({
                         scope: 'scope.writePhotosAlbum',
                         success(res2){
                             console.log("success res2",res2)
-                            self.Screenshot(camera);
+                            self.Screenshot(camera, callback);
                         },
                         fail(res2){
                             wx.showToast({title: '请重新授权'})
+                            callback(null)
                             console.log("fail res2",res2)
                         }
                     })
                 }
+            },
+            fail(){
+                callback(null)
             }
         })
     },
-    capture (camera) {
+    capture (camera, callback) {
         //.要截取的范围（全屏）
         let texture = new cc.RenderTexture();
         texture.initWithSize(cc.visibleRect.width, cc.visibleRect.height);
@@ -943,13 +947,16 @@ var sdk = {
             success (res1) {
                 //.可以保存该截屏图片
                 console.log('success==',res1)
+                
                 wx.saveImageToPhotosAlbum({
                     filePath: res1.tempFilePath,
                     success(res2){
                         console.log('==saveImageToPhotosAlbum=success=',res2)
+                        callback(true)
                     },
                     fail(res2){
                         console.log('==saveImageToPhotosAlbum=fail=',res2)
+                        callback(null)
                     }
                 })
             },

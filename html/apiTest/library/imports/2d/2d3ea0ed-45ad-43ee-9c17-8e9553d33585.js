@@ -58,7 +58,7 @@ cc.Class({
         //     console.log(d)
         // })
 
-        console.log(sdk);
+        // console.log(sdk)
     },
 
     // called every frame
