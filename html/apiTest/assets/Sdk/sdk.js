@@ -881,6 +881,83 @@ var sdk = {
             }
         }
     },
+    Screenshot(camera){
+        var self = this;
+        //1.判断是否授权
+        wx.getSetting({
+            success(res){
+                console.log("授权状态", res.authSetting['scope.writePhotosAlbum'])
+                if(res.authSetting['scope.writePhotosAlbum']){
+                    self.capture(camera);
+                }else{
+                    console.log("未授权", res)
+                    wx.authorize({
+                        scope: 'scope.writePhotosAlbum',
+                        success(res2){
+                            console.log("success res2",res2)
+                            self.Screenshot(camera);
+                        },
+                        fail(res2){
+                            wx.showToast({title: '请重新授权'})
+                            console.log("fail res2",res2)
+                        }
+                    })
+                }
+            }
+        })
+    },
+    capture (camera) {
+        //.要截取的范围（全屏）
+        let texture = new cc.RenderTexture();
+        texture.initWithSize(cc.visibleRect.width, cc.visibleRect.height);
+        camera.targetTexture = texture;
+        this.texture = texture;
+
+
+        let width = this.texture.width;
+        let height = this.texture.height;
+        let canvas = document.createElement('canvas');
+        let ctx = canvas.getContext('2d');
+        canvas.width = width;
+        canvas.height = height;
+        camera.render();
+        let data = this.texture.readPixels();
+        let rowBytes = width * 4;
+        for (let row = 0; row < height; row++) {
+            let srow = height - 1 - row;
+            let imageData = ctx.createImageData(width, 1);
+            let start = srow*width*4;
+            for (let i = 0; i < rowBytes; i++) {
+                imageData.data[i] = data[start+i];
+            }
+            ctx.putImageData(imageData, 0, row);
+        }
+        var dataURL = canvas.toDataURL("image/jpeg");
+        canvas.toTempFilePath({
+            x: 0,
+            y: 0,
+            width: width,
+            height: height,
+            destWidth: width,
+            destHeight: height,
+            success (res1) {
+                //.可以保存该截屏图片
+                console.log('success==',res1)
+                wx.saveImageToPhotosAlbum({
+                    filePath: res1.tempFilePath,
+                    success(res2){
+                        console.log('==saveImageToPhotosAlbum=success=',res2)
+                    },
+                    fail(res2){
+                        console.log('==saveImageToPhotosAlbum=fail=',res2)
+                    }
+                })
+            },
+            fail(res){
+                console.log(res)
+            }
+        })
+    }
     
 
 };

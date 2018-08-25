@@ -1,61 +1,61 @@
-2018-08-24T07:44:55.402Z - normal: Load ~/.CocosCreator/settings.json
-2018-08-24T07:44:55.405Z - normal: checking language setting...
-2018-08-24T07:44:55.405Z - normal: Language: zh
-2018-08-24T07:44:57.241Z - success: protocol editor-framework registered
-2018-08-24T07:44:57.241Z - success: protocol app registered
-2018-08-24T07:44:57.241Z - success: protocol theme registered
-2018-08-24T07:44:57.241Z - success: protocol packages registered
-2018-08-24T07:44:57.242Z - success: protocol unpack registerred
-2018-08-24T07:44:57.242Z - success: protocol disable-commonjs registerred
-2018-08-24T07:44:57.460Z - normal: connected!
-2018-08-24T07:44:57.462Z - normal: Check project D:\lx\git\github\lewan\html\apiTest
-2018-08-24T07:44:57.463Z - normal: Initializing Cocos2d
-2018-08-24T07:44:57.666Z - normal: Initializing Asset Database
-2018-08-24T07:44:57.708Z - success: protocol uuid registerred
-2018-08-24T07:44:57.709Z - success: protocol db registerred
-2018-08-24T07:44:57.709Z - success: protocol thumbnail registerred
-2018-08-24T07:44:57.709Z - normal: Loading editor/builtin packages
-2018-08-24T07:44:57.728Z - success: anysdk loaded
-2018-08-24T07:44:57.853Z - success: assets loaded
-2018-08-24T07:44:57.855Z - success: builder loaded
-2018-08-24T07:44:57.857Z - success: cocos-analytics loaded
-2018-08-24T07:44:57.860Z - success: console loaded
-2018-08-24T07:44:57.900Z - success: fb-instant-games loaded
-2018-08-24T07:44:57.905Z - success: hierarchy loaded
-2018-08-24T07:44:57.910Z - success: inspector loaded
-2018-08-24T07:44:57.911Z - success: keystore loaded
-2018-08-24T07:44:57.915Z - success: node-library loaded
-2018-08-24T07:44:57.919Z - success: package-asset loaded
-2018-08-24T07:44:57.923Z - success: preferences loaded
-2018-08-24T07:44:57.925Z - success: project-exporter loaded
-2018-08-24T07:44:57.951Z - success: project-importer loaded
-2018-08-24T07:44:57.954Z - success: project-settings loaded
-2018-08-24T07:44:57.958Z - success: ui-kit loaded
-2018-08-24T07:44:57.962Z - success: ui-grid loaded
-2018-08-24T07:44:57.969Z - success: scene loaded
-2018-08-24T07:44:57.971Z - success: sprite-editor loaded
-2018-08-24T07:44:57.973Z - success: store loaded
-2018-08-24T07:44:57.976Z - success: timeline loaded
-2018-08-24T07:44:57.977Z - normal: Loading builtin packages
-2018-08-24T07:44:57.979Z - success: asset-db-debugger loaded
-2018-08-24T07:44:57.980Z - success: code-editor loaded
-2018-08-24T07:44:57.981Z - success: color-picker loaded
-2018-08-24T07:44:57.984Z - success: package-manager loaded
-2018-08-24T07:44:57.987Z - success: qqplay-adapter loaded
-2018-08-24T07:44:57.991Z - success: sdkbox loaded
-2018-08-24T07:44:57.994Z - success: tester loaded
-2018-08-24T07:44:57.996Z - success: ui-kit-preview-extra loaded
-2018-08-24T07:44:57.998Z - success: ui-kit-preview loaded
-2018-08-24T07:44:58.001Z - success: ui-tree loaded
-2018-08-24T07:44:58.002Z - success: weapp-adapter loaded
-2018-08-24T07:44:59.318Z - normal: Initializing project D:\lx\git\github\lewan\html\apiTest
-2018-08-24T07:44:59.320Z - normal: Loading packages
-2018-08-24T07:44:59.327Z - success: resource loaded
-2018-08-24T07:44:59.328Z - normal: Watching packages
-2018-08-24T07:44:59.686Z - normal: Run Application
-2018-08-24T07:45:00.469Z - success: preview server running at http://localhost:7456
-2018-08-24T07:45:04.945Z - normal: 1.9.3
-2018-08-24T07:45:05.096Z - failed: load script [D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js] failed : ReferenceError: wx is not defined
+2018-08-24T12:40:02.490Z - normal: Load ~/.CocosCreator/settings.json
+2018-08-24T12:40:02.504Z - normal: checking language setting...
+2018-08-24T12:40:02.505Z - normal: Language: zh
+2018-08-24T12:40:06.743Z - success: protocol editor-framework registered
+2018-08-24T12:40:06.745Z - success: protocol app registered
+2018-08-24T12:40:06.745Z - success: protocol theme registered
+2018-08-24T12:40:06.747Z - success: protocol packages registered
+2018-08-24T12:40:06.747Z - success: protocol unpack registerred
+2018-08-24T12:40:06.748Z - success: protocol disable-commonjs registerred
+2018-08-24T12:40:06.979Z - normal: connected!
+2018-08-24T12:40:06.989Z - normal: Check project D:\lx\git\github\lewan\html\apiTest
+2018-08-24T12:40:07.002Z - normal: Initializing project D:\lx\git\github\lewan\html\apiTest
+2018-08-24T12:40:07.014Z - normal: Initializing Cocos2d
+2018-08-24T12:40:10.800Z - normal: Initializing Asset Database
+2018-08-24T12:40:10.951Z - success: protocol uuid registerred
+2018-08-24T12:40:10.951Z - success: protocol db registerred
+2018-08-24T12:40:10.952Z - success: protocol thumbnail registerred
+2018-08-24T12:40:10.952Z - normal: Loading editor/builtin packages
+2018-08-24T12:40:11.504Z - success: assets loaded
+2018-08-24T12:40:11.511Z - success: builder loaded
+2018-08-24T12:40:11.519Z - success: cocos-analytics loaded
+2018-08-24T12:40:11.531Z - success: console loaded
+2018-08-24T12:40:11.703Z - success: fb-instant-games loaded
+2018-08-24T12:40:11.719Z - success: hierarchy loaded
+2018-08-24T12:40:11.727Z - success: inspector loaded
+2018-08-24T12:40:11.735Z - success: keystore loaded
+2018-08-24T12:40:11.752Z - success: node-library loaded
+2018-08-24T12:40:11.757Z - success: package-asset loaded
+2018-08-24T12:40:11.761Z - success: preferences loaded
+2018-08-24T12:40:11.767Z - success: project-exporter loaded
+2018-08-24T12:40:11.826Z - success: project-importer loaded
+2018-08-24T12:40:11.832Z - success: project-settings loaded
+2018-08-24T12:40:11.841Z - success: ui-kit loaded
+2018-08-24T12:40:11.852Z - success: scene loaded
+2018-08-24T12:40:11.856Z - success: sprite-editor loaded
+2018-08-24T12:40:11.867Z - success: store loaded
+2018-08-24T12:40:11.879Z - success: timeline loaded
+2018-08-24T12:40:11.880Z - normal: Loading builtin packages
+2018-08-24T12:40:11.889Z - success: asset-db-debugger loaded
+2018-08-24T12:40:11.895Z - success: code-editor loaded
+2018-08-24T12:40:11.897Z - success: color-picker loaded
+2018-08-24T12:40:11.899Z - success: jsb-adapter loaded
+2018-08-24T12:40:11.904Z - success: package-manager loaded
+2018-08-24T12:40:12.330Z - success: qqplay-adapter loaded
+2018-08-24T12:40:12.343Z - success: sdkbox loaded
+2018-08-24T12:40:12.351Z - success: tester loaded
+2018-08-24T12:40:12.359Z - success: ui-grid loaded
+2018-08-24T12:40:12.364Z - success: ui-kit-preview-extra loaded
+2018-08-24T12:40:12.369Z - success: ui-kit-preview loaded
+2018-08-24T12:40:12.375Z - success: ui-tree loaded
+2018-08-24T12:40:12.377Z - success: weapp-adapter loaded
+2018-08-24T12:40:16.600Z - normal: Loading packages
+2018-08-24T12:40:16.614Z - success: resource loaded
+2018-08-24T12:40:16.616Z - success: yw loaded
+2018-08-24T12:40:16.617Z - normal: Watching packages
+2018-08-24T12:40:17.179Z - normal: Run Application
+2018-08-24T12:40:19.267Z - success: preview server running at http://localhost:7458
+2018-08-24T12:40:35.186Z - failed: load script [D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js] failed : ReferenceError: wx is not defined
     at D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:80:5
     at D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:83:4
     at __define (D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:155:2)
@@ -66,7 +66,7 @@
     at Object.Module._extensions..js (module.js:580:10)
     at Module.load (module.js:488:32)
     at tryModuleLoad (module.js:447:12)
-2018-08-24T07:45:05.103Z - failed: load script [ald-game] failed : ReferenceError: wx is not defined
+2018-08-24T12:40:35.206Z - failed: load script [ald-game] failed : ReferenceError: wx is not defined
     at D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:80:5
     at D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:83:4
     at __define (D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:155:2)
@@ -77,26 +77,4 @@
     at Object.Module._extensions..js (module.js:580:10)
     at Module.load (module.js:488:32)
     at tryModuleLoad (module.js:447:12)
-2018-08-24T08:20:09.018Z - failed: load script [D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js] failed : ReferenceError: wx is not defined
-    at D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:80:5
-    at D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:83:4
-    at __define (D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:155:2)
-    at D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:160:13
-    at Object.<anonymous> (D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:167:11)
-    at Object.<anonymous> (D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:170:3)
-    at Module._compile (module.js:571:32)
-    at Object.Module._extensions..js (module.js:580:10)
-    at Module.load (module.js:488:32)
-    at tryModuleLoad (module.js:447:12)
-2018-08-24T08:20:09.028Z - failed: load script [ald-game] failed : ReferenceError: wx is not defined
-    at D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:80:5
-    at D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:83:4
-    at __define (D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:155:2)
-    at D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:160:13
-    at Object.<anonymous> (D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:167:11)
-    at Object.<anonymous> (D:\lx\git\github\lewan\html\apiTest\temp\quick-scripts\assets\Sdk\ald-game.js:170:3)
-    at Module._compile (module.js:571:32)
-    at Object.Module._extensions..js (module.js:580:10)
-    at Module.load (module.js:488:32)
-    at tryModuleLoad (module.js:447:12)
-2018-08-24T09:32:46.961Z - info: shutdown preview server
+2018-08-24T12:43:05.311Z - info: shutdown preview server

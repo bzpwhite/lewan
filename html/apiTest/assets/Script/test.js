@@ -27,6 +27,12 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
+        camera: {
+            default: null,
+            type: cc.Camera
+        }
+
+
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -55,11 +61,7 @@ cc.Class({
     // update (dt) {},
 
     saveImage(){
-        // sdk.saveImageToPhotosAlbum({ })
-        
-        // wx.saveImageToPhotosAlbum({});
-
-        // wx.downloadFile();
+        sdk.Screenshot(this.camera)
 
     }
     

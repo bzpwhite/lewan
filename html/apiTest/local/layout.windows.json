@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 600,
-      "y": 29,
-      "width": 1247,
-      "height": 921,
+      "x": 205,
+      "y": 26,
+      "width": 1275,
+      "height": 881,
       "layout": {
         "children": [
           {
@@ -16,9 +16,9 @@
             "children": [
               "hierarchy"
             ],
-            "height": 793,
+            "height": 754.8817749023438,
             "type": "panel",
-            "width": 204
+            "width": 203.99998474121094
           },
           {
             "active": 3,
@@ -28,37 +28,37 @@
               "node-library",
               "scene"
             ],
-            "height": 793,
+            "height": 754.8817749023438,
             "type": "panel",
-            "width": 504
+            "width": 503.9999694824219
           },
           {
             "active": 0,
             "children": [
               "assets"
             ],
-            "height": 793,
+            "height": 754.8817749023438,
             "type": "panel",
-            "width": 204
+            "width": 203.99998474121094
           },
           {
             "active": 0,
             "children": [
               "inspector"
             ],
-            "height": 793,
+            "height": 754.8817749023438,
             "type": "panel",
-            "width": 304
+            "width": 332.3454284667969
           }
         ],
         "type": "dock-h"
       },
       "panels": [
+        "hierarchy",
         "console",
         "timeline",
         "node-library",
         "inspector",
-        "hierarchy",
         "scene",
         "assets"
       ]
@@ -66,10 +66,16 @@
   },
   "panels": {
     "builder": {
-      "x": 1401,
-      "y": 262,
-      "width": 516,
-      "height": 739
+      "x": 1075,
+      "y": 149,
+      "width": 520,
+      "height": 743
+    },
+    "project-settings": {
+      "x": 537,
+      "y": 167,
+      "width": 597,
+      "height": 560
     }
   }
 }
