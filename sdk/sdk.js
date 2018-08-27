@@ -95,7 +95,11 @@ var sdk = {
             }
             //2.根据权重配比：从i集合（权重越大占比越多）中随机获取。
             var iArray = [];
+<<<<<<< HEAD
             // console.log(this.ShareList.length, "=====0====", tArray)
+=======
+            console.log(i, "=====0====", iArray)
+>>>>>>> 5e926795c4b246477fb81876299d32296314a487
             for (var i = 0; i < tArray.length; i++) {
                 for (var j = 0; j < tArray[i].weight; j++) {
                     iArray.push(i);
