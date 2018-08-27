@@ -1,9 +1,3 @@
-"use strict";
-cc._RF.push(module, '375a3+tnfFJPLBwNEv7vy8U', 'sdk');
-// Sdk/sdk.js
-
-"use strict";
-
 /**
 1.安装apidoc，参考链接：
 	http://apidocjs.com
@@ -21,19 +15,19 @@ var md5 = require("md5");
 var mta = require("mta");
 var sdk_conf = require("sdk_conf");
 var aldgame = require("ald-game");
-var sdk = {
+var sdk = { 
     md5: md5,
     mta: mta,
     ip1: "https://login.llewan.com:1799",
     // ip1: 'http://mock.eolinker.com/RiwKeAE4fb4e33cce254aee8509dbdd47b3898870569465?uri=https://login.llewan.com',
     ip2: "https://game.llewan.com:1899",
-    debug: false, //是否开启调试
+    debug: false,                            //是否开启调试
 
     login: '/Login/common',
     Config: '/Config/common',
-    ConfigData: {
+    ConfigData: { 
         "config1": {},
-        "config2": {}
+        "config2": {},
     },
     Share: "/Share/common",
     ShareList: [],
@@ -56,50 +50,58 @@ var sdk = {
      *       console.log('sdk初始化结果：', res)
      *   })
      */
-    init: function init(args, callback) {
+    init(args, callback){
         var self = this;
-        if (args.debug) {
+        if(args.debug){
             this.debug = args.debug;
         }
         // this.checkUpdate();
 
-        //1.初始化后台配置信息
+        //.获取后台配置信息
         this.Get(this.ip2 + this.Config, {}, function (d) {
             if (d && d.c == 1) {
                 self.ConfigData = d.d;
-
-                //2.初始化分享信息
-                self.Get(self.ip2 + self.Share, {}, function (d) {
-                    if (d && d.c == 1) {
-                        self.ShareList = d.d;
-                    } else {
-                        console.log("初始化分享信息失败：", d);
-                    }
-                    callback(true);
-                });
-            } else {
-                if (self.debug) {
-                    console.log("后台配置信息初始化失败，再次初始化：", d);
+                callback(true);
+            }else{
+                if(self.debug){
+                    console.log("获取游戏后台配置信息失败：",d)
                 }
                 self.init(args, callback);
             }
         });
-    },
 
+        //.初始化分享
+        this.initShare();
+
+    },
+    //.初始化分享
+    initShare(){
+        var self = this;
+        //.获取后台分享信息
+        this.Get(this.ip2 + this.Share, {}, function (d) {
+            if (d && d.c == 1) {
+                self.ShareList = d.d;
+            }else{
+                console.log("获取后台分享信息失败，10s后再次请求：",d)
+                setTimeout(() => {
+                    self.initShare();
+                }, 10000);
+            }
+        });
+    },
     //.根据权重随机获取指定type类型的分享信息。
-    getShareByWeight: function getShareByWeight(type) {
-        if (this.ShareList.length > 0) {
+    getShareByWeight(type){
+        if(this.ShareList.length > 0){
             //1.获取某种type的集合
             var tArray = [];
-            for (var i = 0; i < this.ShareList.length; i++) {
-                if (type == this.ShareList[i].type) {
-                    this.ShareList[i].weight = parseInt(this.ShareList[i].weight);
-                    tArray.push(this.ShareList[i]);
+            for (var i = 0; i < ShareList.length; i++) {
+                if (type == ShareList[i].type) {
+                    ShareList[i].weight = parseInt(ShareList[i].weight);
+                    tArray.push(ShareList[i]);
                 }
             }
             //2.根据权重配比：从i集合（权重越大占比越多）中随机获取。
             var iArray = [];
-            console.log(i, "=====0====", iArray);
             for (var i = 0; i < tArray.length; i++) {
                 for (var j = 0; j < tArray[i].weight; j++) {
                     iArray.push(i);
@@ -108,106 +110,95 @@ var sdk = {
             var i = iArray[parseInt(Math.random() * iArray.length)];
             //3.结果处理：正则替换昵称
             var item = tArray[i];
-            console.log(i, "========1====", item, tArray[i]);
-            if (item.title.indexOf("&nickName") != -1) {
+            if(item.title.indexOf("&nickName") != -1){
                 item.title = item.title.replace(/&nickName/g, this.getUser().nickName);
             }
             return item;
-        } else {
+        }else{
+            this.initShare();
             return null;
         }
     },
-
-    /**
-     * @apiGroup C
-     * @apiName onShareAppMessage
-     * @api {分享} 注册微信右上角分享 onShareAppMessage(分享)
-     * @apiParam {int} type=0 后台自定义的分享类型；例如：0：右上角分享、1：普通分享 2：分享加金币
-     * @apiParam {String} [title] 转发标题
-     * @apiParam {String} [imageUrl] 转发显示图片的链接
-     * @apiParam {String} [query] 必须是 key1=val1&key2=val2 的格式。
-     * @apiParam {callback} [success] 成功回调
-     * @apiParam {callback} [fail] 失败回调
-     * 
-     * @apiSuccessExample {json} 示例:
-     * sdk.onShareAppMessage({type: 0, query: "uid=520" });
-     */
-    onShareAppMessage: function onShareAppMessage(obj) {
-        var self = this;
-        if (cc.sys.platform === cc.sys.WECHAT_GAME) {
-            //.微信右上角分享
-            wx.showShareMenu({ withShareTicket: true });
-            wx.onShareAppMessage(function (res) {
-                //.默认0：右上角分享
-                var tpye = 0;
-                if (obj.type) {
-                    tpye = obj.type;
-                }
-                var shareInfo = self.getShareByWeight(tpye);
-
-                if (obj.title) {
-                    shareInfo.title = obj.title;
-                }
-                if (obj.imageUrl) {
-                    shareInfo.imageUrl = obj.imageUrl;
-                }
-                if (obj.query) {
-                    shareInfo.query += obj.query;
-                }
-                if (obj.success) {
-                    shareInfo.success = obj.success;
-                }
-                if (obj.fail) {
-                    shareInfo.fail = obj.fail;
-                }
-                console.log('==onShareAppMessage根据权重随机的分享信息==', shareInfo);
-                return shareInfo;
-            });
-        }
-    },
-
     /**
      * @apiGroup C
      * @apiName shareAppMessage
      * @api {分享} 主动拉起微信分享 shareAppMessage(分享)
-     * @apiParam {int} type=1 后台自定义的分享类型；例如：0：右上角分享、1：普通分享 2：分享加金币
-     * @apiParam {String} [title] 转发标题
-     * @apiParam {String} [imageUrl] 转发显示图片的链接
-     * @apiParam {String} [query] 必须是 key1=val1&key2=val2 的格式。
-     * @apiParam {callback} [success] 成功回调
-     * @apiParam {callback} [fail] 失败回调
+     * @apiParam {int} type 后台自定义的分享类型；例如：0：右上角分享(只读)、1：普通分享 2：分享加金币
      * 
      * @apiSuccessExample {json} 示例:
-     * sdk.shareAppMessage({type: 1, query: "uid=520" });
+     * sdk.shareAppMessage({type: 1});
      */
-    shareAppMessage: function shareAppMessage(obj) {
+    shareAppMessage(obj){
         //.默认1：普通分享
         var tpye = 1;
-        if (obj.type) {
+        if(obj.type){
             tpye = obj.type;
         }
-        var shareInfo = this.getShareByWeight(tpye);
+        var shareInfo = this.getShareByWeight(tpye)
 
-        if (obj.title) {
+        if(obj.title){
             shareInfo.title = obj.title;
         }
-        if (obj.imageUrl) {
+        if(obj.imageUrl){
             shareInfo.imageUrl = obj.imageUrl;
         }
-        if (obj.query) {
+        if(obj.query){
             shareInfo.query += obj.query;
         }
-        if (obj.success) {
+        if(obj.success){
             shareInfo.success = obj.success;
         }
-        if (obj.fail) {
+        if(obj.fail){
             shareInfo.fail = obj.fail;
         }
-        console.log('==shareAppMessage根据权重随机的分享信息==', shareInfo);
+        console.log('==shareAppMessage根据权重随机的分享信息==', shareInfo)
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
-            wx.shareAppMessage(shareInfo);
+            wx.shareAppMessage(shareInfo)
         }
     },
+    /**
+     * @apiGroup C
+     * @apiName onShareAppMessage
+     * @api {分享} 注册微信右上角分享 onShareAppMessage(分享)
+     * @apiParam {int} type 后台自定义的分享类型；例如：0：右上角分享(只读)、1：普通分享 2：分享加金币
+     * 
+     * @apiSuccessExample {json} 示例:
+     * sdk.onShareAppMessage({type: 0});
+     */
+    onShareAppMessage(obj){
+        var self = this;
+        if (cc.sys.platform === cc.sys.WECHAT_GAME) {
+            //.微信右上角分享
+            wx.showShareMenu({withShareTicket:true})
+            wx.onShareAppMessage(function(res){
+                //.默认0：右上角分享
+                var tpye = 0;
+                if(obj.type){
+                    tpye = obj.type;
+                }
+                var shareInfo = self.getShareByWeight(tpye)
+
+                if(obj.title){
+                    shareInfo.title = obj.title;
+                }
+                if(obj.imageUrl){
+                    shareInfo.imageUrl = obj.imageUrl;
+                }
+                if(obj.query){
+                    shareInfo.query += obj.query;
+                }
+                if(obj.success){
+                    shareInfo.success = obj.success;
+                }
+                if(obj.fail){
+                    shareInfo.fail = obj.fail;
+                }
+                console.log('==onShareAppMessage根据权重随机的分享信息==', shareInfo)
+                return shareInfo;
+            })
+        }
+    },
+    
 
 
     /**
@@ -233,13 +224,12 @@ var sdk = {
      *     "statReachBottom":true // 使用分析-页面触底次数/人数，必须先开通自定义事件，并配置了合法的eventID
      * });
      */
-    initmta: function initmta(args) {
+    initmta(args){
         mta.App.init(args);
         // 功能组件
         // App id: 500625714
         // App Secret key: 9b0fd6393ca10f5eebe0d1c659a460ab
     },
-
     /**
      * @apiIgnore
      * @apiGroup B
@@ -251,12 +241,11 @@ var sdk = {
      * @apiSuccessExample {json} 示例:
      * sdk.setmta("click","p003")
      */
-    setmta: function setmta(name, value) {
+    setmta(name, value){
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
-            mta.Event.stat(name, { value: 'true' });
+            mta.Event.stat(name, { value: 'true' })
         }
     },
-
     /**
      * @apiGroup B
      * @apiName setAld
@@ -270,10 +259,10 @@ var sdk = {
      * //统计类型（点击）， 统计位置（开始游戏按钮），  统计参数（点了1次）
      * sdk.setAld("click", "playButton", "1")
      */
-    setAld: function setAld(type, key, value) {
+    setAld(type, key, value){
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
             // wx.aldSendEvent('事件名称',{'参数key' : '参数value'})、
-            wx.aldSendEvent(v1, { v2: v3 });
+            wx.aldSendEvent(v1,  { v2 : v3 })
         }
     },
 
@@ -291,7 +280,7 @@ var sdk = {
      *     console.log(d)
      * });
      */
-    Get: function Get(url, reqData, callback) {
+    Get(url, reqData, callback) {
         var self = this;
 
         reqData.game = sdk_conf.game;
@@ -309,14 +298,14 @@ var sdk = {
                         var responseJson = JSON.parse(response);
                         callback(responseJson);
                     } else {
-                        if (self.debug) {
-                            console.log("返回数据不存在", url);
+                        if(self.debug){
+                            console.log("返回数据不存在",url)
                         }
                         callback(null);
                     }
                 } else {
-                    if (self.debug) {
-                        console.log("请求失败", url);
+                    if(self.debug){
+                        console.log("请求失败",url)
                     }
                     callback(null);
                 }
@@ -325,7 +314,6 @@ var sdk = {
         xhr.open("GET", url, true);
         xhr.send();
     },
-
     /**
      * @apiGroup C
      * @apiName Post
@@ -339,9 +327,9 @@ var sdk = {
      *     console.log(d)
      * });
      */
-    Post: function Post(url, reqData, callback) {
+    Post: function (url, reqData, callback) {
         var self = this;
-
+        
         reqData.game = sdk_conf.game;
         reqData.version = sdk_conf.version;
         //1.拼接请求参数
@@ -360,14 +348,14 @@ var sdk = {
                         var responseJson = JSON.parse(response);
                         callback(responseJson);
                     } else {
-                        if (self.debug) {
-                            console.log("返回数据不存在");
+                        if(self.debug){
+                            console.log("返回数据不存在")
                         }
                         callback(null);
                     }
                 } else {
-                    if (self.debug) {
-                        console.log("请求失败", xhr);
+                    if(self.debug){
+                        console.log("请求失败",xhr)
                     }
                     callback(null);
                 }
@@ -375,7 +363,7 @@ var sdk = {
         };
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.send(param); //reqData为字符串形式： "key=value"
+        xhr.send(param);//reqData为字符串形式： "key=value"
     },
     /**
      * @apiGroup C
@@ -385,28 +373,27 @@ var sdk = {
      * @apiSuccessExample {json} 示例:
      * sdk.checkUpdate();
      */
-    checkUpdate: function checkUpdate() {
+    checkUpdate() {
         if (cc.sys.platform === cc.sys.WECHAT_GAME && typeof wx.getUpdateManager === 'function') {
-            var updateManager = wx.getUpdateManager();
+            const updateManager = wx.getUpdateManager()
             updateManager.onCheckForUpdate(function (res) {
-                if (self.debug) {
-                    console.log("请求完新版本信息的回调", res.hasUpdate);
+                if(self.debug){
+                    console.log("请求完新版本信息的回调", res.hasUpdate)
                 }
-            });
+            })
             updateManager.onUpdateReady(function () {
-                if (self.debug) {
-                    console.log("新的版本已经下载好，调用 applyUpdate 应用新版本并重启");
+                if(self.debug){
+                    console.log("新的版本已经下载好，调用 applyUpdate 应用新版本并重启")
                 }
-                updateManager.applyUpdate();
-            });
+                updateManager.applyUpdate()
+            })
             updateManager.onUpdateFailed(function () {
-                if (self.debug) {
-                    console.log("新的版本下载失败");
+                if(self.debug){
+                    console.log("新的版本下载失败")
                 }
-            });
+            })
         }
     },
-
     /**
      * @apiGroup C
      * @apiName getConfig1
@@ -416,10 +403,9 @@ var sdk = {
      * @apiSuccessExample {json} 示例:
      * var d = sdk.getConfig1();
      */
-    getConfig1: function getConfig1() {
+    getConfig1(){
         return JSON.parse(this.ConfigData.config1);
     },
-
     /**
      * @apiGroup C
      * @apiName getConfig2
@@ -429,11 +415,11 @@ var sdk = {
      * @apiSuccessExample {json} 示例:
      * var d = sdk.getConfig2();
      */
-    getConfig2: function getConfig2() {
+    getConfig2(){
         return JSON.parse(this.ConfigData.config2);
     },
 
-
+    
     /**
      * @apiGroup C
      * @apiName createImage
@@ -444,19 +430,16 @@ var sdk = {
      * @apiSuccessExample {json} 示例:
      * var data = sdk.createImage(advs);
      */
-    createImage: function createImage(sprite, url) {
-        if (cc.sys.platform === cc.sys.WECHAT_GAME) {
-            var image = wx.createImage();
-            image.onload = function () {
-                var texture = new cc.Texture2D();
-                texture.initWithElement(image);
-                texture.handleLoadedTexture();
-                sprite.spriteFrame = new cc.SpriteFrame(texture);
-            };
-            image.src = url;
-        }
+    createImage(sprite, url) {
+        let image = wx.createImage();
+        image.onload = function () {
+            let texture = new cc.Texture2D();
+            texture.initWithElement(image);
+            texture.handleLoadedTexture();
+            sprite.spriteFrame = new cc.SpriteFrame(texture);
+        };
+        image.src = url;
     },
-
     /**
      * @apiGroup C
      * @apiName getUser
@@ -465,15 +448,14 @@ var sdk = {
      * @apiSuccessExample {json} 示例:
      * var user = sdk.getUser();
      */
-    getUser: function getUser() {
+    getUser(){
         var userinfo = this.getItem('userinfo');
-        if (userinfo) {
+        if(userinfo){
             return userinfo;
-        } else {
+        }else{
             return null;
         }
     },
-
     /**
      * @apiGroup C
      * @apiName setItem
@@ -484,10 +466,9 @@ var sdk = {
      * @apiSuccessExample {json} 示例:
      * sdk.setItem("nick","hello")
      */
-    setItem: function setItem(key, value) {
+    setItem(key, value){
         cc.sys.localStorage.setItem(key, value);
     },
-
     /**
      * @apiGroup C
      * @apiName getItem
@@ -498,10 +479,9 @@ var sdk = {
      * @apiSuccessExample {json} 示例:
      * var nick = sdk.getItem("nick")
      */
-    getItem: function getItem(key) {
+    getItem(key){
         return cc.sys.localStorage.getItem(key);
     },
-
     /**
      * @apiGroup C
      * @apiName onMessage
@@ -513,17 +493,16 @@ var sdk = {
      *     console.log(d)
      * })
      */
-    onMessage: function onMessage(callback) {
+    onMessage(callback){
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
-            wx.onMessage(function (d) {
+            wx.onMessage(function(d){
                 // if(d.message == "common_back"){//.子域: 返回子域首页
                 //     cc.director.loadScene("common_children")
                 // }
-                callback(d);
+                callback(d)
             });
         }
     },
-
     /**
      * @apiGroup C
      * @apiName postMessage
@@ -533,73 +512,68 @@ var sdk = {
      * @apiSuccessExample {json} 示例:
      * sdk.postMessage("hello")
      */
-    postMessage: function postMessage(msg) {
+    postMessage(msg){
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
             wx.postMessage({ message: msg });
         }
     },
-
     //.主域上报数据:    对用户托管数据进行写数据操作，允许同时写多组 KV 数据。
-    setUserCloudStorage: function setUserCloudStorage(kvDataList, callback) {
+    setUserCloudStorage(kvDataList, callback){
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
             wx.setUserCloudStorage({
                 KVDataList: kvDataList,
-                success: function success(res) {
-                    callback(res);
+                success(res){
+                    callback(res)
                 },
-                fail: function fail(res) {
-                    callback(res);
+                fail(res){
+                    callback(res)
                 }
-            });
+            })
         }
     },
-
     //.获取当前用户托管数据当中对应 key 的数据。该接口只可在开放数据域下使用
-    getUserCloudStorage: function getUserCloudStorage(keyList, callback) {
+    getUserCloudStorage(keyList, callback){
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
             wx.getUserCloudStorage({
                 keyList: keyList,
-                success: function success(res) {
-                    callback(res);
+                success(res){
+                    callback(res)
                 },
-                fail: function fail(res) {
-                    callback(res);
+                fail(res){
+                    callback(res)
                 }
-            });
+            })
         }
     },
-
     //.在小游戏是通过群分享卡片打开的情况下，可以通过调用该接口获取群同玩成员的游戏数据。该接口只可在开放数据域下使用。
-    getGroupCloudStorage: function getGroupCloudStorage(shareTicket, keyList, callback) {
+    getGroupCloudStorage(shareTicket, keyList, callback){
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
             wx.getGroupCloudStorage({
                 shareTicket: shareTicket,
                 keyList: keyList,
-                success: function success(res) {
-                    callback(res);
+                success(res){
+                    callback(res)
                 },
-                fail: function fail(res) {
-                    callback(res);
+                fail(res){
+                    callback(res)
                 }
-            });
+            })
         }
     },
-
     //.拉取当前用户所有同玩好友的托管数据。该接口只可在开放数据域下使用
-    getFriendCloudStorage: function getFriendCloudStorage(keyList, callback) {
+    getFriendCloudStorage(keyList, callback){
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
             wx.getFriendCloudStorage({
                 keyList: keyList,
-                success: function success(res) {
-                    callback(res);
+                success(res){
+                    callback(res)
                 },
-                fail: function fail(res) {
-                    callback(res);
+                fail(res){
+                    callback(res)
                 }
-            });
+            })
         }
     },
-
     /**
      * @apiGroup C
      * @apiName sortList
@@ -619,33 +593,32 @@ var sdk = {
      *       }
      *})
      */
-    sortList: function sortList(ListData, field, order) {
-        ListData.sort(function (a, b) {
+    sortList(ListData, field, order){
+        ListData.sort(function(a,b){
             var AMaxScore = 0;
             var KVDataList = a.KVDataList;
-            for (var i = 0; i < KVDataList.length; i++) {
-                if (KVDataList[i].key == field) {
+            for(var i=0; i<KVDataList.length; i++){
+                if(KVDataList[i].key == field){
                     AMaxScore = KVDataList[i].value;
                 }
             }
 
             var BMaxScore = 0;
             KVDataList = b.KVDataList;
-            for (var i = 0; i < KVDataList.length; i++) {
-                if (KVDataList[i].key == field) {
+            for(var i=0; i<KVDataList.length; i++){
+                if(KVDataList[i].key == field){
                     BMaxScore = KVDataList[i].value;
                 }
             }
 
-            if (order) {
+            if(order){
                 return parseInt(AMaxScore) - parseInt(BMaxScore);
-            } else {
+            }else{
                 return parseInt(BMaxScore) - parseInt(AMaxScore);
             }
         });
         return ListData;
     },
-
     /**
      * @apiIgnore
      * @apiGroup C
@@ -670,53 +643,53 @@ var sdk = {
      * 
      * 
      */
-    getMyRank3: function getMyRank3(ListData, me) {
+    getMyRank3(ListData,me){
         var dataList = [];
-        for (var i = 0; i < ListData.length; i++) {
-            if (ListData.length <= 3) {
+        for(var i=0; i<ListData.length; i++){
+            if(ListData.length <= 3){
                 //.只有3个人或以下
-                if (ListData[i].avatarUrl == me.avatarUrl && ListData[i].nickname == me.nickName) {
-                    ListData[i].isSelf = true; //.标记自己
+                if(ListData[i].avatarUrl == me.avatarUrl && ListData[i].nickname == me.nickName){
+                    ListData[i].isSelf = true;//.标记自己
                 }
                 dataList = ListData;
-                for (var i = 0; i < dataList.length; i++) {
+                for(var i=0; i<dataList.length; i++){
                     dataList[i].rank = i;
-                }
-            } else {
-                if (ListData[i].avatarUrl == me.avatarUrl && ListData[i].nickname == me.nickName) {
-                    ListData[i].isSelf = true; //.标记自己
-                    if (i == ListData.length - 1) {
+                }                 
+            }else{
+                if(ListData[i].avatarUrl == me.avatarUrl && ListData[i].nickname == me.nickName){
+                    ListData[i].isSelf = true;//.标记自己
+                    if(i == ListData.length-1){
                         //.自己分数最低
                         ListData[i].rank = i;
-                        ListData[i - 1].rank = i - 1;
-                        ListData[i - 2].rank = i - 2;
-                        dataList.push(ListData[i - 2]);
-                        dataList.push(ListData[i - 1]);
-                        dataList.push(ListData[i]);
-                    } else if (i == 0) {
+                        ListData[i-1].rank = i-1;
+                        ListData[i-2].rank = i-2;
+                        dataList.push(ListData[i-2])
+                        dataList.push(ListData[i-1])
+                        dataList.push(ListData[i])
+                    }else if(i==0){
                         //.自己分数最高
                         ListData[i].rank = i;
-                        ListData[i + 1].rank = i + 1;
-                        ListData[i + 2].rank = i + 2;
-                        dataList.push(ListData[i]);
-                        dataList.push(ListData[i + 1]);
-                        dataList.push(ListData[i + 2]);
-                    } else {
+                        ListData[i+1].rank = i+1;
+                        ListData[i+2].rank = i+2;
+                        dataList.push(ListData[i])
+                        dataList.push(ListData[i+1])
+                        dataList.push(ListData[i+2])
+                    }else{
                         //.居中
-                        ListData[i - 1].rank = i - 1;
+                        ListData[i-1].rank = i-1;
                         ListData[i].rank = i;
-                        ListData[i + 1].rank = i + 1;
-                        dataList.push(ListData[i - 1]);
-                        dataList.push(ListData[i]);
-                        dataList.push(ListData[i + 1]);
+                        ListData[i+1].rank = i+1;
+                        dataList.push(ListData[i-1])
+                        dataList.push(ListData[i])
+                        dataList.push(ListData[i+1])
                     }
-                    break;
+                    break;        
                 }
             }
+               
         }
         return dataList;
     },
-
     /**
      * @apiGroup C
      * @apiName WeChatLogin
@@ -737,66 +710,66 @@ var sdk = {
      * 
      * 
      */
-    WeChatLogin: function WeChatLogin(obj, callback) {
+    WeChatLogin(obj, callback){
         var self = this;
         var loginImg = 'https://laixiao.github.io/lewan/html/img/btn_start.png';
-        var imgWidth = 382 / 2;
-        var imgHeight = imgHeight / 2;
+        var imgWidth = 382/2;
+        var imgHeight = imgHeight/2;
         var referee_id = '';
         var source_id = '';
         var source_id2 = '';
-        if (obj.loginImg) {
+        if(obj.loginImg){
             loginImg = obj.loginImg;
         }
-        if (obj.imgWidth) {
+        if(obj.imgWidth){
             imgWidth = obj.imgWidth;
         }
-        if (obj.imgHeight) {
+        if(obj.imgHeight){
             imgHeight = obj.imgHeight;
         }
-        if (obj.referee_id) {
+        if(obj.referee_id){
             referee_id = obj.referee_id;
         }
-        if (obj.source_id) {
+        if(obj.source_id){
             source_id = obj.source_id;
         }
-        if (obj.source_id2) {
+        if(obj.source_id2){
             source_id2 = obj.source_id2;
         }
 
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
             var userinfo = this.getItem('userinfo');
-            if (userinfo) {
-                callback(JSON.parse(userinfo));
-            } else {
-                if (self.button) {
+            if(userinfo){
+                callback(JSON.parse(userinfo))
+            }else{
+                if(self.button){
                     self.button.show();
-                } else {
+                }else{
                     wx.getSystemInfo({
-                        success: function success(res) {
+                        success(res){
                             self.button = wx.createUserInfoButton({
                                 type: 'image',
                                 image: loginImg,
                                 style: {
-                                    left: res.screenWidth / 2 - imgWidth / 2,
-                                    top: res.screenHeight / 2 - imgHeight / 2,
+                                    left: res.screenWidth/2 - imgWidth/2,
+                                    top: res.screenHeight/2 - imgHeight/2,
                                     width: imgWidth,
-                                    height: imgHeight
+                                    height: imgHeight,
                                 }
-                            });
-                            self.button.onTap(function (res1) {
+                            })
+                            self.button.onTap((res1) => {
                                 // 处理用户拒绝授权的情况
                                 // if (res1.errMsg.indexOf('auth deny') > -1 || res1.errMsg.indexOf('auth denied') > -1 ) {
                                 //     wx.showToast();
                                 // }
-                                wx.showToast({ title: '登录中...', icon: 'loading', duration: 8 });
+                                wx.showToast({title: '登录中...',icon:'loading',duration: 8});
                                 wx.getSetting({
-                                    success: function success(auths) {
-                                        if (auths.authSetting["scope.userInfo"]) {
+                                    success(auths){
+                                        if(auths.authSetting["scope.userInfo"]){
                                             console.log('===已经授权===');
                                             wx.login({
-                                                success: function success(res2) {
-                                                    var reqData = {
+                                                success(res2){ 
+                                                    var reqData = {   
                                                         code: res2.code,
                                                         rawData: res1.rawData,
                                                         iv: res1.iv,
@@ -806,41 +779,41 @@ var sdk = {
                                                         referee_id: referee_id,
                                                         source_id: source_id,
                                                         source_id2: source_id2
-                                                        // console.log('==登录参数==', reqData)
-                                                    };self.Post(self.ip1 + self.login, reqData, function (data) {
+                                                    }
+                                                    // console.log('==登录参数==', reqData)
+                                                    self.Post(self.ip1 + self.login, reqData, function(data){
                                                         // console.log('==登录结果==', data)
-                                                        if (data.c == 1) {
+                                                        if(data.c == 1){
                                                             wx.hideToast();
-                                                            self.setItem('userinfo', data.d);
+                                                            self.setItem('userinfo',data.d);
                                                             self.button.hide();
                                                             callback(data.d);
-                                                        } else {
-                                                            wx.showToast({ title: '登录失败请重试' });
-                                                        }
+                                                        }else{
+                                                            wx.showToast({title: '登录失败请重试'});
+                                                        }                
                                                     });
                                                 },
-                                                fail: function fail() {
-                                                    wx.showToast({ title: '登录失败请重试' });
-                                                    callback(false);
-                                                }
-                                            });
-                                        } else {
-                                            callback(false);
+                                                fail(){
+                                                    wx.showToast({title: '登录失败请重试'});
+                                                    callback(false)
+                                                },
+                                            })
+                                        }else{
+                                            callback(false)
                                         }
                                     }
-                                });
-                            });
-                            self.button.show();
+                                })        
+                            })
+                            self.button.show()
                         },
-                        fail: function fail() {
-                            callback(false);
+                        fail(){
+                            callback(false)
                         }
-                    });
+                    })
                 }
             }
         }
     },
-
     /**
      * @apiGroup C
      * @apiName createBannerAd
@@ -861,26 +834,25 @@ var sdk = {
      *  bannerAd.show()
      * 
      */
-    createBannerAd: function createBannerAd(obj) {
+    createBannerAd(obj){
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
-            if (this.BannerAd) {
+            if(this.BannerAd){
                 return this.BannerAd;
-            } else {
+            }else{
                 this.BannerAd = wx.createBannerAd({
                     adUnitId: sdk_conf.bannerAdUnitId,
-                    style: obj.style
+                    style: obj.style,
+                })
+                this.BannerAd.onLoad(function(res){
+                    console.log("BannerAd广告加载事件：", res)
                 });
-                this.BannerAd.onLoad(function (res) {
-                    console.log("BannerAd广告加载事件：", res);
-                });
-                this.BannerAd.onError(function (res) {
-                    console.log("BannerAd广告错误事件：", res);
+                this.BannerAd.onError(function(res){
+                    console.log("BannerAd广告错误事件：", res)
                 });
                 return this.BannerAd;
             }
         }
     },
-
     /**
      * @apiGroup C
      * @apiName createRewardedVideoAd
@@ -893,93 +865,93 @@ var sdk = {
      *  videoAd.load().then(() => videoAd.show());
      * 
      */
-    createRewardedVideoAd: function createRewardedVideoAd() {
+    createRewardedVideoAd(){
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
-            if (this.VideoAd) {
+            if(this.VideoAd){
                 return this.VideoAd;
-            } else {
-                this.VideoAd = wx.createRewardedVideoAd({ adUnitId: sdk_conf.videoAdUnitId });
-                this.VideoAd.onLoad(function (res) {
-                    console.log("VideoAd广告加载事件：", res);
+            }else{
+                this.VideoAd = wx.createRewardedVideoAd({ adUnitId: sdk_conf.videoAdUnitId })
+                this.VideoAd.onLoad(function(res){
+                    console.log("VideoAd广告加载事件：", res)
                 });
-                this.VideoAd.onError(function (res) {
-                    console.log("VideoAd广告错误事件：", res);
+                this.VideoAd.onError(function(res){
+                    console.log("VideoAd广告错误事件：", res)
                 });
                 return this.VideoAd;
             }
         }
     },
-
-    /**
-    * @apiGroup C
-    * @apiName Screenshot
-    * @api {微信小游戏截图保存} 微信小游戏截图保存 Screenshot（截图）
-    * @apiParam {cc.Camera} camera 摄像头组件	
-    * 
-    * @apiSuccessExample {json} 示例:
-    *   //.摄像机组件、回调
-    *   sdk.Screenshot(this.camera, (d)=>{
-    *       if(d){
-    *           console.log("图片保存成功：", d)
-    *       }else{
-    *           console.log("图片保存失败：", d)
-    *       }
-    *   })
-    * 
-    */
-    Screenshot: function Screenshot(camera, callback) {
+     /**
+     * @apiGroup C
+     * @apiName Screenshot
+     * @api {微信小游戏截图保存} 微信小游戏截图保存 Screenshot（截图）
+     * @apiParam {cc.Camera} camera 摄像头组件	
+     * 
+     * @apiSuccessExample {json} 示例:
+     *   //.摄像机组件、回调
+     *   sdk.Screenshot(this.camera, (d)=>{
+     *       if(d){
+     *           console.log("图片保存成功：", d)
+     *       }else{
+     *           console.log("图片保存失败：", d)
+     *       }
+     *   })
+     * 
+     */
+    Screenshot(camera, callback){
         var self = this;
         //1.判断是否授权
         wx.getSetting({
-            success: function success(res) {
+            success(res){
                 // console.log("授权状态", res.authSetting['scope.writePhotosAlbum'])
-                if (res.authSetting['scope.writePhotosAlbum']) {
+                if(res.authSetting['scope.writePhotosAlbum']){
                     self.capture(camera, callback);
-                } else {
+                }else{
                     // console.log("未授权", res)
                     wx.authorize({
                         scope: 'scope.writePhotosAlbum',
-                        success: function success(res2) {
-                            console.log("success res2", res2);
+                        success(res2){
+                            console.log("success res2",res2)
                             self.Screenshot(camera, callback);
                         },
-                        fail: function fail(res2) {
-                            wx.showToast({ title: '请重新授权' });
-                            callback(null);
-                            console.log("fail res2", res2);
+                        fail(res2){
+                            wx.showToast({title: '请重新授权'})
+                            callback(null)
+                            console.log("fail res2",res2)
                         }
-                    });
+                    })
                 }
             },
-            fail: function fail() {
-                callback(null);
+            fail(){
+                callback(null)
             }
-        });
+        })
     },
-    capture: function capture(camera, callback) {
+    capture (camera, callback) {
         //.要截取的范围（全屏）
-        var texture = new cc.RenderTexture();
+        let texture = new cc.RenderTexture();
         // 如果截图内容中不包含 Mask 组件，可以不用传递第三个参数
-        var gl = cc.game._renderContext;
+        let gl = cc.game._renderContext;
         texture.initWithSize(cc.visibleRect.width, cc.visibleRect.height, gl.STENCIL_INDEX8);
         camera.targetTexture = texture;
         this.texture = texture;
 
-        var width = this.texture.width;
-        var height = this.texture.height;
-        var canvas = document.createElement('canvas');
-        var ctx = canvas.getContext('2d');
+
+        let width = this.texture.width;
+        let height = this.texture.height;
+        let canvas = document.createElement('canvas');
+        let ctx = canvas.getContext('2d');
         canvas.width = width;
         canvas.height = height;
         camera.render();
-        var data = this.texture.readPixels();
-        var rowBytes = width * 4;
-        for (var row = 0; row < height; row++) {
-            var srow = height - 1 - row;
-            var imageData = ctx.createImageData(width, 1);
-            var start = srow * width * 4;
-            for (var i = 0; i < rowBytes; i++) {
-                imageData.data[i] = data[start + i];
+        let data = this.texture.readPixels();
+        let rowBytes = width * 4;
+        for (let row = 0; row < height; row++) {
+            let srow = height - 1 - row;
+            let imageData = ctx.createImageData(width, 1);
+            let start = srow*width*4;
+            for (let i = 0; i < rowBytes; i++) {
+                imageData.data[i] = data[start+i];
             }
             ctx.putImageData(imageData, 0, row);
         }
@@ -990,23 +962,25 @@ var sdk = {
             width: width,
             height: height,
             destWidth: width,
-            destHeight: height
+            destHeight: height,
         });
 
         wx.saveImageToPhotosAlbum({
             filePath: tempFilePath,
-            success: function success(res2) {
-                console.log('==截图保存=success=', res2);
-                callback(true);
+            success(res2){
+                console.log('==截图保存=success=',res2)
+                callback(true)
             },
-            fail: function fail(res2) {
-                console.log('==截图保存=fail=', res2);
-                callback(null);
+            fail(res2){
+                console.log('==截图保存=fail=',res2)
+                callback(null)
             }
-        });
+        })
+        
     }
+    
+
 };
 // module.exports = sdk;
 window.sdk = sdk;
 
-cc._RF.pop();

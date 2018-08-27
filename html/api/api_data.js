@@ -172,6 +172,38 @@ define({ "api": [
   },
   {
     "group": "C",
+    "name": "Screenshot",
+    "type": "微信小游戏截图保存",
+    "url": "微信小游戏截图保存",
+    "title": "Screenshot（截图）",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "cc.Camera",
+            "optional": false,
+            "field": "camera",
+            "description": "<p>摄像头组件</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "示例:",
+          "content": "//.摄像机组件、回调\nsdk.Screenshot(this.camera, (d)=>{\n    if(d){\n        console.log(\"图片保存成功：\", d)\n    }else{\n        console.log(\"图片保存失败：\", d)\n    }\n})",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "apiTest/assets/Sdk/sdk.js",
+    "groupTitle": "C"
+  },
+  {
+    "group": "C",
     "name": "WeChatLogin",
     "type": "微信登录",
     "url": "微信登录",
@@ -513,7 +545,43 @@ define({ "api": [
             "type": "int",
             "optional": false,
             "field": "type",
-            "description": "<p>后台自定义的分享类型；例如：0：右上角分享(只读)、1：普通分享 2：分享加金币</p>"
+            "defaultValue": "0",
+            "description": "<p>后台自定义的分享类型；例如：0：右上角分享、1：普通分享 2：分享加金币</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "title",
+            "description": "<p>转发标题</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "imageUrl",
+            "description": "<p>转发显示图片的链接</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "query",
+            "description": "<p>必须是 key1=val1&amp;key2=val2 的格式。</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "callback",
+            "optional": true,
+            "field": "success",
+            "description": "<p>成功回调</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "callback",
+            "optional": true,
+            "field": "fail",
+            "description": "<p>失败回调</p>"
           }
         ]
       }
@@ -522,7 +590,7 @@ define({ "api": [
       "examples": [
         {
           "title": "示例:",
-          "content": "sdk.onShareAppMessage({type: 0});",
+          "content": "sdk.onShareAppMessage({type: 0, query: \"uid=520\" });",
           "type": "json"
         }
       ]
@@ -616,7 +684,43 @@ define({ "api": [
             "type": "int",
             "optional": false,
             "field": "type",
-            "description": "<p>后台自定义的分享类型；例如：0：右上角分享(只读)、1：普通分享 2：分享加金币</p>"
+            "defaultValue": "1",
+            "description": "<p>后台自定义的分享类型；例如：0：右上角分享、1：普通分享 2：分享加金币</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "title",
+            "description": "<p>转发标题</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "imageUrl",
+            "description": "<p>转发显示图片的链接</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "query",
+            "description": "<p>必须是 key1=val1&amp;key2=val2 的格式。</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "callback",
+            "optional": true,
+            "field": "success",
+            "description": "<p>成功回调</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "callback",
+            "optional": true,
+            "field": "fail",
+            "description": "<p>失败回调</p>"
           }
         ]
       }
@@ -625,7 +729,7 @@ define({ "api": [
       "examples": [
         {
           "title": "示例:",
-          "content": "sdk.shareAppMessage({type: 1});",
+          "content": "sdk.shareAppMessage({type: 1, query: \"uid=520\" });",
           "type": "json"
         }
       ]

@@ -57,51 +57,44 @@ var sdk = {
         }
         // this.checkUpdate();
 
-        //.获取后台配置信息
+        //1.初始化后台配置信息
         this.Get(this.ip2 + this.Config, {}, function (d) {
             if (d && d.c == 1) {
                 self.ConfigData = d.d;
-                callback(true);
+
+                //2.初始化分享信息
+                self.Get(self.ip2 + self.Share, {}, function (d) {
+                    if (d && d.c == 1) {
+                        self.ShareList = d.d;
+                    }else{
+                        console.log("初始化分享信息失败：",d)
+                    }
+                    callback(true);
+                });
             }else{
                 if(self.debug){
-                    console.log("获取游戏后台配置信息失败：",d)
+                    console.log("后台配置信息初始化失败，再次初始化：",d)
                 }
                 self.init(args, callback);
             }
         });
 
-        //.初始化分享
-        this.initShare();
 
-    },
-    //.初始化分享
-    initShare(){
-        var self = this;
-        //.获取后台分享信息
-        this.Get(this.ip2 + this.Share, {}, function (d) {
-            if (d && d.c == 1) {
-                self.ShareList = d.d;
-            }else{
-                console.log("获取后台分享信息失败，10s后再次请求：",d)
-                setTimeout(() => {
-                    self.initShare();
-                }, 10000);
-            }
-        });
     },
     //.根据权重随机获取指定type类型的分享信息。
     getShareByWeight(type){
         if(this.ShareList.length > 0){
             //1.获取某种type的集合
             var tArray = [];
-            for (var i = 0; i < ShareList.length; i++) {
-                if (type == ShareList[i].type) {
-                    ShareList[i].weight = parseInt(ShareList[i].weight);
-                    tArray.push(ShareList[i]);
+            for (var i = 0; i < this.ShareList.length; i++) {
+                if (type == this.ShareList[i].type) {
+                    this.ShareList[i].weight = parseInt(this.ShareList[i].weight);
+                    tArray.push(this.ShareList[i]);
                 }
             }
             //2.根据权重配比：从i集合（权重越大占比越多）中随机获取。
             var iArray = [];
+            console.log(i, "=====0====", iArray)
             for (var i = 0; i < tArray.length; i++) {
                 for (var j = 0; j < tArray[i].weight; j++) {
                     iArray.push(i);
@@ -110,60 +103,28 @@ var sdk = {
             var i = iArray[parseInt(Math.random() * iArray.length)];
             //3.结果处理：正则替换昵称
             var item = tArray[i];
+            console.log(i, "========1====", item, tArray[i])
             if(item.title.indexOf("&nickName") != -1){
                 item.title = item.title.replace(/&nickName/g, this.getUser().nickName);
             }
             return item;
         }else{
-            this.initShare();
             return null;
-        }
-    },
-    /**
-     * @apiGroup C
-     * @apiName shareAppMessage
-     * @api {分享} 主动拉起微信分享 shareAppMessage(分享)
-     * @apiParam {int} type 后台自定义的分享类型；例如：0：右上角分享(只读)、1：普通分享 2：分享加金币
-     * 
-     * @apiSuccessExample {json} 示例:
-     * sdk.shareAppMessage({type: 1});
-     */
-    shareAppMessage(obj){
-        //.默认1：普通分享
-        var tpye = 1;
-        if(obj.type){
-            tpye = obj.type;
-        }
-        var shareInfo = this.getShareByWeight(tpye)
-
-        if(obj.title){
-            shareInfo.title = obj.title;
-        }
-        if(obj.imageUrl){
-            shareInfo.imageUrl = obj.imageUrl;
-        }
-        if(obj.query){
-            shareInfo.query += obj.query;
-        }
-        if(obj.success){
-            shareInfo.success = obj.success;
-        }
-        if(obj.fail){
-            shareInfo.fail = obj.fail;
-        }
-        console.log('==shareAppMessage根据权重随机的分享信息==', shareInfo)
-        if (cc.sys.platform === cc.sys.WECHAT_GAME) {
-            wx.shareAppMessage(shareInfo)
         }
     },
     /**
      * @apiGroup C
      * @apiName onShareAppMessage
      * @api {分享} 注册微信右上角分享 onShareAppMessage(分享)
-     * @apiParam {int} type 后台自定义的分享类型；例如：0：右上角分享(只读)、1：普通分享 2：分享加金币
+     * @apiParam {int} type=0 后台自定义的分享类型；例如：0：右上角分享、1：普通分享 2：分享加金币
+     * @apiParam {String} [title] 转发标题
+     * @apiParam {String} [imageUrl] 转发显示图片的链接
+     * @apiParam {String} [query] 必须是 key1=val1&key2=val2 的格式。
+     * @apiParam {callback} [success] 成功回调
+     * @apiParam {callback} [fail] 失败回调
      * 
      * @apiSuccessExample {json} 示例:
-     * sdk.onShareAppMessage({type: 0});
+     * sdk.onShareAppMessage({type: 0, query: "uid=520" });
      */
     onShareAppMessage(obj){
         var self = this;
@@ -198,7 +159,48 @@ var sdk = {
             })
         }
     },
-    
+    /**
+     * @apiGroup C
+     * @apiName shareAppMessage
+     * @api {分享} 主动拉起微信分享 shareAppMessage(分享)
+     * @apiParam {int} type=1 后台自定义的分享类型；例如：0：右上角分享、1：普通分享 2：分享加金币
+     * @apiParam {String} [title] 转发标题
+     * @apiParam {String} [imageUrl] 转发显示图片的链接
+     * @apiParam {String} [query] 必须是 key1=val1&key2=val2 的格式。
+     * @apiParam {callback} [success] 成功回调
+     * @apiParam {callback} [fail] 失败回调
+     * 
+     * @apiSuccessExample {json} 示例:
+     * sdk.shareAppMessage({type: 1, query: "uid=520" });
+     */
+    shareAppMessage(obj){
+        //.默认1：普通分享
+        var tpye = 1;
+        if(obj.type){
+            tpye = obj.type;
+        }
+        var shareInfo = this.getShareByWeight(tpye)
+        
+        if(obj.title){
+            shareInfo.title = obj.title;
+        }
+        if(obj.imageUrl){
+            shareInfo.imageUrl = obj.imageUrl;
+        }
+        if(obj.query){
+            shareInfo.query += obj.query;
+        }
+        if(obj.success){
+            shareInfo.success = obj.success;
+        }
+        if(obj.fail){
+            shareInfo.fail = obj.fail;
+        }
+        console.log('==shareAppMessage根据权重随机的分享信息==', shareInfo)
+        if (cc.sys.platform === cc.sys.WECHAT_GAME) {
+            wx.shareAppMessage(shareInfo)
+        }
+    },
 
 
     /**
@@ -431,14 +433,17 @@ var sdk = {
      * var data = sdk.createImage(advs);
      */
     createImage(sprite, url) {
-        let image = wx.createImage();
-        image.onload = function () {
-            let texture = new cc.Texture2D();
-            texture.initWithElement(image);
-            texture.handleLoadedTexture();
-            sprite.spriteFrame = new cc.SpriteFrame(texture);
-        };
-        image.src = url;
+        if (cc.sys.platform === cc.sys.WECHAT_GAME) {
+            let image = wx.createImage();
+            image.onload = function () {
+                let texture = new cc.Texture2D();
+                texture.initWithElement(image);
+                texture.handleLoadedTexture();
+                sprite.spriteFrame = new cc.SpriteFrame(texture);
+            };
+            image.src = url;
+        }
+        
     },
     /**
      * @apiGroup C
@@ -881,6 +886,23 @@ var sdk = {
             }
         }
     },
+     /**
+     * @apiGroup C
+     * @apiName Screenshot
+     * @api {微信小游戏截图保存} 微信小游戏截图保存 Screenshot（截图）
+     * @apiParam {cc.Camera} camera 摄像头组件	
+     * 
+     * @apiSuccessExample {json} 示例:
+     *   //.摄像机组件、回调
+     *   sdk.Screenshot(this.camera, (d)=>{
+     *       if(d){
+     *           console.log("图片保存成功：", d)
+     *       }else{
+     *           console.log("图片保存失败：", d)
+     *       }
+     *   })
+     * 
+     */
     Screenshot(camera, callback){
         var self = this;
         //1.判断是否授权
@@ -939,34 +961,27 @@ var sdk = {
             ctx.putImageData(imageData, 0, row);
         }
         var dataURL = canvas.toDataURL("image/jpeg");
-        canvas.toTempFilePath({
+        var tempFilePath = canvas.toTempFilePathSync({
             x: 0,
             y: 0,
             width: width,
             height: height,
             destWidth: width,
             destHeight: height,
-            success (res1) {
-                //.可以保存该截屏图片
-                console.log('success==',res1)
-                
-                wx.saveImageToPhotosAlbum({
-                    filePath: res1.tempFilePath,
-                    success(res2){
-                        console.log('==saveImageToPhotosAlbum=success=',res2)
-                        camera.render();
-                        callback(true)
-                    },
-                    fail(res2){
-                        console.log('==saveImageToPhotosAlbum=fail=',res2)
-                        callback(null)
-                    }
-                })
+        });
+
+        wx.saveImageToPhotosAlbum({
+            filePath: tempFilePath,
+            success(res2){
+                console.log('==截图保存=success=',res2)
+                callback(true)
             },
-            fail(res){
-                console.log(res)
+            fail(res2){
+                console.log('==截图保存=fail=',res2)
+                callback(null)
             }
         })
+        
     }
     
 

@@ -27,13 +27,6 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        camera: {
-            default: null,
-            type: cc.Camera
-        },
-
-        background: cc.Node,
-
 
     },
 
@@ -60,38 +53,24 @@ cc.Class({
     },
 
     start () {
+        
+        sdk.init({
+            debug: true,        //.是否开启调试
+        }, (res)=>{
+            console.log('sdk初始化结果：', res)
+            // sdk.onShareAppMessage({type: 0, query: "uid=520" });
+        })
 
     },
 
     // update (dt) {},
 
-    //.截图
-    saveImage(){
-        var self = this;
-        sdk.Screenshot(this.camera, (d)=>{
-            if(d){
-                console.log("图片保存成功：", d)
-                self.camera.node.destroy()
-            }else{
-                console.log("图片保存失败：", d)
-            }
-            
-        })
+    //.分享
+    share(){
+        sdk.shareAppMessage({type: 1, query: "uid=520" });
     },
-    loginBt(){
-        //.登录按钮图片、图片宽度、图片高度
-        // sdk.WeChatLogin({loginImg: 'https://laixiao.github.io/lewan/html/img/btn_start.png', imgWidth:382, imgHeight: 164}, (d)=>{
-        //     if(d){
-        //         console.log("登录成功：",d)
-        //     }else{
-        //         console.log("登陆失败，请重试")
-        //     }
-        // });
-        console.log("=========1=====")
-        this.background.active = false;
-        wx.shareAppMessage({})
-    }
-    
+
+
     
 
 });
