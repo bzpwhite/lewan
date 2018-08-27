@@ -68,15 +68,16 @@ var sdk = {
             if (d && d.c == 1) {
                 self.ConfigData = d.d;
 
-                //2.初始化分享信息
-                self.Get(self.ip2 + self.Share, {}, function (d) {
-                    if (d && d.c == 1) {
-                        self.ShareList = d.d;
-                    } else {
-                        console.log("初始化分享信息失败：", d);
-                    }
-                    callback(true);
-                });
+                // //2.初始化分享信息
+                // self.Get(self.ip2 + self.Share, {}, function (d2) {
+                //     console.log("初始化分享信息：",d2)
+                //     if (d2 && d2.c == 1) {
+                //         self.ShareList = d2.d;
+                //     }else{
+                //         console.log("初始化分享信息失败：",d2)
+                //     }
+                callback(true);
+                // });
             } else {
                 if (self.debug) {
                     console.log("后台配置信息初始化失败，再次初始化：", d);
@@ -99,7 +100,7 @@ var sdk = {
             }
             //2.根据权重配比：从i集合（权重越大占比越多）中随机获取。
             var iArray = [];
-            console.log(i, "=====0====", iArray);
+            // console.log(this.ShareList.length, "=====0====", tArray)
             for (var i = 0; i < tArray.length; i++) {
                 for (var j = 0; j < tArray[i].weight; j++) {
                     iArray.push(i);

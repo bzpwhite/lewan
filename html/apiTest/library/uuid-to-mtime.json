@@ -55,7 +55,7 @@
     "relativePath": "Sdk\\mta.js"
   },
   "7b81d4e8-ec84-4716-968d-500ac1d78a54": {
-    "asset": 1535162677141,
+    "asset": 1535356840534,
     "meta": 1535162677140,
     "relativePath": "Texture"
   },
@@ -304,11 +304,6 @@
     "meta": 1535349442053,
     "relativePath": "prefab\\webview.prefab"
   },
-  "375a3fad-9df1-493c-b070-344bfbbf2f14": {
-    "asset": 1535356703283,
-    "meta": 1535356717789,
-    "relativePath": "Sdk\\sdk.js"
-  },
   "a3bc6467-671f-4393-82bc-d0b813d8cfad": {
     "asset": 1535356840527,
     "meta": 1535356840555,
@@ -323,5 +318,10 @@
     "asset": 1535357568213,
     "meta": 1535357571774,
     "relativePath": "Script\\demo.js"
+  },
+  "375a3fad-9df1-493c-b070-344bfbbf2f14": {
+    "asset": 1535358955533,
+    "meta": 1535358960094,
+    "relativePath": "Sdk\\sdk.js"
   }
 }
