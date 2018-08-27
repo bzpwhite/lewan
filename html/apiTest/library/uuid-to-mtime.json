@@ -25,63 +25,63 @@
     "relativePath": "prefab"
   },
   "29f52784-2fca-467b-92e7-8fd9ef8c57b7": {
-    "asset": 1535189766062,
-    "meta": 1535162677133,
+    "asset": 1535362593936,
+    "meta": 1535362593934,
     "relativePath": "Scene"
   },
   "2d2f792f-a40c-49bb-a189-ed176a246e49": {
-    "asset": 1535357578711,
-    "meta": 1535357578719,
+    "asset": 1535362593935,
+    "meta": 1535363443238,
     "relativePath": "Scene\\demo.fire"
   },
   "4734c20c-0db8-4eb2-92ea-e692f4d70934": {
-    "asset": 1535162677135,
-    "meta": 1535162677134,
+    "asset": 1535362593937,
+    "meta": 1535362593936,
     "relativePath": "Script"
   },
   "f25195d4-e6e5-423b-a5ce-a68e307f2195": {
-    "asset": 1535335991439,
-    "meta": 1535162677135,
+    "asset": 1535362593944,
+    "meta": 1535362593938,
     "relativePath": "Sdk"
   },
   "a07f6c82-9d14-4ee7-9a01-85dec9077d30": {
-    "asset": 1535162677137,
-    "meta": 1535162727394,
+    "asset": 1535362593941,
+    "meta": 1535363443997,
     "relativePath": "Sdk\\md5.js"
   },
   "6504ae6f-29fb-4195-b0e6-fc7d47f6f314": {
-    "asset": 1535162677138,
-    "meta": 1535162727397,
+    "asset": 1535362593942,
+    "meta": 1535363444001,
     "relativePath": "Sdk\\mta.js"
   },
   "7b81d4e8-ec84-4716-968d-500ac1d78a54": {
-    "asset": 1535356840534,
-    "meta": 1535162677140,
+    "asset": 1535362593946,
+    "meta": 1535362593944,
     "relativePath": "Texture"
   },
   "a8027877-d8d6-4645-97a0-52d4a0123dba": {
-    "asset": 1535162677140,
-    "meta": 1535162727589,
+    "asset": 1535362593945,
+    "meta": 1535363444182,
     "relativePath": "Texture\\singleColor.png"
   },
   "1d32b1b6-29dc-4aae-81a3-ec3c3ed4bae9": {
-    "asset": 1535162677136,
-    "meta": 1535162727170,
+    "asset": 1535362593939,
+    "meta": 1535363443839,
     "relativePath": "Sdk\\ald-game-conf.js"
   },
   "6f49714f-d0f6-4a7b-8520-30ecd092a2ff": {
-    "asset": 1535189932174,
-    "meta": 1535191057439,
+    "asset": 1535362593943,
+    "meta": 1535363444154,
     "relativePath": "Sdk\\sdk_conf.js"
   },
   "bcb5a004-c7ae-4629-86fd-d7d7800318ec": {
-    "asset": 1535173642741,
-    "meta": 1535173650994,
+    "asset": 1535362593940,
+    "meta": 1535363443952,
     "relativePath": "Sdk\\ald-game.js"
   },
   "7e8c8fe8-f6b6-4591-8877-bb453faee2db": {
-    "asset": 1535189798644,
-    "meta": 1535189798672,
+    "asset": 1535362593935,
+    "meta": 1535363443240,
     "relativePath": "Scene\\test.fire"
   },
   "71561142-4c83-4933-afca-cb7a17f67053": {
@@ -101,7 +101,7 @@
   },
   "edd215b9-2796-4a05-aaf5-81f96c9281ce": {
     "asset": 1534992730000,
-    "meta": 1535349441882,
+    "meta": 1535363443196,
     "relativePath": "image\\default_editbox_bg.png"
   },
   "d81ec8ad-247c-4e62-aa3c-d35c4193c7af": {
@@ -196,12 +196,12 @@
   },
   "8a96b965-2dc0-4e03-aa90-3b79cb93b5b4": {
     "asset": 1534992730000,
-    "meta": 1535349442001,
+    "meta": 1535363443199,
     "relativePath": "obsolete\\atom.png"
   },
   "d0a82d39-bede-46c4-b698-c81ff0dedfff": {
     "asset": 1534992730000,
-    "meta": 1535349442004,
+    "meta": 1535363443212,
     "relativePath": "particle\\atom.png"
   },
   "972b9a4d-47ee-4c74-b5c3-61d8a69bc29f": {
@@ -276,7 +276,7 @@
   },
   "0e42ba95-1fa1-46aa-b2cf-143cd1bcee2c": {
     "asset": 1534992730000,
-    "meta": 1535349442040,
+    "meta": 1535363443203,
     "relativePath": "prefab\\tiledtile.prefab"
   },
   "0d784963-d024-4ea6-a7db-03be0ad63010": {
@@ -305,23 +305,23 @@
     "relativePath": "prefab\\webview.prefab"
   },
   "a3bc6467-671f-4393-82bc-d0b813d8cfad": {
-    "asset": 1535356840527,
-    "meta": 1535356840555,
+    "asset": 1535362593945,
+    "meta": 1535363444167,
     "relativePath": "Texture\\icon.png"
   },
   "45bf5ac7-9fc1-4771-94e0-558919a788fa": {
-    "asset": 1535357143956,
-    "meta": 1535357166204,
+    "asset": 1535362593937,
+    "meta": 1535363443574,
     "relativePath": "Script\\test.js"
   },
   "2d3ea0ed-45ad-43ee-9c17-8e9553d33585": {
-    "asset": 1535357568213,
-    "meta": 1535357571774,
+    "asset": 1535362593937,
+    "meta": 1535363443572,
     "relativePath": "Script\\demo.js"
   },
   "375a3fad-9df1-493c-b070-344bfbbf2f14": {
-    "asset": 1535358955533,
-    "meta": 1535358960094,
+    "asset": 1535372625880,
+    "meta": 1535372628654,
     "relativePath": "Sdk\\sdk.js"
   }
 }

@@ -5,9 +5,10 @@
     apidoc -i ./apiTest/assets/Sdk -o api/
     
     在小程序后台添加合法域名：
-        https://glog.aldwx.com
         https://game.llewan.com
         https://login.llewan.com
+
+        https://glog.aldwx.com
         https://mock.eolinker.com
  */
 
