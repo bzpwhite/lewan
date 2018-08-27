@@ -1,57 +1,57 @@
-2018-08-27T12:10:12.226Z - normal: Load ~/.CocosCreator/settings.json
-2018-08-27T12:10:12.229Z - normal: checking language setting...
-2018-08-27T12:10:12.229Z - normal: Language: zh
-2018-08-27T12:10:13.758Z - success: protocol editor-framework registered
-2018-08-27T12:10:13.758Z - success: protocol app registered
-2018-08-27T12:10:13.758Z - success: protocol theme registered
-2018-08-27T12:10:13.759Z - success: protocol packages registered
-2018-08-27T12:10:13.759Z - success: protocol unpack registerred
-2018-08-27T12:10:13.759Z - success: protocol disable-commonjs registerred
-2018-08-27T12:10:13.975Z - normal: connected!
-2018-08-27T12:10:13.985Z - normal: Check project D:\lx\git\github\lewan\html\apiTest
-2018-08-27T12:10:13.996Z - normal: Initializing project D:\lx\git\github\lewan\html\apiTest
-2018-08-27T12:10:14.004Z - normal: Initializing Cocos2d
-2018-08-27T12:10:14.655Z - normal: Initializing Asset Database
-2018-08-27T12:10:14.704Z - success: protocol uuid registerred
-2018-08-27T12:10:14.704Z - success: protocol db registerred
-2018-08-27T12:10:14.704Z - success: protocol thumbnail registerred
-2018-08-27T12:10:14.705Z - normal: Loading editor/builtin packages
-2018-08-27T12:10:14.867Z - success: assets loaded
-2018-08-27T12:10:14.869Z - success: builder loaded
-2018-08-27T12:10:14.871Z - success: cocos-analytics loaded
-2018-08-27T12:10:14.874Z - success: console loaded
-2018-08-27T12:10:14.905Z - success: fb-instant-games loaded
-2018-08-27T12:10:14.909Z - success: hierarchy loaded
-2018-08-27T12:10:14.913Z - success: inspector loaded
-2018-08-27T12:10:14.914Z - success: keystore loaded
-2018-08-27T12:10:14.917Z - success: node-library loaded
-2018-08-27T12:10:14.919Z - success: package-asset loaded
-2018-08-27T12:10:14.920Z - success: preferences loaded
-2018-08-27T12:10:14.921Z - success: project-exporter loaded
-2018-08-27T12:10:14.936Z - success: project-importer loaded
-2018-08-27T12:10:14.938Z - success: project-settings loaded
-2018-08-27T12:10:14.941Z - success: ui-kit loaded
-2018-08-27T12:10:14.944Z - success: scene loaded
-2018-08-27T12:10:14.945Z - success: sprite-editor loaded
-2018-08-27T12:10:14.947Z - success: store loaded
-2018-08-27T12:10:14.950Z - success: timeline loaded
-2018-08-27T12:10:14.950Z - normal: Loading builtin packages
-2018-08-27T12:10:14.952Z - success: asset-db-debugger loaded
-2018-08-27T12:10:14.953Z - success: code-editor loaded
-2018-08-27T12:10:14.954Z - success: color-picker loaded
-2018-08-27T12:10:14.954Z - success: jsb-adapter loaded
-2018-08-27T12:10:14.956Z - success: package-manager loaded
-2018-08-27T12:10:15.050Z - success: qqplay-adapter loaded
-2018-08-27T12:10:15.054Z - success: sdkbox loaded
-2018-08-27T12:10:15.058Z - success: tester loaded
-2018-08-27T12:10:15.061Z - success: ui-grid loaded
-2018-08-27T12:10:15.063Z - success: ui-kit-preview-extra loaded
-2018-08-27T12:10:15.064Z - success: ui-kit-preview loaded
-2018-08-27T12:10:15.066Z - success: ui-tree loaded
-2018-08-27T12:10:15.067Z - success: weapp-adapter loaded
-2018-08-27T12:10:16.143Z - normal: Loading packages
-2018-08-27T12:10:16.156Z - success: resource loaded
-2018-08-27T12:10:16.157Z - normal: Watching packages
-2018-08-27T12:10:16.538Z - normal: Run Application
-2018-08-27T12:10:17.018Z - success: preview server running at http://localhost:7456
-2018-08-27T12:53:17.898Z - info: shutdown preview server
+2018-08-27T13:01:05.459Z - normal: Load ~/.CocosCreator/settings.json
+2018-08-27T13:01:05.462Z - normal: checking language setting...
+2018-08-27T13:01:05.462Z - normal: Language: zh
+2018-08-27T13:01:07.113Z - success: protocol editor-framework registered
+2018-08-27T13:01:07.113Z - success: protocol app registered
+2018-08-27T13:01:07.113Z - success: protocol theme registered
+2018-08-27T13:01:07.113Z - success: protocol packages registered
+2018-08-27T13:01:07.113Z - success: protocol unpack registerred
+2018-08-27T13:01:07.113Z - success: protocol disable-commonjs registerred
+2018-08-27T13:01:07.328Z - normal: connected!
+2018-08-27T13:01:07.332Z - normal: Check project D:\lx\git\github\lewan\html\apiTest
+2018-08-27T13:01:07.339Z - normal: Initializing project D:\lx\git\github\lewan\html\apiTest
+2018-08-27T13:01:07.351Z - normal: Initializing Cocos2d
+2018-08-27T13:01:08.013Z - normal: Initializing Asset Database
+2018-08-27T13:01:08.059Z - success: protocol uuid registerred
+2018-08-27T13:01:08.059Z - success: protocol db registerred
+2018-08-27T13:01:08.059Z - success: protocol thumbnail registerred
+2018-08-27T13:01:08.059Z - normal: Loading editor/builtin packages
+2018-08-27T13:01:08.223Z - success: assets loaded
+2018-08-27T13:01:08.227Z - success: builder loaded
+2018-08-27T13:01:08.229Z - success: cocos-analytics loaded
+2018-08-27T13:01:08.233Z - success: console loaded
+2018-08-27T13:01:08.266Z - success: fb-instant-games loaded
+2018-08-27T13:01:08.273Z - success: hierarchy loaded
+2018-08-27T13:01:08.276Z - success: inspector loaded
+2018-08-27T13:01:08.277Z - success: keystore loaded
+2018-08-27T13:01:08.282Z - success: node-library loaded
+2018-08-27T13:01:08.284Z - success: package-asset loaded
+2018-08-27T13:01:08.286Z - success: preferences loaded
+2018-08-27T13:01:08.288Z - success: project-exporter loaded
+2018-08-27T13:01:08.303Z - success: project-importer loaded
+2018-08-27T13:01:08.307Z - success: project-settings loaded
+2018-08-27T13:01:08.310Z - success: ui-kit loaded
+2018-08-27T13:01:08.312Z - success: scene loaded
+2018-08-27T13:01:08.314Z - success: sprite-editor loaded
+2018-08-27T13:01:08.317Z - success: store loaded
+2018-08-27T13:01:08.321Z - success: timeline loaded
+2018-08-27T13:01:08.322Z - normal: Loading builtin packages
+2018-08-27T13:01:08.330Z - success: asset-db-debugger loaded
+2018-08-27T13:01:08.332Z - success: code-editor loaded
+2018-08-27T13:01:08.333Z - success: color-picker loaded
+2018-08-27T13:01:08.333Z - success: jsb-adapter loaded
+2018-08-27T13:01:08.337Z - success: package-manager loaded
+2018-08-27T13:01:08.461Z - success: qqplay-adapter loaded
+2018-08-27T13:01:08.464Z - success: sdkbox loaded
+2018-08-27T13:01:08.467Z - success: tester loaded
+2018-08-27T13:01:08.470Z - success: ui-grid loaded
+2018-08-27T13:01:08.472Z - success: ui-kit-preview-extra loaded
+2018-08-27T13:01:08.474Z - success: ui-kit-preview loaded
+2018-08-27T13:01:08.475Z - success: ui-tree loaded
+2018-08-27T13:01:08.476Z - success: weapp-adapter loaded
+2018-08-27T13:01:09.541Z - normal: Loading packages
+2018-08-27T13:01:09.547Z - success: resource loaded
+2018-08-27T13:01:09.547Z - normal: Watching packages
+2018-08-27T13:01:09.879Z - normal: Run Application
+2018-08-27T13:01:10.321Z - success: preview server running at http://localhost:7456
+2018-08-27T13:04:47.414Z - info: shutdown preview server

@@ -11,8 +11,8 @@ cc._RF.push(module, '375a3+tnfFJPLBwNEv7vy8U', 'sdk');
     apidoc -i ./apiTest/assets/Sdk -o api/
     
     在小程序后台添加合法域名：
-        https://game.llewan.com
-        https://login.llewan.com
+        https://game.llewan.com:1899
+        https://login.llewan.com:1799
 
         https://glog.aldwx.com
         https://mock.eolinker.com
