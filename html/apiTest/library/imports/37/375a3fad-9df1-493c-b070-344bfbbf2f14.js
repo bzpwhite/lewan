@@ -938,7 +938,9 @@ var sdk = {
     capture: function capture(camera, callback) {
         //.要截取的范围（全屏）
         var texture = new cc.RenderTexture();
-        texture.initWithSize(cc.visibleRect.width, cc.visibleRect.height);
+        // 如果截图内容中不包含 Mask 组件，可以不用传递第三个参数
+        var gl = cc.game._renderContext;
+        texture.initWithSize(cc.visibleRect.width, cc.visibleRect.height, gl.STENCIL_INDEX8);
         camera.targetTexture = texture;
         this.texture = texture;
 
@@ -976,6 +978,7 @@ var sdk = {
                     filePath: res1.tempFilePath,
                     success: function success(res2) {
                         console.log('==saveImageToPhotosAlbum=success=', res2);
+                        camera.render();
                         callback(true);
                     },
                     fail: function fail(res2) {
