@@ -70,52 +70,53 @@ var sdk = {
         }
         
         // this.checkUpdate();
+        
+        if (cc.sys.platform === cc.sys.WECHAT_GAME) {
+            //1.初始化后台配置信息
+            this.Get(this.ip2 + this.Config, {}, function (d) {
+                if (d && d.c == 1) {
+                    self.ConfigData = d.d;
 
-        //1.初始化后台配置信息
-        this.Get(this.ip2 + this.Config, {}, function (d) {
-            if (d && d.c == 1) {
-                self.ConfigData = d.d;
-
-                //2.初始化分享信息
-                self.Get(self.ip2 + self.Share, {}, function (d2) {
-                    console.log("初始化分享信息：",d2)
-                    if (d2 && d2.c == 1) {
-                        self.ShareList = d2.d;
-                    }else{
-                        console.log("初始化分享信息失败：",d2)
+                    //2.初始化分享信息
+                    self.Get(self.ip2 + self.Share, {}, function (d2) {
+                        console.log("初始化分享信息：",d2)
+                        if (d2 && d2.c == 1) {
+                            self.ShareList = d2.d;
+                        }else{
+                            console.log("初始化分享信息失败：",d2)
+                        }
+                        callback(true);
+                    });
+                }else{
+                    if(self.debug){
+                        console.log("后台配置信息初始化失败，再次初始化：",d)
                     }
-                    callback(true);
-                });
-            }else{
-                if(self.debug){
-                    console.log("后台配置信息初始化失败，再次初始化：",d)
+                    self.init(args, callback);
                 }
-                self.init(args, callback);
-            }
-        });
-
-        //2.统计接口
-        var option = wx.getLaunchOptionsSync();
-        option.query.share_uid = option.query.uid;
-        option.query.uid = this.userid;
-        console.log('==3统计信息==',option)
-        this.Get(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: option }, function (d) {
-            console.log("==3统计信息结果==", d)
-        });
-        wx.onShow((option)=>{
-            // console.log(option)
-            if(option.query.uid){
-                option.query.share_uid = option.query.uid;
-                option.query.uid = self.userid;
-                console.log('==4统计信息==',option)
-                self.Get(self.ip3 + self.Logcommon, { log_type: "ShareEnter", data: option }, function (d) {
-                    console.log("==4统计信息结果==", d)
-                });
-            }
-        })
+            });
+            
+            //2.统计接口
+            var option = wx.getLaunchOptionsSync();
+            option.query.share_uid = option.query.uid;
+            option.query.uid = this.userid;
+            console.log('==3统计信息==',option)
+            this.Get(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: option }, function (d) {
+                console.log("==3统计信息结果==", d)
+            });
+            wx.onShow((option)=>{
+                // console.log(option)
+                if(option.query.uid){
+                    option.query.share_uid = option.query.uid;
+                    option.query.uid = self.userid;
+                    console.log('==4统计信息==',option)
+                    self.Get(self.ip3 + self.Logcommon, { log_type: "ShareEnter", data: option }, function (d) {
+                        console.log("==4统计信息结果==", d)
+                    });
+                }
+            })
+        }
 
         
-
     },
     //.根据权重随机获取指定type类型的分享信息。
     getShareByWeight(type){

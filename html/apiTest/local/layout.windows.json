@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 298,
-      "y": 46,
-      "width": 1247,
-      "height": 918,
+      "x": 281,
+      "y": 1,
+      "width": 1260,
+      "height": 877,
       "layout": {
         "children": [
           {
@@ -18,9 +18,9 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 790,
+                "height": 748.772705078125,
                 "type": "panel",
-                "width": 204
+                "width": 205.6363525390625
               },
               {
                 "active": 3,
@@ -30,32 +30,32 @@
                   "node-library",
                   "scene"
                 ],
-                "height": 790,
+                "height": 748.772705078125,
                 "type": "panel",
-                "width": 504
+                "width": 509.04541015625
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 790,
+                "height": 748.772705078125,
                 "type": "panel",
-                "width": 204
+                "width": 205.6363525390625
               },
               {
                 "active": 0,
                 "children": [
                   "inspector"
                 ],
-                "height": 790,
+                "height": 748.772705078125,
                 "type": "panel",
-                "width": 304
+                "width": 307.4454345703125
               }
             ],
-            "height": 790,
+            "height": 748.772705078125,
             "type": "dock-h",
-            "width": 1225
+            "width": 1236.7635498046875
           }
         ],
         "type": "dock-v"
@@ -63,14 +63,13 @@
       "panels": [
         "hierarchy",
         "timeline",
-        "node-library",
         "console",
+        "node-library",
         "inspector",
         "scene",
         "assets"
       ]
-    },
-    "window-1535446625273": {}
+    }
   },
   "panels": {
     "builder": {
