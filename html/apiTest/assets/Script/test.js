@@ -34,40 +34,36 @@ cc.Class({
 
     onLoad () {
 
-        // //.初始化游戏
-        // sdk.init({
-        //     debug: true,        //.是否开启调试
-        // }, (res)=>{
-        //     // console.log('sdk初始化结果：', res)
-        //     var d1 = sdk.getConfig1();
-        //     console.log("运营配置：", d1)
+        //.初始化游戏
+        sdk.init({
+            debug: true,        //.是否开启调试
+            userid: 110         //.用户的id（兼容旧游戏，新游戏废弃）
+        }, (res)=>{
+            // console.log('sdk初始化结果：', res)
+            // var d1 = sdk.getConfig1();
+            // console.log("运营配置：", d1)
 
-        //     var d2 = sdk.getConfig2();
-        //     console.log("程序配置：", d2)
+            // var d2 = sdk.getConfig2();
+            // console.log("程序配置：", d2)
 
-        // })
+            //1.监听：用户点击右上角分享
+            sdk.onShareAppMessage({type: 0, query: "" });
 
-        // this.login();
+        })
 
 
     },
 
     start () {
         
-        sdk.init({
-            debug: true,        //.是否开启调试
-        }, (res)=>{
-            console.log('sdk初始化结果：', res)
-            // sdk.onShareAppMessage({type: 0, query: "uid=520" });
-        })
-
     },
 
     // update (dt) {},
 
-    //.分享
+    //2.主动拉起分享
     share(){
-        sdk.shareAppMessage({type: 1, query: "uid=520" });
+        sdk.shareAppMessage({type: 1, query: "nick=55" });
+
     },
 
 

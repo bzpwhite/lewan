@@ -13,9 +13,10 @@ cc._RF.push(module, '375a3+tnfFJPLBwNEv7vy8U', 'sdk', __filename);
     在小程序后台添加合法域名：
         https://game.llewan.com:1899
         https://login.llewan.com:1799
+        https://log.llewan.com:1999
+        https://res.llewan.com:2099
 
         https://glog.aldwx.com
-        https://mock.eolinker.com
  */
 
 var md5 = require("md5");
@@ -26,8 +27,10 @@ var sdk = {
     md5: md5,
     mta: mta,
     ip1: "https://login.llewan.com:1799",
-    // ip1: 'http://mock.eolinker.com/RiwKeAE4fb4e33cce254aee8509dbdd47b3898870569465?uri=https://login.llewan.com',
     ip2: "https://game.llewan.com:1899",
+
+    ip3: "https://log.llewan.com:1999",
+    ip4: "https://res.llewan.com:2099",
     debug: false, //是否开启调试
 
     login: '/Login/common',
@@ -38,9 +41,13 @@ var sdk = {
     },
     Share: "/Share/common",
     ShareList: [],
+    Logcommon: "/Log/common",
 
     BannerAd: null,
     VideoAd: null,
+
+    //.即将废弃
+    userid: 0,
 
     /**
      * @apiGroup A
@@ -48,11 +55,13 @@ var sdk = {
      * @api {初始化sdk} 使用sdk前，必须先初始化一次才能使用 init（初始化sdk）
      *
      * @apiParam {Boolean} [debug=false] 是否开启调试
+     * @apiParam {Boolean} [userid] 用户的id（兼容旧游戏，新游戏废弃）
      * 
      * @apiSuccessExample {json} 示例:
      * //.初始化游戏
      *   sdk.init({
-     *       debug: true,        //.是否开启调试
+     *      debug: true,        //.是否开启调试
+     *      userid: 110         //.用户的id（兼容旧游戏，新游戏废弃）
      *   }, (res)=>{
      *       console.log('sdk初始化结果：', res)
      *   })
@@ -62,6 +71,10 @@ var sdk = {
         if (args.debug) {
             this.debug = args.debug;
         }
+        if (args.userid) {
+            this.userid = args.userid;
+        }
+
         // this.checkUpdate();
 
         //1.初始化后台配置信息
@@ -69,21 +82,41 @@ var sdk = {
             if (d && d.c == 1) {
                 self.ConfigData = d.d;
 
-                // //2.初始化分享信息
-                // self.Get(self.ip2 + self.Share, {}, function (d2) {
-                //     console.log("初始化分享信息：",d2)
-                //     if (d2 && d2.c == 1) {
-                //         self.ShareList = d2.d;
-                //     }else{
-                //         console.log("初始化分享信息失败：",d2)
-                //     }
-                callback(true);
-                // });
+                //2.初始化分享信息
+                self.Get(self.ip2 + self.Share, {}, function (d2) {
+                    console.log("初始化分享信息：", d2);
+                    if (d2 && d2.c == 1) {
+                        self.ShareList = d2.d;
+                    } else {
+                        console.log("初始化分享信息失败：", d2);
+                    }
+                    callback(true);
+                });
             } else {
                 if (self.debug) {
                     console.log("后台配置信息初始化失败，再次初始化：", d);
                 }
                 self.init(args, callback);
+            }
+        });
+
+        //2.统计接口
+        var option = wx.getLaunchOptionsSync();
+        option.query.share_uid = option.query.uid;
+        option.query.uid = this.userid;
+        console.log('==3统计信息==', option);
+        this.Get(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: option }, function (d) {
+            console.log("==3统计信息结果==", d);
+        });
+        wx.onShow(function (option) {
+            // console.log(option)
+            if (option.query.uid) {
+                option.query.share_uid = option.query.uid;
+                option.query.uid = self.userid;
+                console.log('==4统计信息==', option);
+                self.Get(self.ip3 + self.Logcommon, { log_type: "ShareEnter", data: option }, function (d) {
+                    console.log("==4统计信息结果==", d);
+                });
             }
         });
     },
@@ -101,7 +134,6 @@ var sdk = {
             }
             //2.根据权重配比：从i集合（权重越大占比越多）中随机获取。
             var iArray = [];
-            // console.log(this.ShareList.length, "=====0====", tArray)
             for (var i = 0; i < tArray.length; i++) {
                 for (var j = 0; j < tArray[i].weight; j++) {
                     iArray.push(i);
@@ -110,11 +142,10 @@ var sdk = {
             var i = iArray[parseInt(Math.random() * iArray.length)];
             //3.结果处理：正则替换昵称
             var item = tArray[i];
-            console.log(i, "========1====", item, tArray[i]);
             if (item.title.indexOf("&nickName") != -1) {
                 item.title = item.title.replace(/&nickName/g, this.getUser().nickName);
             }
-            return item;
+            return JSON.parse(JSON.stringify(item));
         } else {
             return null;
         }
@@ -153,8 +184,14 @@ var sdk = {
                 if (obj.imageUrl) {
                     shareInfo.imageUrl = obj.imageUrl;
                 }
-                if (obj.query) {
-                    shareInfo.query += obj.query;
+                if (shareInfo.query) {
+                    shareInfo.query += obj.query + "&share_id=" + shareInfo.sysid + "&uid=" + self.userid;
+                } else {
+                    if (obj.query) {
+                        shareInfo.query = "share_id=" + shareInfo.sysid + "&uid=" + self.userid + "&" + obj.query;
+                    } else {
+                        shareInfo.query = "share_id=" + shareInfo.sysid + "&uid=" + self.userid;
+                    }
                 }
                 if (obj.success) {
                     shareInfo.success = obj.success;
@@ -162,7 +199,14 @@ var sdk = {
                 if (obj.fail) {
                     shareInfo.fail = obj.fail;
                 }
-                console.log('==onShareAppMessage根据权重随机的分享信息==', shareInfo);
+
+                //.分享统计 测试：  uid=11&share_id=22
+                var option = { 'uid': sdk.userid, 'share_id': shareInfo.sysid };
+                // console.log('==1统计信息==', { log_type: "ShareClick", data: option })
+                self.Get(self.ip3 + self.Logcommon, { log_type: "ShareClick", data: option }, function (d) {
+                    // console.log("==1统计信息结果==", d)
+                });
+
                 return shareInfo;
             });
         }
@@ -183,21 +227,27 @@ var sdk = {
      * sdk.shareAppMessage({type: 1, query: "uid=520" });
      */
     shareAppMessage: function shareAppMessage(obj) {
+        var self = this;
         //.默认1：普通分享
         var tpye = 1;
         if (obj.type) {
             tpye = obj.type;
         }
         var shareInfo = this.getShareByWeight(tpye);
-
         if (obj.title) {
             shareInfo.title = obj.title;
         }
         if (obj.imageUrl) {
             shareInfo.imageUrl = obj.imageUrl;
         }
-        if (obj.query) {
-            shareInfo.query += obj.query;
+        if (shareInfo.query) {
+            shareInfo.query += obj.query + "&share_id=" + shareInfo.sysid + "&uid=" + self.userid;
+        } else {
+            if (obj.query) {
+                shareInfo.query = "share_id=" + shareInfo.sysid + "&uid=" + self.userid + "&" + obj.query;
+            } else {
+                shareInfo.query = "share_id=" + shareInfo.sysid + "&uid=" + self.userid;
+            }
         }
         if (obj.success) {
             shareInfo.success = obj.success;
@@ -205,9 +255,16 @@ var sdk = {
         if (obj.fail) {
             shareInfo.fail = obj.fail;
         }
-        console.log('==shareAppMessage根据权重随机的分享信息==', shareInfo);
+        console.log("====111======", shareInfo);
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
             wx.shareAppMessage(shareInfo);
+
+            //.分享统计 测试： uid=11&share_id=22
+            var option = { 'uid': sdk.userid, 'share_id': shareInfo.sysid };
+            // console.log('==2统计信息==', { log_type: "ShareClick", data: option })
+            self.Get(self.ip3 + self.Logcommon, { log_type: "ShareClick", data: option }, function (d) {
+                // console.log("==2统计信息结果==", d)
+            });
         }
     },
 
