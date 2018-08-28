@@ -777,21 +777,10 @@ var sdk = {
      */
     WeChatLogin(obj, callback){
         var self = this;
-        var loginImg = 'https://laixiao.github.io/lewan/html/img/btn_start.png';
-        var imgWidth = 382/2;
-        var imgHeight = imgHeight/2;
+        
         var referee_id = '';
         var source_id = '';
         var source_id2 = '';
-        if(obj.loginImg){
-            loginImg = obj.loginImg;
-        }
-        if(obj.imgWidth){
-            imgWidth = obj.imgWidth;
-        }
-        if(obj.imgHeight){
-            imgHeight = obj.imgHeight;
-        }
         if(obj.referee_id){
             referee_id = obj.referee_id;
         }
@@ -810,71 +799,56 @@ var sdk = {
                 if(self.button){
                     self.button.show();
                 }else{
-                    wx.getSystemInfo({
-                        success(res){
-                            self.button = wx.createUserInfoButton({
-                                type: 'image',
-                                image: loginImg,
-                                style: {
-                                    left: res.screenWidth/2 - imgWidth/2,
-                                    top: res.screenHeight/2 - imgHeight/2,
-                                    width: imgWidth,
-                                    height: imgHeight,
-                                }
-                            })
-                            self.button.onTap((res1) => {
-                                // 处理用户拒绝授权的情况
-                                // if (res1.errMsg.indexOf('auth deny') > -1 || res1.errMsg.indexOf('auth denied') > -1 ) {
-                                //     wx.showToast();
-                                // }
-                                wx.showToast({title: '登录中...',icon:'loading',duration: 8});
-                                wx.getSetting({
-                                    success(auths){
-                                        if(auths.authSetting["scope.userInfo"]){
-                                            console.log('===已经授权===');
-                                            wx.login({
-                                                success(res2){ 
-                                                    var reqData = {   
-                                                        code: res2.code,
-                                                        rawData: res1.rawData,
-                                                        iv: res1.iv,
-                                                        encryptedData: res1.encryptedData,
-                                                        signature: res1.signature,
+                    self.button = wx.createUserInfoButton(obj.buttonConfig)
+                    self.button.onTap((res1) => {
+                        // 处理用户拒绝授权的情况
+                        // if (res1.errMsg.indexOf('auth deny') > -1 || res1.errMsg.indexOf('auth denied') > -1 ) {
+                        //     wx.showToast();
+                        // }
+                        wx.showToast({title: '登录中...',icon:'loading',duration: 8});
+                        wx.getSetting({
+                            success(auths){
+                                if(auths.authSetting["scope.userInfo"]){
+                                    console.log('===已经授权===');
+                                    wx.login({
+                                        success(res2){ 
+                                            var reqData = {   
+                                                code: res2.code,
+                                                rawData: res1.rawData,
+                                                iv: res1.iv,
+                                                encryptedData: res1.encryptedData,
+                                                signature: res1.signature,
 
-                                                        referee_id: referee_id,
-                                                        source_id: source_id,
-                                                        source_id2: source_id2
-                                                    }
-                                                    // console.log('==登录参数==', reqData)
-                                                    self.Post(self.ip1 + self.login, reqData, function(data){
-                                                        // console.log('==登录结果==', data)
-                                                        if(data.c == 1){
-                                                            wx.hideToast();
-                                                            self.setItem('userinfo',data.d);
-                                                            self.button.hide();
-                                                            callback(data.d);
-                                                        }else{
-                                                            wx.showToast({title: '登录失败请重试'});
-                                                        }                
-                                                    });
-                                                },
-                                                fail(){
+                                                referee_id: referee_id,
+                                                source_id: source_id,
+                                                source_id2: source_id2
+                                            }
+                                            // console.log('==登录参数==', reqData)
+                                            self.Post(self.ip1 + self.login, reqData, function(data){
+                                                // console.log('==登录结果==', data)
+                                                if(data.c == 1){
+                                                    wx.hideToast();
+                                                    self.setItem('userinfo',data.d);
+                                                    self.button.hide();
+                                                    callback(data.d);
+                                                }else{
+                                                    console.log('==登录接口请求失败==', data)
                                                     wx.showToast({title: '登录失败请重试'});
-                                                    callback(false)
-                                                },
-                                            })
-                                        }else{
+                                                }                
+                                            });
+                                        },
+                                        fail(){
+                                            wx.showToast({title: '登录失败请重试'});
                                             callback(false)
-                                        }
-                                    }
-                                })        
-                            })
-                            self.button.show()
-                        },
-                        fail(){
-                            callback(false)
-                        }
+                                        },
+                                    })
+                                }else{
+                                    callback(false)
+                                }
+                            }
+                        })        
                     })
+                    self.button.show()
                 }
             }
         }

@@ -1,58 +1,835 @@
-2018-08-28T11:44:39.269Z - normal: Load ~/.CocosCreator/settings.json
-2018-08-28T11:44:39.278Z - normal: checking language setting...
-2018-08-28T11:44:39.279Z - normal: Language: zh
-2018-08-28T11:44:41.348Z - success: protocol editor-framework registered
-2018-08-28T11:44:41.348Z - success: protocol app registered
-2018-08-28T11:44:41.349Z - success: protocol theme registered
-2018-08-28T11:44:41.349Z - success: protocol packages registered
-2018-08-28T11:44:41.349Z - success: protocol unpack registerred
-2018-08-28T11:44:41.349Z - success: protocol disable-commonjs registerred
-2018-08-28T11:44:41.595Z - normal: connected!
-2018-08-28T11:44:41.598Z - normal: Check project C:\lx\git\github\lewan\html\apiTest
-2018-08-28T11:44:41.605Z - normal: Initializing project C:\lx\git\github\lewan\html\apiTest
-2018-08-28T11:44:41.609Z - normal: Initializing Cocos2d
-2018-08-28T11:44:42.775Z - normal: Initializing Asset Database
-2018-08-28T11:44:42.866Z - success: protocol uuid registerred
-2018-08-28T11:44:42.866Z - success: protocol db registerred
-2018-08-28T11:44:42.866Z - success: protocol thumbnail registerred
-2018-08-28T11:44:42.866Z - normal: Loading editor/builtin packages
-2018-08-28T11:44:43.152Z - success: assets loaded
-2018-08-28T11:44:43.155Z - success: builder loaded
-2018-08-28T11:44:43.158Z - success: cocos-analytics loaded
-2018-08-28T11:44:43.162Z - success: console loaded
-2018-08-28T11:44:43.218Z - success: fb-instant-games loaded
-2018-08-28T11:44:43.223Z - success: hierarchy loaded
-2018-08-28T11:44:43.227Z - success: inspector loaded
-2018-08-28T11:44:43.228Z - success: keystore loaded
-2018-08-28T11:44:43.235Z - success: node-library loaded
-2018-08-28T11:44:43.237Z - success: package-asset loaded
-2018-08-28T11:44:43.238Z - success: preferences loaded
-2018-08-28T11:44:43.240Z - success: project-exporter loaded
-2018-08-28T11:44:43.262Z - success: project-importer loaded
-2018-08-28T11:44:43.266Z - success: project-settings loaded
-2018-08-28T11:44:43.269Z - success: ui-kit loaded
-2018-08-28T11:44:43.273Z - success: scene loaded
-2018-08-28T11:44:43.274Z - success: sprite-editor loaded
-2018-08-28T11:44:43.278Z - success: store loaded
-2018-08-28T11:44:43.283Z - success: timeline loaded
-2018-08-28T11:44:43.283Z - normal: Loading builtin packages
-2018-08-28T11:44:43.287Z - success: asset-db-debugger loaded
-2018-08-28T11:44:43.289Z - success: code-editor loaded
-2018-08-28T11:44:43.289Z - success: color-picker loaded
-2018-08-28T11:44:43.290Z - success: jsb-adapter loaded
-2018-08-28T11:44:43.295Z - success: package-manager loaded
-2018-08-28T11:44:43.453Z - success: qqplay-adapter loaded
-2018-08-28T11:44:43.458Z - success: sdkbox loaded
-2018-08-28T11:44:43.462Z - success: tester loaded
-2018-08-28T11:44:43.464Z - success: ui-grid loaded
-2018-08-28T11:44:43.466Z - success: ui-kit-preview-extra loaded
-2018-08-28T11:44:43.468Z - success: ui-kit-preview loaded
-2018-08-28T11:44:43.470Z - success: ui-tree loaded
-2018-08-28T11:44:43.471Z - success: weapp-adapter loaded
-2018-08-28T11:44:45.576Z - normal: Loading packages
-2018-08-28T11:44:45.589Z - success: resource loaded
-2018-08-28T11:44:45.591Z - success: yw loaded
-2018-08-28T11:44:45.591Z - normal: Watching packages
-2018-08-28T11:44:46.368Z - normal: Run Application
-2018-08-28T11:44:47.061Z - success: preview server running at http://localhost:7456
-2018-08-28T11:48:32.564Z - info: shutdown preview server
+2018-08-28T15:17:51.028Z - normal: Load ~/.CocosCreator/settings.json
+2018-08-28T15:17:51.031Z - normal: checking language setting...
+2018-08-28T15:17:51.031Z - normal: Language: zh
+2018-08-28T15:17:53.429Z - success: protocol editor-framework registered
+2018-08-28T15:17:53.429Z - success: protocol app registered
+2018-08-28T15:17:53.429Z - success: protocol theme registered
+2018-08-28T15:17:53.429Z - success: protocol packages registered
+2018-08-28T15:17:53.429Z - success: protocol unpack registerred
+2018-08-28T15:17:53.429Z - success: protocol disable-commonjs registerred
+2018-08-28T15:17:53.645Z - normal: connected!
+2018-08-28T15:17:53.648Z - normal: Check project D:\laixiao\git\github\lewan\html\apiTest
+2018-08-28T15:17:53.659Z - normal: Initializing project D:\laixiao\git\github\lewan\html\apiTest
+2018-08-28T15:17:53.662Z - normal: Initializing Cocos2d
+2018-08-28T15:17:54.855Z - normal: Initializing Asset Database
+2018-08-28T15:17:54.929Z - success: protocol uuid registerred
+2018-08-28T15:17:54.929Z - success: protocol db registerred
+2018-08-28T15:17:54.929Z - success: protocol thumbnail registerred
+2018-08-28T15:17:54.929Z - normal: Loading editor/builtin packages
+2018-08-28T15:17:55.244Z - success: assets loaded
+2018-08-28T15:17:55.247Z - success: builder loaded
+2018-08-28T15:17:55.250Z - success: cocos-analytics loaded
+2018-08-28T15:17:55.254Z - success: console loaded
+2018-08-28T15:17:55.300Z - success: fb-instant-games loaded
+2018-08-28T15:17:55.307Z - success: hierarchy loaded
+2018-08-28T15:17:55.309Z - success: inspector loaded
+2018-08-28T15:17:55.310Z - success: keystore loaded
+2018-08-28T15:17:55.315Z - success: node-library loaded
+2018-08-28T15:17:55.317Z - success: package-asset loaded
+2018-08-28T15:17:55.318Z - success: preferences loaded
+2018-08-28T15:17:55.320Z - success: project-exporter loaded
+2018-08-28T15:17:55.338Z - success: project-importer loaded
+2018-08-28T15:17:55.340Z - success: project-settings loaded
+2018-08-28T15:17:55.342Z - success: ui-kit loaded
+2018-08-28T15:17:55.345Z - success: scene loaded
+2018-08-28T15:17:55.346Z - success: sprite-editor loaded
+2018-08-28T15:17:55.351Z - success: store loaded
+2018-08-28T15:17:55.354Z - success: timeline loaded
+2018-08-28T15:17:55.355Z - normal: Loading builtin packages
+2018-08-28T15:17:55.495Z - success: asset-db-debugger loaded
+2018-08-28T15:17:55.506Z - success: code-editor loaded
+2018-08-28T15:17:55.506Z - success: color-picker loaded
+2018-08-28T15:17:55.507Z - success: jsb-adapter loaded
+2018-08-28T15:17:55.518Z - success: package-manager loaded
+2018-08-28T15:17:56.008Z - success: qqplay-adapter loaded
+2018-08-28T15:17:56.055Z - success: sdkbox loaded
+2018-08-28T15:17:56.066Z - success: tester loaded
+2018-08-28T15:17:56.071Z - success: ui-grid loaded
+2018-08-28T15:17:56.086Z - success: ui-kit-preview-extra loaded
+2018-08-28T15:17:56.093Z - success: ui-kit-preview loaded
+2018-08-28T15:17:56.096Z - success: ui-tree loaded
+2018-08-28T15:17:56.097Z - success: weapp-adapter loaded
+2018-08-28T15:17:57.828Z - normal: Loading packages
+2018-08-28T15:17:57.836Z - success: resource loaded
+2018-08-28T15:17:57.836Z - normal: Watching packages
+2018-08-28T15:17:58.471Z - normal: Run Application
+2018-08-28T15:18:02.387Z - success: preview server running at http://localhost:7456
+2018-08-28T15:48:26.848Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build",
+  "debug": false,
+  "dest": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build\\wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49",
+    "7e8c8fe8-f6b6-4591-8877-bb453faee2db"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "demo",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx1990cf9754a1483d",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "xxteaKey": "6333ff63-e93b-42",
+  "zipCompressJs": true,
+  "project": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest",
+  "projectName": "demo",
+  "debugBuildWorker": false
+}
+2018-08-28T15:48:26.850Z - normal: Building D:\laixiao\git\github\lewan\html\apiTest
+2018-08-28T15:48:26.851Z - normal: Destination D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame
+2018-08-28T15:48:27.376Z - normal: Delete D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame\**\*
+2018-08-28T15:48:31.821Z - normal: Start building assets
+2018-08-28T15:48:31.821Z - normal: Start spawn build-worker
+2018-08-28T15:48:32.612Z - normal: Finish spawn build-worker
+2018-08-28T15:48:32.612Z - normal: Start init build-worker
+2018-08-28T15:48:35.145Z - normal: Initializing...
+
+2018-08-28T15:48:35.173Z - normal: idePortFile: C:\Users\admin\AppData\Local\微信web开发者工具\User Data\Default\.ide
+
+2018-08-28T15:48:36.011Z - normal: Finish init build-worker
+2018-08-28T15:48:36.011Z - normal: Start build-assets in worker
+2018-08-28T15:48:36.211Z - normal: starting ide...
+
+2018-08-28T15:48:36.280Z - normal: Finish build-assets in worker
+2018-08-28T15:48:36.288Z - normal: Finish building assets
+2018-08-28T15:48:36.295Z - normal: Start building plugin scripts
+2018-08-28T15:48:36.319Z - normal: Generating main.js from D:\laixiao\cocos\install\CocosCreator\resources\static\build-templates\shares\main.js
+2018-08-28T15:48:37.500Z - normal: Built to "D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame" successfully
+2018-08-28T15:48:41.170Z - normal: IDE server has started, listening on http://127.0.0.1:10475
+
+2018-08-28T15:48:41.175Z - normal: initialization finished
+
+2018-08-28T15:48:41.374Z - error: StatusCodeError: 400 - "{\"code\":40000,\"error\":\"错误 需要重新登录\"}"
+
+    at Socket.<anonymous> (D:\laixiao\cocos\install\CocosCreator\resources\app.asar\editor\core\wechat-game.js:1:900)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:191:7)
+    at readableAddChunk (_stream_readable.js:178:18)
+    at Socket.Readable.push (_stream_readable.js:136:10)
+    at Pipe.onread (net.js:560:20)
+2018-08-28T15:51:12.687Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build",
+  "debug": false,
+  "dest": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build\\wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49",
+    "7e8c8fe8-f6b6-4591-8877-bb453faee2db"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "demo",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx1990cf9754a1483d",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "xxteaKey": "6333ff63-e93b-42",
+  "zipCompressJs": true,
+  "project": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest",
+  "projectName": "demo",
+  "debugBuildWorker": false
+}
+2018-08-28T15:51:12.692Z - normal: Building D:\laixiao\git\github\lewan\html\apiTest
+2018-08-28T15:51:12.692Z - normal: Destination D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame
+2018-08-28T15:51:12.697Z - normal: Delete D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame\**\*
+2018-08-28T15:51:16.292Z - normal: Start building assets
+2018-08-28T15:51:16.292Z - normal: Start spawn build-worker
+2018-08-28T15:51:17.168Z - normal: Finish spawn build-worker
+2018-08-28T15:51:17.168Z - normal: Start init build-worker
+2018-08-28T15:51:20.534Z - normal: Finish init build-worker
+2018-08-28T15:51:20.534Z - normal: Start build-assets in worker
+2018-08-28T15:51:20.747Z - normal: Finish build-assets in worker
+2018-08-28T15:51:20.755Z - normal: Finish building assets
+2018-08-28T15:51:20.761Z - normal: Start building plugin scripts
+2018-08-28T15:51:20.767Z - normal: Generating main.js from D:\laixiao\cocos\install\CocosCreator\resources\static\build-templates\shares\main.js
+2018-08-28T15:51:21.706Z - normal: Built to "D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame" successfully
+2018-08-28T15:54:01.814Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build",
+  "debug": false,
+  "dest": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build\\wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49",
+    "7e8c8fe8-f6b6-4591-8877-bb453faee2db"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "demo",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx1990cf9754a1483d",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "xxteaKey": "6333ff63-e93b-42",
+  "zipCompressJs": true,
+  "project": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest",
+  "projectName": "demo",
+  "debugBuildWorker": false
+}
+2018-08-28T15:54:01.818Z - normal: Building D:\laixiao\git\github\lewan\html\apiTest
+2018-08-28T15:54:01.819Z - normal: Destination D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame
+2018-08-28T15:54:01.821Z - normal: Delete D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame\**\*
+2018-08-28T15:54:05.528Z - normal: Start building assets
+2018-08-28T15:54:05.528Z - normal: Start spawn build-worker
+2018-08-28T15:54:06.319Z - normal: Finish spawn build-worker
+2018-08-28T15:54:06.319Z - normal: Start init build-worker
+2018-08-28T15:54:09.659Z - normal: Finish init build-worker
+2018-08-28T15:54:09.659Z - normal: Start build-assets in worker
+2018-08-28T15:54:09.877Z - normal: Finish build-assets in worker
+2018-08-28T15:54:09.885Z - normal: Finish building assets
+2018-08-28T15:54:09.890Z - normal: Start building plugin scripts
+2018-08-28T15:54:09.896Z - normal: Generating main.js from D:\laixiao\cocos\install\CocosCreator\resources\static\build-templates\shares\main.js
+2018-08-28T15:54:10.791Z - normal: Built to "D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame" successfully
+2018-08-28T15:55:19.248Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build",
+  "debug": false,
+  "dest": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build\\wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49",
+    "7e8c8fe8-f6b6-4591-8877-bb453faee2db"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "demo",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx1990cf9754a1483d",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "xxteaKey": "6333ff63-e93b-42",
+  "zipCompressJs": true,
+  "project": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest",
+  "projectName": "demo",
+  "debugBuildWorker": false
+}
+2018-08-28T15:55:19.252Z - normal: Building D:\laixiao\git\github\lewan\html\apiTest
+2018-08-28T15:55:19.252Z - normal: Destination D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame
+2018-08-28T15:55:19.253Z - normal: Delete D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame\**\*
+2018-08-28T15:55:23.082Z - normal: Start building assets
+2018-08-28T15:55:23.083Z - normal: Start spawn build-worker
+2018-08-28T15:55:23.912Z - normal: Finish spawn build-worker
+2018-08-28T15:55:23.912Z - normal: Start init build-worker
+2018-08-28T15:55:27.475Z - normal: Finish init build-worker
+2018-08-28T15:55:27.475Z - normal: Start build-assets in worker
+2018-08-28T15:55:27.693Z - normal: Finish build-assets in worker
+2018-08-28T15:55:27.699Z - normal: Finish building assets
+2018-08-28T15:55:27.705Z - normal: Start building plugin scripts
+2018-08-28T15:55:27.711Z - normal: Generating main.js from D:\laixiao\cocos\install\CocosCreator\resources\static\build-templates\shares\main.js
+2018-08-28T15:55:28.662Z - normal: Built to "D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame" successfully
+2018-08-28T15:56:57.505Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build",
+  "debug": false,
+  "dest": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build\\wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49",
+    "7e8c8fe8-f6b6-4591-8877-bb453faee2db"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "demo",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx1990cf9754a1483d",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "xxteaKey": "6333ff63-e93b-42",
+  "zipCompressJs": true,
+  "project": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest",
+  "projectName": "demo",
+  "debugBuildWorker": false
+}
+2018-08-28T15:56:57.511Z - normal: Building D:\laixiao\git\github\lewan\html\apiTest
+2018-08-28T15:56:57.511Z - normal: Destination D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame
+2018-08-28T15:56:57.513Z - normal: Delete D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame\**\*
+2018-08-28T15:57:01.456Z - normal: Start building assets
+2018-08-28T15:57:01.456Z - normal: Start spawn build-worker
+2018-08-28T15:57:02.301Z - normal: Finish spawn build-worker
+2018-08-28T15:57:02.301Z - normal: Start init build-worker
+2018-08-28T15:57:05.871Z - normal: Finish init build-worker
+2018-08-28T15:57:05.871Z - normal: Start build-assets in worker
+2018-08-28T15:57:06.112Z - normal: Finish build-assets in worker
+2018-08-28T15:57:06.120Z - normal: Finish building assets
+2018-08-28T15:57:06.127Z - normal: Start building plugin scripts
+2018-08-28T15:57:06.132Z - normal: Generating main.js from D:\laixiao\cocos\install\CocosCreator\resources\static\build-templates\shares\main.js
+2018-08-28T15:57:07.314Z - normal: Built to "D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame" successfully
+2018-08-28T15:57:10.216Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build",
+  "debug": false,
+  "dest": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build\\wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49",
+    "7e8c8fe8-f6b6-4591-8877-bb453faee2db"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "demo",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx1990cf9754a1483d",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "xxteaKey": "6333ff63-e93b-42",
+  "zipCompressJs": true,
+  "project": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest",
+  "projectName": "demo",
+  "debugBuildWorker": false
+}
+2018-08-28T15:57:10.216Z - normal: Building D:\laixiao\git\github\lewan\html\apiTest
+2018-08-28T15:57:10.217Z - normal: Destination D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame
+2018-08-28T15:57:10.225Z - normal: Delete D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame\**\*
+2018-08-28T15:57:13.802Z - normal: Start building assets
+2018-08-28T15:57:13.803Z - normal: Start spawn build-worker
+2018-08-28T15:57:14.627Z - normal: Finish spawn build-worker
+2018-08-28T15:57:14.628Z - normal: Start init build-worker
+2018-08-28T15:57:18.203Z - normal: Finish init build-worker
+2018-08-28T15:57:18.203Z - normal: Start build-assets in worker
+2018-08-28T15:57:18.425Z - normal: Finish build-assets in worker
+2018-08-28T15:57:18.430Z - normal: Finish building assets
+2018-08-28T15:57:18.435Z - normal: Start building plugin scripts
+2018-08-28T15:57:18.440Z - normal: Generating main.js from D:\laixiao\cocos\install\CocosCreator\resources\static\build-templates\shares\main.js
+2018-08-28T15:57:19.251Z - normal: Built to "D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame" successfully
+2018-08-28T15:57:25.905Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build",
+  "debug": false,
+  "dest": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build\\wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49",
+    "7e8c8fe8-f6b6-4591-8877-bb453faee2db"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "demo",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx1990cf9754a1483d",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "xxteaKey": "6333ff63-e93b-42",
+  "zipCompressJs": true,
+  "project": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest",
+  "projectName": "demo",
+  "debugBuildWorker": false
+}
+2018-08-28T15:57:25.905Z - normal: Building D:\laixiao\git\github\lewan\html\apiTest
+2018-08-28T15:57:25.905Z - normal: Destination D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame
+2018-08-28T15:57:25.906Z - normal: Delete D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame\**\*
+2018-08-28T15:57:29.137Z - normal: Start building assets
+2018-08-28T15:57:29.137Z - normal: Start spawn build-worker
+2018-08-28T15:57:29.954Z - normal: Finish spawn build-worker
+2018-08-28T15:57:29.954Z - normal: Start init build-worker
+2018-08-28T15:57:33.323Z - normal: Finish init build-worker
+2018-08-28T15:57:33.323Z - normal: Start build-assets in worker
+2018-08-28T15:57:33.546Z - normal: Finish build-assets in worker
+2018-08-28T15:57:33.557Z - normal: Finish building assets
+2018-08-28T15:57:33.561Z - normal: Start building plugin scripts
+2018-08-28T15:57:33.568Z - normal: Generating main.js from D:\laixiao\cocos\install\CocosCreator\resources\static\build-templates\shares\main.js
+2018-08-28T15:57:34.373Z - normal: Built to "D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame" successfully
+2018-08-28T15:57:57.096Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build",
+  "debug": false,
+  "dest": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build\\wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49",
+    "7e8c8fe8-f6b6-4591-8877-bb453faee2db"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "demo",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx1990cf9754a1483d",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "xxteaKey": "6333ff63-e93b-42",
+  "zipCompressJs": true,
+  "project": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest",
+  "projectName": "demo",
+  "debugBuildWorker": false
+}
+2018-08-28T15:57:57.096Z - normal: Building D:\laixiao\git\github\lewan\html\apiTest
+2018-08-28T15:57:57.096Z - normal: Destination D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame
+2018-08-28T15:57:57.097Z - normal: Delete D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame\**\*
+2018-08-28T15:58:00.678Z - normal: Start building assets
+2018-08-28T15:58:00.678Z - normal: Start spawn build-worker
+2018-08-28T15:58:01.518Z - normal: Finish spawn build-worker
+2018-08-28T15:58:01.518Z - normal: Start init build-worker
+2018-08-28T15:58:04.907Z - normal: Finish init build-worker
+2018-08-28T15:58:04.907Z - normal: Start build-assets in worker
+2018-08-28T15:58:05.129Z - normal: Finish build-assets in worker
+2018-08-28T15:58:05.135Z - normal: Finish building assets
+2018-08-28T15:58:05.139Z - normal: Start building plugin scripts
+2018-08-28T15:58:05.143Z - normal: Generating main.js from D:\laixiao\cocos\install\CocosCreator\resources\static\build-templates\shares\main.js
+2018-08-28T15:58:06.137Z - normal: Built to "D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame" successfully
+2018-08-28T15:58:58.031Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build",
+  "debug": false,
+  "dest": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build\\wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49",
+    "7e8c8fe8-f6b6-4591-8877-bb453faee2db"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "demo",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx1990cf9754a1483d",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "xxteaKey": "6333ff63-e93b-42",
+  "zipCompressJs": true,
+  "project": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest",
+  "projectName": "demo",
+  "debugBuildWorker": false
+}
+2018-08-28T15:58:58.034Z - normal: Building D:\laixiao\git\github\lewan\html\apiTest
+2018-08-28T15:58:58.034Z - normal: Destination D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame
+2018-08-28T15:58:58.037Z - normal: Delete D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame\**\*
+2018-08-28T15:59:01.678Z - normal: Start building assets
+2018-08-28T15:59:01.678Z - normal: Start spawn build-worker
+2018-08-28T15:59:02.503Z - normal: Finish spawn build-worker
+2018-08-28T15:59:02.503Z - normal: Start init build-worker
+2018-08-28T15:59:06.042Z - normal: Finish init build-worker
+2018-08-28T15:59:06.042Z - normal: Start build-assets in worker
+2018-08-28T15:59:06.257Z - normal: Finish build-assets in worker
+2018-08-28T15:59:06.262Z - normal: Finish building assets
+2018-08-28T15:59:06.268Z - normal: Start building plugin scripts
+2018-08-28T15:59:06.272Z - normal: Generating main.js from D:\laixiao\cocos\install\CocosCreator\resources\static\build-templates\shares\main.js
+2018-08-28T15:59:07.186Z - normal: Built to "D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame" successfully
+2018-08-28T16:01:27.634Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build",
+  "debug": false,
+  "dest": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest\\build\\wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49",
+    "7e8c8fe8-f6b6-4591-8877-bb453faee2db"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "demo",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx1990cf9754a1483d",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "xxteaKey": "6333ff63-e93b-42",
+  "zipCompressJs": true,
+  "project": "D:\\laixiao\\git\\github\\lewan\\html\\apiTest",
+  "projectName": "demo",
+  "debugBuildWorker": false
+}
+2018-08-28T16:01:27.638Z - normal: Building D:\laixiao\git\github\lewan\html\apiTest
+2018-08-28T16:01:27.639Z - normal: Destination D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame
+2018-08-28T16:01:27.640Z - normal: Delete D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame\**\*
+2018-08-28T16:01:31.230Z - normal: Start building assets
+2018-08-28T16:01:31.230Z - normal: Start spawn build-worker
+2018-08-28T16:01:32.011Z - normal: Finish spawn build-worker
+2018-08-28T16:01:32.011Z - normal: Start init build-worker
+2018-08-28T16:01:35.340Z - normal: Finish init build-worker
+2018-08-28T16:01:35.340Z - normal: Start build-assets in worker
+2018-08-28T16:01:35.563Z - normal: Finish build-assets in worker
+2018-08-28T16:01:35.571Z - normal: Finish building assets
+2018-08-28T16:01:35.577Z - normal: Start building plugin scripts
+2018-08-28T16:01:35.581Z - normal: Generating main.js from D:\laixiao\cocos\install\CocosCreator\resources\static\build-templates\shares\main.js
+2018-08-28T16:01:36.466Z - normal: Built to "D:\laixiao\git\github\lewan\html\apiTest\build\wechatgame" successfully
+2018-08-28T16:02:03.381Z - info: shutdown preview server
