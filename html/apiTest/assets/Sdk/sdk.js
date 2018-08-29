@@ -100,7 +100,7 @@ var sdk = {
             option.query.share_uid = option.query.uid;
             option.query.uid = this.userid;
             // console.log('==3统计信息==',option)
-            this.Get(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: option }, function (d) {
+            this.Get(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
                 // console.log("==3统计信息结果==", d)
             });
             wx.onShow((option)=>{
@@ -109,7 +109,7 @@ var sdk = {
                     option.query.share_uid = option.query.uid;
                     option.query.uid = self.userid;
                     // console.log('==4统计信息==',option)
-                    self.Get(self.ip3 + self.Logcommon, { log_type: "ShareEnter", data: option }, function (d) {
+                    self.Get(self.ip3 + self.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
                         // console.log("==4统计信息结果==", d)
                     });
                 }
@@ -199,7 +199,7 @@ var sdk = {
                 //.分享统计 测试：  uid=11&share_id=22
                 var option = {'uid': sdk.userid, 'share_id': shareInfo.sysid };
                 // console.log('==1统计信息==', { log_type: "ShareClick", data: option })
-                self.Get(self.ip3 + self.Logcommon, { log_type: "ShareClick", data: option }, function (d) {
+                self.Get(self.ip3 + self.Logcommon, { log_type: "ShareClick", data: JSON.stringify(option) }, function (d) {
                     // console.log("==1统计信息结果==", d)
                 });
 
@@ -257,7 +257,7 @@ var sdk = {
             //.分享统计 测试： uid=11&share_id=22
             var option = {'uid': sdk.userid, 'share_id': shareInfo.sysid };
             // console.log('==2统计信息==', { log_type: "ShareClick", data: option })
-            self.Get(self.ip3 + self.Logcommon, { log_type: "ShareClick", data: option }, function (d) {
+            self.Get(self.ip3 + self.Logcommon, { log_type: "ShareClick", data: JSON.stringify(option) }, function (d) {
                 // console.log("==2统计信息结果==", d)
             });
         }

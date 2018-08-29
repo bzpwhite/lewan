@@ -50,7 +50,7 @@ cc.Class({
             // console.log("程序配置：", d2)
 
             //.监听：用户点击右上角分享
-            // sdk.onShareAppMessage({type: 0, query: "" });
+            sdk.onShareAppMessage({type: 0, query: "" });
 
         })
 
