@@ -55,7 +55,7 @@ var sdk = {
      * @api {初始化sdk} 使用sdk前，必须先初始化一次才能使用 init（初始化sdk）
      *
      * @apiParam {Boolean} [debug=false] 是否开启调试
-     * @apiParam {Boolean} [userid] 用户的id（兼容旧游戏，新游戏废弃）
+     * @apiParam {int} [userid] 用户的id（兼容旧游戏，新游戏废弃）
      * 
      * @apiSuccessExample {json} 示例:
      * //.初始化游戏
@@ -75,7 +75,7 @@ var sdk = {
             this.userid = args.userid;
         }
 
-        // this.checkUpdate();
+        this.checkUpdate();
 
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
             //1.初始化后台配置信息
@@ -455,6 +455,7 @@ var sdk = {
      * sdk.checkUpdate();
      */
     checkUpdate: function checkUpdate() {
+        var self = this;
         if (cc.sys.platform === cc.sys.WECHAT_GAME && typeof wx.getUpdateManager === 'function') {
             var updateManager = wx.getUpdateManager();
             updateManager.onCheckForUpdate(function (res) {
@@ -532,6 +533,7 @@ var sdk = {
      * @api {获取本地用户信息} 获取本地用户信息（登录成功后，会在本地存储用户信息） getUser（获取用户信息）
      * 
      * @apiSuccessExample {json} 示例:
+     * //.不存在返回null
      * var user = sdk.getUser();
      */
     getUser: function getUser() {
@@ -679,9 +681,10 @@ var sdk = {
      * 
      * @apiSuccessExample {json} 示例:
      * wx.getFriendCloudStorage({
-     *       keyList: ["yw_score"],
+     *       keyList: ["score"],
      *       success(res){
-     *           var ListData = sdk.sortList(res.data, 'yw_score', true));
+     *           var ListData = sdk.sortList(res.data, 'score', true));
+     *           console.log("=排序后的数据=", ListData);
      *       },
      *       fail(){
      *           console.log(res)
@@ -790,18 +793,18 @@ var sdk = {
      * @apiGroup C
      * @apiName WeChatLogin
      * @api {微信登录} 微信登录 WeChatLogin（登录）
-     * @apiParam {String} loginImg 登录按钮图片
-     * @apiParam {String} imgWidth 图片宽度
-     * @apiParam {String} imgHeight 图片高度
+     * @apiParam {Object} buttonConfig 登录按钮配置，参考：https://developers.weixin.qq.com/minigame/dev/document/open-api/user-info/wx.createUserInfoButton.html
      * 
      * @apiSuccessExample {json} 示例:
-     * //.登录按钮图片、图片宽度、图片高度
-     *   sdk.WeChatLogin({loginImg: 'https://laixiao.github.io/lewan/html/img/btn_start.png', imgWidth:382, imgHeight: 164}, (d)=>{
-     *       if(d){
-     *           console.log(d)
-     *       }else{
-     *           console.log("登陆失败，请重试")
+     *   //调用sdk登录
+     *   sdk.WeChatLogin({
+     *       buttonConfig:{
+     *           type: 'image',
+     *           image: 'https://laixiao.github.io/lewan/html/img/btn_start.png',
+     *           style: {  width: 382, height: 164, top: res.screenHeight/2-164/2, left: res.screenWidth/2-382/2 }
      *       }
+     *   }, (d)=>{
+     *       console.log("登陆状态：", d)
      *   });
      * 
      * 

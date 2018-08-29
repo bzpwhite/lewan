@@ -15,6 +15,13 @@
             "field": "debug",
             "defaultValue": "false",
             "description": "<p>是否开启调试</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "userid",
+            "description": "<p>用户的id（兼容旧游戏，新游戏废弃）</p>"
           }
         ]
       }
@@ -23,7 +30,7 @@
       "examples": [
         {
           "title": "示例:",
-          "content": "//.初始化游戏\n  sdk.init({\n      debug: true,        //.是否开启调试\n  }, (res)=>{\n      console.log('sdk初始化结果：', res)\n  })",
+          "content": "//.初始化游戏\n  sdk.init({\n     debug: true,        //.是否开启调试\n     userid: 110         //.用户的id（兼容旧游戏，新游戏废弃）\n  }, (res)=>{\n      console.log('sdk初始化结果：', res)\n  })",
           "type": "json"
         }
       ]
@@ -213,24 +220,10 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "Object",
             "optional": false,
-            "field": "loginImg",
-            "description": "<p>登录按钮图片</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "imgWidth",
-            "description": "<p>图片宽度</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "imgHeight",
-            "description": "<p>图片高度</p>"
+            "field": "buttonConfig",
+            "description": "<p>登录按钮配置，参考：https://developers.weixin.qq.com/minigame/dev/document/open-api/user-info/wx.createUserInfoButton.html</p>"
           }
         ]
       }
@@ -239,7 +232,7 @@
       "examples": [
         {
           "title": "示例:",
-          "content": "//.登录按钮图片、图片宽度、图片高度\n  sdk.WeChatLogin({loginImg: 'https://laixiao.github.io/lewan/html/img/btn_start.png', imgWidth:382, imgHeight: 164}, (d)=>{\n      if(d){\n          console.log(d)\n      }else{\n          console.log(\"登陆失败，请重试\")\n      }\n  });",
+          "content": "//调用sdk登录\nsdk.WeChatLogin({\n    buttonConfig:{\n        type: 'image',\n        image: 'https://laixiao.github.io/lewan/html/img/btn_start.png',\n        style: {  width: 382, height: 164, top: res.screenHeight/2-164/2, left: res.screenWidth/2-382/2 }\n    }\n}, (d)=>{\n    console.log(\"登陆状态：\", d)\n});",
           "type": "json"
         }
       ]
@@ -490,7 +483,7 @@
       "examples": [
         {
           "title": "示例:",
-          "content": "var user = sdk.getUser();",
+          "content": "//.不存在返回null\nvar user = sdk.getUser();",
           "type": "json"
         }
       ]
@@ -775,7 +768,7 @@
       "examples": [
         {
           "title": "示例:",
-          "content": "wx.getFriendCloudStorage({\n      keyList: [\"yw_score\"],\n      success(res){\n          var ListData = sdk.sortList(res.data, 'yw_score', true));\n      },\n      fail(){\n          console.log(res)\n      }\n})",
+          "content": "wx.getFriendCloudStorage({\n      keyList: [\"score\"],\n      success(res){\n          var ListData = sdk.sortList(res.data, 'score', true));\n          console.log(\"=排序后的数据=\", ListData);\n      },\n      fail(){\n          console.log(res)\n      }\n})",
           "type": "json"
         }
       ]
