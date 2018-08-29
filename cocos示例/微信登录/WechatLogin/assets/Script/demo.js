@@ -7,22 +7,30 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
+        var self = this;
+        //1.获取系统信息
+        if (cc.sys.platform === cc.sys.WECHAT_GAME) {
+            wx.getSystemInfo({
+                success(res){
+                    console.log(res)
+                    //2.调用sdk登录
+                    sdk.WeChatLogin({
+                        buttonConfig:{
+                            type: 'image',
+                            image: 'https://laixiao.github.io/lewan/html/img/btn_start.png',
+                            style: {  width: 382, height: 164, top: res.screenHeight/2-164/2, left: res.screenWidth/2-382/2 }
+                        }
+                    }, (d)=>{
+                        console.log("登陆状态：", d)
+
+                    });
+                }
+            })
+        }
 
     },
 
     start(){
-        var self = this;
-
-        //.登录按钮图片、图片宽度、图片高度
-        sdk.WeChatLogin({loginImg: 'https://laixiao.github.io/lewan/html/img/btn_start.png', imgWidth:382, imgHeight: 164}, (d)=>{
-            if(d){
-                console.log(d)
-            }else{
-                console.log("登陆失败，请重试")
-            }
-        });
-
-
 
     },
 

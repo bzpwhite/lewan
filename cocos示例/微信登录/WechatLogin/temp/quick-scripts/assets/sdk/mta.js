@@ -1,6 +1,6 @@
-(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/sdk/mta.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
-cc._RF.push(module, '0cb05xIPfZPVoI58Prt1Zt6', 'mta', __filename);
-// sdk/mta.js
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/Sdk/mta.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, 'cc3adPZcURPDalQkPzJ20yh', 'mta', __filename);
+// Sdk/mta.js
 
 "use strict";
 

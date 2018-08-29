@@ -1,57 +1,141 @@
-2018-08-28T15:32:17.877Z - normal: Load ~/.CocosCreator/settings.json
-2018-08-28T15:32:17.881Z - normal: checking language setting...
-2018-08-28T15:32:17.881Z - normal: Language: zh
-2018-08-28T15:32:19.504Z - success: protocol editor-framework registered
-2018-08-28T15:32:19.504Z - success: protocol app registered
-2018-08-28T15:32:19.504Z - success: protocol theme registered
-2018-08-28T15:32:19.504Z - success: protocol packages registered
-2018-08-28T15:32:19.504Z - success: protocol unpack registerred
-2018-08-28T15:32:19.504Z - success: protocol disable-commonjs registerred
-2018-08-28T15:32:19.700Z - normal: connected!
-2018-08-28T15:32:19.703Z - normal: Check project D:\laixiao\git\github\lewan\cocos示例\微信登录\WechatLogin
-2018-08-28T15:32:19.707Z - normal: Initializing project D:\laixiao\git\github\lewan\cocos示例\微信登录\WechatLogin
-2018-08-28T15:32:19.711Z - normal: Initializing Cocos2d
-2018-08-28T15:32:20.380Z - normal: Initializing Asset Database
-2018-08-28T15:32:20.445Z - success: protocol uuid registerred
-2018-08-28T15:32:20.445Z - success: protocol db registerred
-2018-08-28T15:32:20.445Z - success: protocol thumbnail registerred
-2018-08-28T15:32:20.445Z - normal: Loading editor/builtin packages
-2018-08-28T15:32:20.617Z - success: assets loaded
-2018-08-28T15:32:20.619Z - success: builder loaded
-2018-08-28T15:32:20.622Z - success: cocos-analytics loaded
-2018-08-28T15:32:20.625Z - success: console loaded
-2018-08-28T15:32:20.658Z - success: fb-instant-games loaded
-2018-08-28T15:32:20.664Z - success: hierarchy loaded
-2018-08-28T15:32:20.667Z - success: inspector loaded
-2018-08-28T15:32:20.669Z - success: keystore loaded
-2018-08-28T15:32:20.673Z - success: node-library loaded
-2018-08-28T15:32:20.675Z - success: package-asset loaded
-2018-08-28T15:32:20.676Z - success: preferences loaded
-2018-08-28T15:32:20.678Z - success: project-exporter loaded
-2018-08-28T15:32:20.695Z - success: project-importer loaded
-2018-08-28T15:32:20.697Z - success: project-settings loaded
-2018-08-28T15:32:20.700Z - success: ui-kit loaded
-2018-08-28T15:32:20.704Z - success: scene loaded
-2018-08-28T15:32:20.705Z - success: sprite-editor loaded
-2018-08-28T15:32:20.710Z - success: store loaded
-2018-08-28T15:32:20.714Z - success: timeline loaded
-2018-08-28T15:32:20.714Z - normal: Loading builtin packages
-2018-08-28T15:32:20.718Z - success: asset-db-debugger loaded
-2018-08-28T15:32:20.720Z - success: code-editor loaded
-2018-08-28T15:32:20.720Z - success: color-picker loaded
-2018-08-28T15:32:20.721Z - success: jsb-adapter loaded
-2018-08-28T15:32:20.723Z - success: package-manager loaded
-2018-08-28T15:32:20.840Z - success: qqplay-adapter loaded
-2018-08-28T15:32:20.845Z - success: sdkbox loaded
-2018-08-28T15:32:20.849Z - success: tester loaded
-2018-08-28T15:32:20.851Z - success: ui-grid loaded
-2018-08-28T15:32:20.852Z - success: ui-kit-preview-extra loaded
-2018-08-28T15:32:20.854Z - success: ui-kit-preview loaded
-2018-08-28T15:32:20.855Z - success: ui-tree loaded
-2018-08-28T15:32:20.856Z - success: weapp-adapter loaded
-2018-08-28T15:32:22.124Z - normal: Loading packages
-2018-08-28T15:32:22.133Z - success: resource loaded
-2018-08-28T15:32:22.133Z - normal: Watching packages
-2018-08-28T15:32:22.587Z - normal: Run Application
-2018-08-28T15:32:24.256Z - success: preview server running at http://localhost:7457
-2018-08-28T16:02:11.248Z - info: shutdown preview server
+2018-08-29T06:18:01.208Z - normal: Load ~/.CocosCreator/settings.json
+2018-08-29T06:18:01.211Z - normal: checking language setting...
+2018-08-29T06:18:01.211Z - normal: Language: zh
+2018-08-29T06:18:02.747Z - success: protocol editor-framework registered
+2018-08-29T06:18:02.747Z - success: protocol app registered
+2018-08-29T06:18:02.747Z - success: protocol theme registered
+2018-08-29T06:18:02.747Z - success: protocol packages registered
+2018-08-29T06:18:02.747Z - success: protocol unpack registerred
+2018-08-29T06:18:02.747Z - success: protocol disable-commonjs registerred
+2018-08-29T06:18:02.957Z - normal: connected!
+2018-08-29T06:18:02.967Z - normal: Check project C:\Users\lx\Desktop\WechatLogin
+2018-08-29T06:18:02.979Z - normal: Initializing project C:\Users\lx\Desktop\WechatLogin
+2018-08-29T06:18:02.987Z - normal: Initializing Cocos2d
+2018-08-29T06:18:03.578Z - normal: Initializing Asset Database
+2018-08-29T06:18:03.620Z - success: protocol uuid registerred
+2018-08-29T06:18:03.621Z - success: protocol db registerred
+2018-08-29T06:18:03.621Z - success: protocol thumbnail registerred
+2018-08-29T06:18:03.621Z - normal: Loading editor/builtin packages
+2018-08-29T06:18:03.761Z - success: assets loaded
+2018-08-29T06:18:03.763Z - success: builder loaded
+2018-08-29T06:18:03.765Z - success: cocos-analytics loaded
+2018-08-29T06:18:03.769Z - success: console loaded
+2018-08-29T06:18:03.801Z - success: fb-instant-games loaded
+2018-08-29T06:18:03.806Z - success: hierarchy loaded
+2018-08-29T06:18:03.808Z - success: inspector loaded
+2018-08-29T06:18:03.810Z - success: keystore loaded
+2018-08-29T06:18:03.813Z - success: node-library loaded
+2018-08-29T06:18:03.815Z - success: package-asset loaded
+2018-08-29T06:18:03.816Z - success: preferences loaded
+2018-08-29T06:18:03.818Z - success: project-exporter loaded
+2018-08-29T06:18:03.831Z - success: project-importer loaded
+2018-08-29T06:18:03.833Z - success: project-settings loaded
+2018-08-29T06:18:03.837Z - success: ui-kit loaded
+2018-08-29T06:18:03.840Z - success: scene loaded
+2018-08-29T06:18:03.841Z - success: sprite-editor loaded
+2018-08-29T06:18:03.844Z - success: store loaded
+2018-08-29T06:18:03.847Z - success: timeline loaded
+2018-08-29T06:18:03.847Z - normal: Loading builtin packages
+2018-08-29T06:18:03.849Z - success: asset-db-debugger loaded
+2018-08-29T06:18:03.850Z - success: code-editor loaded
+2018-08-29T06:18:03.851Z - success: color-picker loaded
+2018-08-29T06:18:03.851Z - success: jsb-adapter loaded
+2018-08-29T06:18:03.854Z - success: package-manager loaded
+2018-08-29T06:18:03.948Z - success: qqplay-adapter loaded
+2018-08-29T06:18:03.951Z - success: sdkbox loaded
+2018-08-29T06:18:03.953Z - success: tester loaded
+2018-08-29T06:18:03.955Z - success: ui-grid loaded
+2018-08-29T06:18:03.957Z - success: ui-kit-preview-extra loaded
+2018-08-29T06:18:03.959Z - success: ui-kit-preview loaded
+2018-08-29T06:18:03.960Z - success: ui-tree loaded
+2018-08-29T06:18:03.961Z - success: weapp-adapter loaded
+2018-08-29T06:18:04.943Z - normal: Loading packages
+2018-08-29T06:18:04.950Z - success: resource loaded
+2018-08-29T06:18:04.950Z - normal: Watching packages
+2018-08-29T06:18:05.283Z - normal: Run Application
+2018-08-29T06:18:06.605Z - success: preview server running at http://localhost:7457
+2018-08-29T06:21:04.260Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "C:\\Users\\lx\\Desktop\\WechatLogin\\build",
+  "debug": false,
+  "dest": "C:\\Users\\lx\\Desktop\\WechatLogin\\build\\wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "demo",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx80050e48268dd2a9",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "xxteaKey": "ed16cd77-7457-4f",
+  "zipCompressJs": true,
+  "project": "C:\\Users\\lx\\Desktop\\WechatLogin",
+  "projectName": "demo",
+  "debugBuildWorker": false
+}
+2018-08-29T06:21:04.263Z - normal: Building C:\Users\lx\Desktop\WechatLogin
+2018-08-29T06:21:04.263Z - normal: Destination C:\Users\lx\Desktop\WechatLogin\build\wechatgame
+2018-08-29T06:21:04.542Z - normal: Delete C:\Users\lx\Desktop\WechatLogin\build\wechatgame\**\*
+2018-08-29T06:21:07.596Z - normal: Start building assets
+2018-08-29T06:21:07.596Z - normal: Start spawn build-worker
+2018-08-29T06:21:08.336Z - normal: Finish spawn build-worker
+2018-08-29T06:21:08.337Z - normal: Start init build-worker
+2018-08-29T06:21:11.652Z - normal: Finish init build-worker
+2018-08-29T06:21:11.652Z - normal: Start build-assets in worker
+2018-08-29T06:21:11.849Z - normal: Finish build-assets in worker
+2018-08-29T06:21:11.855Z - normal: Finish building assets
+2018-08-29T06:21:11.861Z - normal: Start building plugin scripts
+2018-08-29T06:21:11.867Z - normal: Generating main.js from D:\lx\cocos\install\2\CocosCreator\resources\static\build-templates\shares\main.js
+2018-08-29T06:21:12.920Z - normal: Built to "C:\Users\lx\Desktop\WechatLogin\build\wechatgame" successfully
+2018-08-29T06:21:51.464Z - normal: Initializing...
+
+2018-08-29T06:21:51.470Z - normal: idePortFile: C:\Users\lx\AppData\Local\微信web开发者工具\User Data\Default\.ide
+
+2018-08-29T06:21:51.489Z - normal: IDE server has started, listening on http://127.0.0.1:56075
+initialization finished
+
+2018-08-29T06:21:52.918Z - normal: open IDE success
+
+2018-08-29T06:22:35.675Z - info: shutdown preview server

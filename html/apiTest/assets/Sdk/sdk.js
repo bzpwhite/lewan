@@ -79,7 +79,7 @@ var sdk = {
 
                     //2.初始化分享信息
                     self.Get(self.ip2 + self.Share, {}, function (d2) {
-                        console.log("初始化分享信息：",d2)
+                        // console.log("初始化分享信息：",d2)
                         if (d2 && d2.c == 1) {
                             self.ShareList = d2.d;
                         }else{
@@ -99,18 +99,18 @@ var sdk = {
             var option = wx.getLaunchOptionsSync();
             option.query.share_uid = option.query.uid;
             option.query.uid = this.userid;
-            console.log('==3统计信息==',option)
+            // console.log('==3统计信息==',option)
             this.Get(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: option }, function (d) {
-                console.log("==3统计信息结果==", d)
+                // console.log("==3统计信息结果==", d)
             });
             wx.onShow((option)=>{
                 // console.log(option)
                 if(option.query.uid){
                     option.query.share_uid = option.query.uid;
                     option.query.uid = self.userid;
-                    console.log('==4统计信息==',option)
+                    // console.log('==4统计信息==',option)
                     self.Get(self.ip3 + self.Logcommon, { log_type: "ShareEnter", data: option }, function (d) {
-                        console.log("==4统计信息结果==", d)
+                        // console.log("==4统计信息结果==", d)
                     });
                 }
             })
@@ -347,6 +347,10 @@ var sdk = {
 
         reqData.game = sdk_conf.game;
         reqData.version = sdk_conf.version;
+        var ts = new Date().getTime();
+        reqData.ts = ts;
+        reqData.sign = md5(ts.toString().substr(0,4)+sdk_conf.game.substr(0,2)+sdk_conf.version.substr(0,1)+ '$5dfjr$%dsadsfdsii');
+        
         url += "?";
         for (var item in reqData) {
             url += item + "=" + reqData[item] + "&";
@@ -394,6 +398,10 @@ var sdk = {
         
         reqData.game = sdk_conf.game;
         reqData.version = sdk_conf.version;
+        var ts = new Date().getTime();
+        reqData.ts = ts;
+        reqData.sign = md5(ts.toString().substr(0,4)+sdk_conf.game.substr(0,2)+sdk_conf.version.substr(0,1)+ '$5dfjr$%dsadsfdsii');
+        
         //1.拼接请求参数
         var param = "";
         for (var item in reqData) {
@@ -778,23 +786,17 @@ var sdk = {
     WeChatLogin(obj, callback){
         var self = this;
         
-        var referee_id = '';
-        var source_id = '';
-        var source_id2 = '';
-        if(obj.referee_id){
-            referee_id = obj.referee_id;
-        }
-        if(obj.source_id){
-            source_id = obj.source_id;
-        }
-        if(obj.source_id2){
-            source_id2 = obj.source_id2;
-        }
-
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
+            var options = wx.getLaunchOptionsSync();
+            
+            var referee_id = options.query.uid;             //.推荐人id
+            var source_id = options.query.source_id;        //.用户来源id
+            var source_id2 = options.query.source_id2;      //.用户来源子id
+            var share_id = options.query.share_id;          //.分享素材ID
+            
             var userinfo = this.getItem('userinfo');
             if(userinfo){
-                callback(JSON.parse(userinfo))
+                callback(userinfo)
             }else{
                 if(self.button){
                     self.button.show();
@@ -821,11 +823,12 @@ var sdk = {
 
                                                 referee_id: referee_id,
                                                 source_id: source_id,
-                                                source_id2: source_id2
+                                                source_id2: source_id2,
+                                                share_id: share_id
                                             }
-                                            // console.log('==登录参数==', reqData)
+                                            console.log('==登录参数==', reqData)
                                             self.Post(self.ip1 + self.login, reqData, function(data){
-                                                // console.log('==登录结果==', data)
+                                                console.log('==登录结果==', data)
                                                 if(data.c == 1){
                                                     wx.hideToast();
                                                     self.setItem('userinfo',data.d);
