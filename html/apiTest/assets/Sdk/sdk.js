@@ -526,7 +526,7 @@ var sdk = {
     getUser(){
         var userinfo = this.getItem('userinfo');
         if(userinfo){
-            return userinfo;
+            return JSON.parse(userinfo);
         }else{
             return null;
         }
@@ -834,7 +834,7 @@ var sdk = {
                                                 console.log('==登录结果==', data)
                                                 if(data.c == 1){
                                                     wx.hideToast();
-                                                    self.setItem('userinfo',data.d);
+                                                    self.setItem('userinfo', JSON.stringify(data.d));
                                                     self.button.hide();
                                                     callback(data.d);
                                                 }else{
