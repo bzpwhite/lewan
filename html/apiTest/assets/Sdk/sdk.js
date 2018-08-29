@@ -929,7 +929,7 @@ var sdk = {
      /**
      * @apiGroup C
      * @apiName Screenshot
-     * @api {微信小游戏截图保存} 微信小游戏截图保存 Screenshot（截图）
+     * @api {微信小游戏截图保存} 微信小游戏截图保存（仅支持Creator2.0.1及以上版本） Screenshot（截图）
      * @apiParam {cc.Camera} camera 摄像头组件	
      * 
      * @apiSuccessExample {json} 示例:
