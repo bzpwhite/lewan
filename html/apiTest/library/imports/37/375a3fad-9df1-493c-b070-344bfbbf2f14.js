@@ -134,7 +134,7 @@ var sdk = {
                         success: function success(res2) {
                             loginData.network_type = res2.networkType;
                             // console.log("======loginData=======", loginData)
-                            self.Get(self.ip3 + self.Logcommon, { log_type: "loginData", data: JSON.stringify(loginData) }, function (d) {
+                            self.Get(self.ip3 + self.Logcommon, { log_type: "LoginData", data: JSON.stringify(loginData) }, function (d) {
                                 // console.log("==3.统计：每次打开小游戏调用==", d)
                             });
                         }
