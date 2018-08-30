@@ -42,15 +42,15 @@ cc.Class({
             // console.log('sdk初始化结果：', res)
 
             //.获取后台运营配置
-            // var d1 = sdk.getConfig1();
-            // console.log("运营配置：", d1)
+            var d1 = sdk.getConfig1();
+            console.log("运营配置：", d1)
 
             //.获取后台程序配置
-            // var d2 = sdk.getConfig2();
-            // console.log("程序配置：", d2)
+            var d2 = sdk.getConfig2();
+            console.log("程序配置：", d2)
 
             //.监听：用户点击右上角分享
-            sdk.onShareAppMessage({type: 0, query: "" });
+            // sdk.onShareAppMessage({type: 0, query: "" });
 
         })
 

@@ -101,14 +101,16 @@ var sdk = {
                 }
             });
 
-            //2.统计接口
+            //2.统计：分享信息
             var option = wx.getLaunchOptionsSync();
-            option.query.share_uid = option.query.uid;
-            option.query.uid = this.userid;
-            // console.log('==3统计信息==',option)
-            this.Get(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
-                // console.log("==3统计信息结果==", d)
-            });
+            if (option.query.share_uid && option.query.uid) {
+                option.query.share_uid = option.query.uid;
+                option.query.uid = this.userid;
+                // console.log('==3统计信息==',option)
+                this.Get(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
+                    // console.log("==3统计信息结果==", d)
+                });
+            }
             wx.onShow(function (option) {
                 // console.log(option)
                 if (option.query.uid) {
@@ -117,6 +119,25 @@ var sdk = {
                     // console.log('==4统计信息==',option)
                     self.Get(self.ip3 + self.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
                         // console.log("==4统计信息结果==", d)
+                    });
+                }
+            });
+
+            //3.统计：每次打开小游戏调用
+            wx.getSystemInfo({
+                success: function success(res) {
+                    var loginData = res;
+                    loginData.uid = self.userid;
+                    loginData.share_uid = option.query.share_uid;
+                    loginData.scene = option.scene;
+                    wx.getNetworkType({
+                        success: function success(res2) {
+                            loginData.network_type = res2.networkType;
+                            // console.log("======loginData=======", loginData)
+                            self.Get(self.ip3 + self.Logcommon, { log_type: "loginData", data: JSON.stringify(loginData) }, function (d) {
+                                // console.log("==3.统计：每次打开小游戏调用==", d)
+                            });
+                        }
                     });
                 }
             });
