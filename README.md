@@ -12,6 +12,7 @@ Cocos小游戏sdk、Cocos小游戏sdk文档、Cocos小游戏开发示例；
 ```javascript
 sdk.init({
     debug: true,         //.是否开启调试
+    userid: 56032607     //.用户的id（兼容旧游戏，新游戏废弃）
 }, (res)=>{
     console.log('sdk初始化结果：', res)
     var d = sdk.getConfig1();
