@@ -315,13 +315,13 @@
     "relativePath": "image\\default_toggle_disabled.png"
   },
   "45bf5ac7-9fc1-4771-94e0-558919a788fa": {
-    "asset": 1535597959577,
-    "meta": 1535597961881,
+    "asset": 1535618740573,
+    "meta": 1535618747525,
     "relativePath": "Script\\test.js"
   },
   "375a3fad-9df1-493c-b070-344bfbbf2f14": {
-    "asset": 1535613389291,
-    "meta": 1535613392293,
+    "asset": 1535619222467,
+    "meta": 1535619669760,
     "relativePath": "Sdk\\sdk.js"
   }
 }

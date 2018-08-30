@@ -101,9 +101,10 @@ var sdk = {
                 }
             });
 
-            //2.统计：分享信息
+            //2.统计：分享信息 测试：  uid=56032607&share_id=22&share_uid=56032607
             var option = wx.getLaunchOptionsSync();
-            if (option.query.share_uid && option.query.uid) {
+            // console.log("==option==", option)
+            if (option.query.share_id && option.query.uid) {
                 option.query.share_uid = option.query.uid;
                 option.query.uid = this.userid;
                 // console.log('==3统计信息==',option)
@@ -123,7 +124,7 @@ var sdk = {
                 }
             });
 
-            //3.统计：每次打开小游戏调用
+            //5.统计：每次打开小游戏调用
             wx.getSystemInfo({
                 success: function success(res) {
                     var loginData = res;
@@ -135,7 +136,7 @@ var sdk = {
                             loginData.network_type = res2.networkType;
                             // console.log("======loginData=======", loginData)
                             self.Get(self.ip3 + self.Logcommon, { log_type: "LoginData", data: JSON.stringify(loginData) }, function (d) {
-                                // console.log("==3.统计：每次打开小游戏调用==", d)
+                                // console.log("==5.统计：每次打开小游戏调用==", d)
                             });
                         }
                     });

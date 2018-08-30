@@ -37,7 +37,7 @@ cc.Class({
         //.初始化游戏
         sdk.init({
             debug: true,        //.是否开启调试
-            userid: 110         //.用户的id（兼容旧游戏，新游戏废弃）
+            userid: 56032607    //.用户的id（兼容旧游戏，新游戏废弃）
         }, (res)=>{
             // console.log('sdk初始化结果：', res)
 
