@@ -102,7 +102,7 @@ var sdk = {
                 option.query.share_uid = option.query.uid;
                 option.query.uid = this.userid;
                 // console.log('==3统计信息==',option)
-                this.Get(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
+                this.Post(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
                     // console.log("==3统计信息结果==", d)
                 });
             }
@@ -112,7 +112,7 @@ var sdk = {
                     option.query.share_uid = option.query.uid;
                     option.query.uid = self.userid;
                     // console.log('==4统计信息==',option)
-                    self.Get(self.ip3 + self.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
+                    self.Post(self.ip3 + self.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
                         // console.log("==4统计信息结果==", d)
                     });
                 }
@@ -372,7 +372,8 @@ var sdk = {
         reqData.version = sdk_conf.version;
         var ts = new Date().getTime();
         reqData.ts = ts;
-        reqData.sign = md5(ts.toString().substr(0,4)+sdk_conf.game.substr(0,2)+sdk_conf.version.substr(0,1)+ '$5dfjr$%dsadsfdsii');
+        //数据验证签名。规则为：MD5(ts.substr(9,4)+game.substr(0,2)+version.substr(0,1)+key),时间戳后4位、data前3位、key（服务端提供）然后进行MD5加密
+        reqData.sign = md5(ts.toString().substr(9,4)+sdk_conf.game.substr(0,2)+sdk_conf.version.substr(0,1)+ '$5dfjr$%dsadsfdsii');
         
         url += "?";
         for (var item in reqData) {
@@ -423,7 +424,7 @@ var sdk = {
         reqData.version = sdk_conf.version;
         var ts = new Date().getTime();
         reqData.ts = ts;
-        reqData.sign = md5(ts.toString().substr(0,4)+sdk_conf.game.substr(0,2)+sdk_conf.version.substr(0,1)+ '$5dfjr$%dsadsfdsii');
+        reqData.sign = md5(ts.toString().substr(9,4)+sdk_conf.game.substr(0,2)+sdk_conf.version.substr(0,1)+ '$5dfjr$%dsadsfdsii');
         
         //1.拼接请求参数
         var param = "";

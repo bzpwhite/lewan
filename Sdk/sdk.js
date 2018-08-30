@@ -55,7 +55,7 @@ var sdk = {
      * //.初始化游戏
      *   sdk.init({
      *      debug: true,        //.是否开启调试
-     *      userid: 110         //.用户的id（兼容旧游戏，新游戏废弃）
+     *      userid: 56032607    //.用户的id（兼容旧游戏，新游戏废弃）
      *   }, (res)=>{
      *       console.log('sdk初始化结果：', res)
      *   })
@@ -95,13 +95,14 @@ var sdk = {
                 }
             });
             
-            //2.统计：分享信息
+            //2.统计：分享信息 测试：  uid=56032607&share_id=22&share_uid=56032607
             var option = wx.getLaunchOptionsSync();
-            if(option.query.share_uid && option.query.uid){
+            // console.log("==option==", option)
+            if(option.query.share_id && option.query.uid){
                 option.query.share_uid = option.query.uid;
                 option.query.uid = this.userid;
                 // console.log('==3统计信息==',option)
-                this.Get(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
+                this.Post(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
                     // console.log("==3统计信息结果==", d)
                 });
             }
@@ -111,13 +112,13 @@ var sdk = {
                     option.query.share_uid = option.query.uid;
                     option.query.uid = self.userid;
                     // console.log('==4统计信息==',option)
-                    self.Get(self.ip3 + self.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
+                    self.Post(self.ip3 + self.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
                         // console.log("==4统计信息结果==", d)
                     });
                 }
             })
 
-            //3.统计：每次打开小游戏调用
+            //5.统计：每次打开小游戏调用
             wx.getSystemInfo({
                 success(res){
                     var loginData = res;
@@ -128,8 +129,8 @@ var sdk = {
                         success(res2){
                             loginData.network_type = res2.networkType;
                             // console.log("======loginData=======", loginData)
-                            self.Get(self.ip3 + self.Logcommon, { log_type: "loginData", data: JSON.stringify(loginData) }, function (d) {
-                                // console.log("==3.统计：每次打开小游戏调用==", d)
+                            self.Get(self.ip3 + self.Logcommon, { log_type: "LoginData", data: JSON.stringify(loginData) }, function (d) {
+                                // console.log("==5.统计：每次打开小游戏调用==", d)
                             });
                         }
                     })
@@ -371,7 +372,8 @@ var sdk = {
         reqData.version = sdk_conf.version;
         var ts = new Date().getTime();
         reqData.ts = ts;
-        reqData.sign = md5(ts.toString().substr(0,4)+sdk_conf.game.substr(0,2)+sdk_conf.version.substr(0,1)+ '$5dfjr$%dsadsfdsii');
+        //数据验证签名。规则为：MD5(ts.substr(9,4)+game.substr(0,2)+version.substr(0,1)+key),时间戳后4位、data前3位、key（服务端提供）然后进行MD5加密
+        reqData.sign = md5(ts.toString().substr(9,4)+sdk_conf.game.substr(0,2)+sdk_conf.version.substr(0,1)+ '$5dfjr$%dsadsfdsii');
         
         url += "?";
         for (var item in reqData) {
@@ -422,7 +424,7 @@ var sdk = {
         reqData.version = sdk_conf.version;
         var ts = new Date().getTime();
         reqData.ts = ts;
-        reqData.sign = md5(ts.toString().substr(0,4)+sdk_conf.game.substr(0,2)+sdk_conf.version.substr(0,1)+ '$5dfjr$%dsadsfdsii');
+        reqData.sign = md5(ts.toString().substr(9,4)+sdk_conf.game.substr(0,2)+sdk_conf.version.substr(0,1)+ '$5dfjr$%dsadsfdsii');
         
         //1.拼接请求参数
         var param = "";

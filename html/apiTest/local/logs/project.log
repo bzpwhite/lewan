@@ -1,68 +1,133 @@
-2018-08-30T09:12:52.893Z - normal: Load ~/.CocosCreator/settings.json
-2018-08-30T09:12:52.896Z - normal: checking language setting...
-2018-08-30T09:12:52.896Z - normal: Language: zh
-2018-08-30T09:12:54.434Z - success: protocol editor-framework registered
-2018-08-30T09:12:54.434Z - success: protocol app registered
-2018-08-30T09:12:54.434Z - success: protocol theme registered
-2018-08-30T09:12:54.434Z - success: protocol packages registered
-2018-08-30T09:12:54.434Z - success: protocol unpack registerred
-2018-08-30T09:12:54.435Z - success: protocol disable-commonjs registerred
-2018-08-30T09:12:54.652Z - normal: connected!
-2018-08-30T09:12:54.662Z - normal: Check project D:\lx\git\github\lewan\html\apiTest
-2018-08-30T09:12:54.672Z - normal: Initializing project D:\lx\git\github\lewan\html\apiTest
-2018-08-30T09:12:54.678Z - normal: Initializing Cocos2d
-2018-08-30T09:12:55.302Z - normal: Initializing Asset Database
-2018-08-30T09:12:55.343Z - success: protocol uuid registerred
-2018-08-30T09:12:55.343Z - success: protocol db registerred
-2018-08-30T09:12:55.343Z - success: protocol thumbnail registerred
-2018-08-30T09:12:55.343Z - normal: Loading editor/builtin packages
-2018-08-30T09:12:55.486Z - success: assets loaded
-2018-08-30T09:12:55.488Z - success: builder loaded
-2018-08-30T09:12:55.490Z - success: cocos-analytics loaded
-2018-08-30T09:12:55.493Z - success: console loaded
-2018-08-30T09:12:55.522Z - success: fb-instant-games loaded
-2018-08-30T09:12:55.526Z - success: hierarchy loaded
-2018-08-30T09:12:55.528Z - success: inspector loaded
-2018-08-30T09:12:55.530Z - success: keystore loaded
-2018-08-30T09:12:55.534Z - success: node-library loaded
-2018-08-30T09:12:55.535Z - success: package-asset loaded
-2018-08-30T09:12:55.537Z - success: preferences loaded
-2018-08-30T09:12:55.538Z - success: project-exporter loaded
-2018-08-30T09:12:55.551Z - success: project-importer loaded
-2018-08-30T09:12:55.553Z - success: project-settings loaded
-2018-08-30T09:12:55.555Z - success: ui-kit loaded
-2018-08-30T09:12:55.558Z - success: scene loaded
-2018-08-30T09:12:55.559Z - success: sprite-editor loaded
-2018-08-30T09:12:55.562Z - success: store loaded
-2018-08-30T09:12:55.566Z - success: timeline loaded
-2018-08-30T09:12:55.566Z - normal: Loading builtin packages
-2018-08-30T09:12:55.568Z - success: asset-db-debugger loaded
-2018-08-30T09:12:55.569Z - success: code-editor loaded
-2018-08-30T09:12:55.570Z - success: color-picker loaded
-2018-08-30T09:12:55.571Z - success: jsb-adapter loaded
-2018-08-30T09:12:55.574Z - success: package-manager loaded
-2018-08-30T09:12:55.663Z - success: qqplay-adapter loaded
-2018-08-30T09:12:55.667Z - success: sdkbox loaded
-2018-08-30T09:12:55.670Z - success: tester loaded
-2018-08-30T09:12:55.671Z - success: ui-grid loaded
-2018-08-30T09:12:55.673Z - success: ui-kit-preview-extra loaded
-2018-08-30T09:12:55.675Z - success: ui-kit-preview loaded
-2018-08-30T09:12:55.676Z - success: ui-tree loaded
-2018-08-30T09:12:55.679Z - success: weapp-adapter loaded
-2018-08-30T09:12:56.707Z - normal: Loading packages
-2018-08-30T09:12:56.713Z - success: resource loaded
-2018-08-30T09:12:56.713Z - normal: Watching packages
-2018-08-30T09:12:57.033Z - normal: Run Application
-2018-08-30T09:12:57.434Z - success: preview server running at http://localhost:7456
-2018-08-30T09:16:51.433Z - failed: Exception  TypeError: Cannot read property 'nativeWin' of null
-    at Object.n.reply (D:\lx\cocos\install\2\CocosCreator\resources\app.asar\editor-framework\lib\main\ipc.js:1:3835)
-    at Object.callback (D:\lx\cocos\install\2\CocosCreator\resources\app.asar\editor\core\ipc\app-ipc.js:1:2552)
-    at D:\lx\cocos\install\2\CocosCreator\resources\app.asar\node_modules\async\lib\async.js:906:35
-    at _arrayEach (D:\lx\cocos\install\2\CocosCreator\resources\app.asar\node_modules\async\lib\async.js:85:13)
-    at D:\lx\cocos\install\2\CocosCreator\resources\app.asar\node_modules\async\lib\async.js:898:17
-    at D:\lx\cocos\install\2\CocosCreator\resources\app.asar\node_modules\async\lib\async.js:44:16
-    at u.<anonymous> (D:\lx\cocos\install\2\CocosCreator\resources\app.asar\asset-db\index.js:1:1883)
-    at u.queryMetas (D:\lx\cocos\install\2\CocosCreator\resources\app.asar\asset-db\lib\tasks.js:1:12724)
-    at _tasks.r.queue (D:\lx\cocos\install\2\CocosCreator\resources\app.asar\asset-db\index.js:1:2264)
-    at D:\lx\cocos\install\2\CocosCreator\resources\app.asar\node_modules\async\lib\async.js:987:13
-2018-08-30T09:16:51.648Z - info: shutdown preview server
+2018-08-30T13:03:12.166Z - normal: Load ~/.CocosCreator/settings.json
+2018-08-30T13:03:12.169Z - normal: checking language setting...
+2018-08-30T13:03:12.169Z - normal: Language: zh
+2018-08-30T13:03:13.646Z - success: protocol editor-framework registered
+2018-08-30T13:03:13.647Z - success: protocol app registered
+2018-08-30T13:03:13.647Z - success: protocol theme registered
+2018-08-30T13:03:13.647Z - success: protocol packages registered
+2018-08-30T13:03:13.647Z - success: protocol unpack registerred
+2018-08-30T13:03:13.647Z - success: protocol disable-commonjs registerred
+2018-08-30T13:03:13.902Z - normal: connected!
+2018-08-30T13:03:13.911Z - normal: Check project D:\lx\git\github\lewan\html\apiTest
+2018-08-30T13:03:13.922Z - normal: Initializing project D:\lx\git\github\lewan\html\apiTest
+2018-08-30T13:03:13.931Z - normal: Initializing Cocos2d
+2018-08-30T13:03:14.477Z - normal: Initializing Asset Database
+2018-08-30T13:03:14.530Z - success: protocol uuid registerred
+2018-08-30T13:03:14.530Z - success: protocol db registerred
+2018-08-30T13:03:14.530Z - success: protocol thumbnail registerred
+2018-08-30T13:03:14.530Z - normal: Loading editor/builtin packages
+2018-08-30T13:03:14.651Z - success: assets loaded
+2018-08-30T13:03:14.653Z - success: builder loaded
+2018-08-30T13:03:14.655Z - success: cocos-analytics loaded
+2018-08-30T13:03:14.657Z - success: console loaded
+2018-08-30T13:03:14.685Z - success: fb-instant-games loaded
+2018-08-30T13:03:14.689Z - success: hierarchy loaded
+2018-08-30T13:03:14.692Z - success: inspector loaded
+2018-08-30T13:03:14.693Z - success: keystore loaded
+2018-08-30T13:03:14.696Z - success: node-library loaded
+2018-08-30T13:03:14.698Z - success: package-asset loaded
+2018-08-30T13:03:14.699Z - success: preferences loaded
+2018-08-30T13:03:14.700Z - success: project-exporter loaded
+2018-08-30T13:03:14.713Z - success: project-importer loaded
+2018-08-30T13:03:14.715Z - success: project-settings loaded
+2018-08-30T13:03:14.717Z - success: ui-kit loaded
+2018-08-30T13:03:14.720Z - success: scene loaded
+2018-08-30T13:03:14.721Z - success: sprite-editor loaded
+2018-08-30T13:03:14.725Z - success: store loaded
+2018-08-30T13:03:14.727Z - success: timeline loaded
+2018-08-30T13:03:14.727Z - normal: Loading builtin packages
+2018-08-30T13:03:14.730Z - success: asset-db-debugger loaded
+2018-08-30T13:03:14.731Z - success: code-editor loaded
+2018-08-30T13:03:14.731Z - success: color-picker loaded
+2018-08-30T13:03:14.732Z - success: jsb-adapter loaded
+2018-08-30T13:03:14.734Z - success: package-manager loaded
+2018-08-30T13:03:14.816Z - success: qqplay-adapter loaded
+2018-08-30T13:03:14.820Z - success: sdkbox loaded
+2018-08-30T13:03:14.822Z - success: tester loaded
+2018-08-30T13:03:14.823Z - success: ui-grid loaded
+2018-08-30T13:03:14.824Z - success: ui-kit-preview-extra loaded
+2018-08-30T13:03:14.825Z - success: ui-kit-preview loaded
+2018-08-30T13:03:14.826Z - success: ui-tree loaded
+2018-08-30T13:03:14.827Z - success: weapp-adapter loaded
+2018-08-30T13:03:15.785Z - normal: Loading packages
+2018-08-30T13:03:15.793Z - success: resource loaded
+2018-08-30T13:03:15.793Z - normal: Watching packages
+2018-08-30T13:03:16.096Z - normal: Run Application
+2018-08-30T13:03:16.463Z - success: preview server running at http://localhost:7456
+2018-08-30T13:03:41.488Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "D:\\lx\\git\\github\\lewan\\html\\apiTest\\build",
+  "debug": false,
+  "dest": "D:\\lx\\git\\github\\lewan\\html\\apiTest\\build\\wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49",
+    "7e8c8fe8-f6b6-4591-8877-bb453faee2db"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "demo",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx1990cf9754a1483d",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "xxteaKey": "6333ff63-e93b-42",
+  "zipCompressJs": true,
+  "project": "D:\\lx\\git\\github\\lewan\\html\\apiTest",
+  "projectName": "demo",
+  "debugBuildWorker": false
+}
+2018-08-30T13:03:41.490Z - normal: Building D:\lx\git\github\lewan\html\apiTest
+2018-08-30T13:03:41.490Z - normal: Destination D:\lx\git\github\lewan\html\apiTest\build\wechatgame
+2018-08-30T13:03:41.721Z - normal: Delete D:\lx\git\github\lewan\html\apiTest\build\wechatgame\**\*
+2018-08-30T13:03:44.210Z - normal: Start building assets
+2018-08-30T13:03:44.211Z - normal: Start spawn build-worker
+2018-08-30T13:03:44.889Z - normal: Finish spawn build-worker
+2018-08-30T13:03:44.889Z - normal: Start init build-worker
+2018-08-30T13:03:47.665Z - normal: Finish init build-worker
+2018-08-30T13:03:47.665Z - normal: Start build-assets in worker
+2018-08-30T13:03:47.840Z - normal: Finish build-assets in worker
+2018-08-30T13:03:47.846Z - normal: Finish building assets
+2018-08-30T13:03:47.853Z - normal: Start building plugin scripts
+2018-08-30T13:03:47.858Z - normal: Generating main.js from D:\lx\cocos\install\2\CocosCreator\resources\static\build-templates\shares\main.js
+2018-08-30T13:03:48.989Z - normal: Built to "D:\lx\git\github\lewan\html\apiTest\build\wechatgame" successfully
+2018-08-30T13:11:51.562Z - info: shutdown preview server
