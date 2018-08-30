@@ -12,6 +12,10 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
 
+        if(cc.ENGINE_VERSION < "2.0.0"){
+            console.log(cc.ENGINE_VERSION)
+        }
+        
     },
 
     // called every frame

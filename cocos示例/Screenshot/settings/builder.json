@@ -19,12 +19,13 @@
     "portrait": false,
     "upsideDown": false
   },
-  "packageName": "org.cocos2d.helloworld",
+  "packageName": "org.cocos2d.Screenshot",
   "privateKey": "",
   "qqplay": {
     "REMOTE_SERVER_ROOT": "",
     "orientation": "portrait"
   },
+  "renderMode": "0",
   "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
   "title": "Screenshot",
   "webOrientation": "auto",
@@ -35,6 +36,6 @@
     "orientation": "portrait",
     "subContext": ""
   },
-  "xxteaKey": "68ca9687-8f48-4d",
+  "xxteaKey": "afcef9f7-14bc-48",
   "zipCompressJs": true
 }
