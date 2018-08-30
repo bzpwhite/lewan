@@ -181,7 +181,7 @@
     "group": "C",
     "name": "Screenshot",
     "type": "微信小游戏截图保存",
-    "url": "微信小游戏截图保存（仅支持Creator2.0.1及以上版本）",
+    "url": "微信小游戏截图保存",
     "title": "Screenshot（截图）",
     "parameter": {
       "fields": {
