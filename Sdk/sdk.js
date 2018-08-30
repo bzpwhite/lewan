@@ -95,14 +95,16 @@ var sdk = {
                 }
             });
             
-            //2.统计接口
+            //2.统计：分享信息
             var option = wx.getLaunchOptionsSync();
-            option.query.share_uid = option.query.uid;
-            option.query.uid = this.userid;
-            // console.log('==3统计信息==',option)
-            this.Get(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
-                // console.log("==3统计信息结果==", d)
-            });
+            if(option.query.share_uid && option.query.uid){
+                option.query.share_uid = option.query.uid;
+                option.query.uid = this.userid;
+                // console.log('==3统计信息==',option)
+                this.Get(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
+                    // console.log("==3统计信息结果==", d)
+                });
+            }
             wx.onShow((option)=>{
                 // console.log(option)
                 if(option.query.uid){
@@ -114,6 +116,26 @@ var sdk = {
                     });
                 }
             })
+
+            //3.统计：每次打开小游戏调用
+            wx.getSystemInfo({
+                success(res){
+                    var loginData = res;
+                    loginData.uid = self.userid;
+                    loginData.share_uid = option.query.share_uid;
+                    loginData.scene = option.scene;
+                    wx.getNetworkType({
+                        success(res2){
+                            loginData.network_type = res2.networkType;
+                            // console.log("======loginData=======", loginData)
+                            self.Get(self.ip3 + self.Logcommon, { log_type: "loginData", data: JSON.stringify(loginData) }, function (d) {
+                                // console.log("==3.统计：每次打开小游戏调用==", d)
+                            });
+                        }
+                    })
+                }
+            })
+
         }
 
         
@@ -929,7 +951,7 @@ var sdk = {
      /**
      * @apiGroup C
      * @apiName Screenshot
-     * @api {微信小游戏截图保存} 微信小游戏截图保存（仅支持Creator2.0.1及以上版本） Screenshot（截图）
+     * @api {微信小游戏截图保存} 微信小游戏截图保存 Screenshot（截图）
      * @apiParam {cc.Camera} camera 摄像头组件	
      * 
      * @apiSuccessExample {json} 示例:
@@ -973,54 +995,87 @@ var sdk = {
         })
     },
     capture (camera, callback) {
-        //.要截取的范围（全屏）
-        let texture = new cc.RenderTexture();
-        // 如果截图内容中不包含 Mask 组件，可以不用传递第三个参数
-        let gl = cc.game._renderContext;
-        texture.initWithSize(cc.visibleRect.width, cc.visibleRect.height, gl.STENCIL_INDEX8);
-        camera.targetTexture = texture;
-        this.texture = texture;
+        if(cc.ENGINE_VERSION < "2.0.0"){
+            //1.9.3旧版本截图
+            var canvas = cc.game.canvas;
+            var width  = cc.winSize.width;
+            var height  = cc.winSize.height;
+
+            canvas.toTempFilePath({
+                x: 0,
+                y: 0,
+                width: width,
+                height: height,
+                destWidth: width,
+                destHeight: height,
+                success (res) {
+                    //.可以保存该截屏图片
+                    // console.log(res)
+                    //.保存到手机
+                    wx.saveImageToPhotosAlbum({
+                        filePath: res.tempFilePath,
+                        success(res2){
+                            console.log('==截图保存=success=',res2)
+                            callback(true)
+                        },
+                        fail(res2){
+                            console.log('==截图保存=fail=',res2)
+                            callback(null)
+                        }
+                    })
+                }
+            })
+        }else{
+            //2.0.1新版本截图
+            //.要截取的范围（全屏）
+            let texture = new cc.RenderTexture();
+            // 如果截图内容中不包含 Mask 组件，可以不用传递第三个参数
+            let gl = cc.game._renderContext;
+            texture.initWithSize(cc.visibleRect.width, cc.visibleRect.height, gl.STENCIL_INDEX8);
+            camera.targetTexture = texture;
+            this.texture = texture;
 
 
-        let width = this.texture.width;
-        let height = this.texture.height;
-        let canvas = document.createElement('canvas');
-        let ctx = canvas.getContext('2d');
-        canvas.width = width;
-        canvas.height = height;
-        camera.render();
-        let data = this.texture.readPixels();
-        let rowBytes = width * 4;
-        for (let row = 0; row < height; row++) {
-            let srow = height - 1 - row;
-            let imageData = ctx.createImageData(width, 1);
-            let start = srow*width*4;
-            for (let i = 0; i < rowBytes; i++) {
-                imageData.data[i] = data[start+i];
+            let width = this.texture.width;
+            let height = this.texture.height;
+            let canvas = document.createElement('canvas');
+            let ctx = canvas.getContext('2d');
+            canvas.width = width;
+            canvas.height = height;
+            camera.render();
+            let data = this.texture.readPixels();
+            let rowBytes = width * 4;
+            for (let row = 0; row < height; row++) {
+                let srow = height - 1 - row;
+                let imageData = ctx.createImageData(width, 1);
+                let start = srow*width*4;
+                for (let i = 0; i < rowBytes; i++) {
+                    imageData.data[i] = data[start+i];
+                }
+                ctx.putImageData(imageData, 0, row);
             }
-            ctx.putImageData(imageData, 0, row);
+            var dataURL = canvas.toDataURL("image/jpeg");
+            var tempFilePath = canvas.toTempFilePathSync({
+                x: 0,
+                y: 0,
+                width: width,
+                height: height,
+                destWidth: width,
+                destHeight: height,
+            });
+            //.保存到手机
+            wx.saveImageToPhotosAlbum({
+                filePath: tempFilePath,
+                success(res2){
+                    console.log('==截图保存=success=',res2)
+                    callback(true)
+                },
+                fail(res2){
+                    console.log('==截图保存=fail=',res2)
+                    callback(null)
+                }
+            })
         }
-        var dataURL = canvas.toDataURL("image/jpeg");
-        var tempFilePath = canvas.toTempFilePathSync({
-            x: 0,
-            y: 0,
-            width: width,
-            height: height,
-            destWidth: width,
-            destHeight: height,
-        });
-
-        wx.saveImageToPhotosAlbum({
-            filePath: tempFilePath,
-            success(res2){
-                console.log('==截图保存=success=',res2)
-                callback(true)
-            },
-            fail(res2){
-                console.log('==截图保存=fail=',res2)
-                callback(null)
-            }
-        })
         
     }
     
