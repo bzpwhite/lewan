@@ -28,9 +28,11 @@ var sdk = {
     mta: mta,
     ip1: "https://login.llewan.com:1799",
     ip2: "https://game.llewan.com:1899",
-
     ip3: "https://log.llewan.com:1999",
     ip4: "https://res.llewan.com:2099",
+    loginBg: "https://res.g.llewan.com/uploadfile/common/20180831/20180831173032_3279.png",
+    loginBt: "https://res.g.llewan.com/uploadfile/common/20180831/20180831180006_1583.png",
+
     debug: false, //是否开启调试
 
     login: '/Login/common',
@@ -145,7 +147,7 @@ var sdk = {
         }
     },
 
-    //.根据权重随机获取指定type类型的分享信息。
+    //.根据权重随机获取指定type类型的分享信息。（没有this.ShareList数据不能调用）
     getShareByWeight: function getShareByWeight(type) {
         if (this.ShareList.length > 0) {
             //1.获取某种type的集合
@@ -816,25 +818,24 @@ var sdk = {
      * @apiGroup C
      * @apiName WeChatLogin
      * @api {微信登录} 微信登录 WeChatLogin（登录）
-     * @apiParam {Object} buttonConfig 登录按钮配置，参考：https://developers.weixin.qq.com/minigame/dev/document/open-api/user-info/wx.createUserInfoButton.html
      * 
      * @apiSuccessExample {json} 示例:
-     *   //调用sdk登录
-     *   sdk.WeChatLogin({
-     *       buttonConfig:{
-     *           type: 'image',
-     *           image: 'https://laixiao.github.io/lewan/html/img/btn_start.png',
-     *           style: {  width: 382, height: 164, top: res.screenHeight/2-164/2, left: res.screenWidth/2-382/2 }
+     *   //.调用sdk登录
+     *   sdk.WeChatLogin((d)=>{
+     *       // 登录成功：返回用户信息； 
+     *       // 登录失败：返回false
+     *       if(d){
+     *           // 获取用户信息
+     *           var user = sdk.getUser();
+     *           console.log("==用户信息==", user)
+     *       }else{
+     *           console.log("登陆失败：", d)
      *       }
-     *   }, (d)=>{
-     *       console.log("登陆状态：", d)
      *   });
      * 
-     * 
      */
-    WeChatLogin: function WeChatLogin(obj, callback) {
+    WeChatLogin: function WeChatLogin(callback) {
         var self = this;
-
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
             var options = wx.getLaunchOptionsSync();
 
@@ -843,64 +844,89 @@ var sdk = {
             var source_id2 = options.query.source_id2; //.用户来源子id
             var share_id = options.query.share_id; //.分享素材ID
 
-            var userinfo = this.getItem('userinfo');
+            var userinfo = this.getUser();
+
             if (userinfo) {
                 callback(userinfo);
             } else {
+                //.登录遮罩背景
+                var maskNode = new cc.Node('Sprite');
+                maskNode.parent = cc.director.getScene().getChildByName('Canvas');
+                maskNode.addComponent(cc.BlockInputEvents);
+                var sp = maskNode.addComponent(cc.Sprite);
+                maskNode.opacity = 178;
+                maskNode.color = new cc.Color(25, 88, 95, 255);
+                sp.sizeMode = cc.Sprite.SizeMode.CUSTOM;
+                self.createImage(sp, self.loginBg);
+                maskNode.width = cc.view.getVisibleSize().width;
+                maskNode.height = cc.view.getVisibleSize().height;
+                // console.log(maskNode.width, maskNode.height)
+
+                //.微信登录按钮
                 if (self.button) {
                     self.button.show();
                 } else {
-                    self.button = wx.createUserInfoButton(obj.buttonConfig);
-                    self.button.onTap(function (res1) {
-                        // 处理用户拒绝授权的情况
-                        // if (res1.errMsg.indexOf('auth deny') > -1 || res1.errMsg.indexOf('auth denied') > -1 ) {
-                        //     wx.showToast();
-                        // }
-                        wx.showToast({ title: '登录中...', icon: 'loading', duration: 8 });
-                        wx.getSetting({
-                            success: function success(auths) {
-                                if (auths.authSetting["scope.userInfo"]) {
-                                    console.log('===已经授权===');
-                                    wx.login({
-                                        success: function success(res2) {
-                                            var reqData = {
-                                                code: res2.code,
-                                                rawData: res1.rawData,
-                                                iv: res1.iv,
-                                                encryptedData: res1.encryptedData,
-                                                signature: res1.signature,
+                    wx.getSystemInfo({
+                        success: function success(res) {
+                            var width = 507 / 2;
+                            var height = 464 / 2;
+                            self.button = wx.createUserInfoButton({
+                                type: 'image',
+                                image: self.loginBt,
+                                style: { width: width, height: height, left: res.screenWidth / 2 - width / 2, top: res.screenHeight / 2 - height / 2 }
+                            });
+                            self.button.onTap(function (res1) {
+                                // 处理用户拒绝授权的情况
+                                // if (res1.errMsg.indexOf('auth deny') > -1 || res1.errMsg.indexOf('auth denied') > -1 ) {
+                                //     wx.showToast();
+                                // }
+                                wx.showToast({ title: '登录中...', icon: 'loading', duration: 8 });
+                                wx.getSetting({
+                                    success: function success(auths) {
+                                        if (auths.authSetting["scope.userInfo"]) {
+                                            console.log('===已经授权===');
+                                            wx.login({
+                                                success: function success(res2) {
+                                                    var reqData = {
+                                                        code: res2.code,
+                                                        rawData: res1.rawData,
+                                                        iv: res1.iv,
+                                                        encryptedData: res1.encryptedData,
+                                                        signature: res1.signature,
 
-                                                referee_id: referee_id,
-                                                source_id: source_id,
-                                                source_id2: source_id2,
-                                                share_id: share_id
-                                            };
-                                            console.log('==登录参数==', reqData);
-                                            self.Post(self.ip1 + self.login, reqData, function (data) {
-                                                console.log('==登录结果==', data);
-                                                if (data.c == 1) {
-                                                    wx.hideToast();
-                                                    self.setItem('userinfo', JSON.stringify(data.d));
-                                                    self.button.hide();
-                                                    callback(data.d);
-                                                } else {
-                                                    console.log('==登录接口请求失败==', data);
+                                                        referee_id: referee_id,
+                                                        source_id: source_id,
+                                                        source_id2: source_id2,
+                                                        share_id: share_id
+                                                        // console.log('==登录参数==', reqData)
+                                                    };self.Post(self.ip1 + self.login, reqData, function (data) {
+                                                        // console.log('==登录结果==', data)
+                                                        if (data.c == 1) {
+                                                            self.setItem('userinfo', JSON.stringify(data.d));
+                                                            wx.hideToast();
+                                                            maskNode.destroy();
+                                                            self.button.hide();
+                                                            callback(data.d);
+                                                        } else {
+                                                            // console.log('==登录接口请求失败==', data)
+                                                            wx.showToast({ title: '登录失败请重试' });
+                                                        }
+                                                    });
+                                                },
+                                                fail: function fail() {
                                                     wx.showToast({ title: '登录失败请重试' });
+                                                    callback(false);
                                                 }
                                             });
-                                        },
-                                        fail: function fail() {
-                                            wx.showToast({ title: '登录失败请重试' });
+                                        } else {
                                             callback(false);
                                         }
-                                    });
-                                } else {
-                                    callback(false);
-                                }
-                            }
-                        });
+                                    }
+                                });
+                            });
+                            self.button.show();
+                        }
                     });
-                    self.button.show();
                 }
             }
         }

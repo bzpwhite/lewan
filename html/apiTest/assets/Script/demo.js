@@ -26,6 +26,20 @@ cc.Class({
 
         // })
 
+        //.调用sdk登录
+        sdk.WeChatLogin((d)=>{
+            // console.log("登陆结果：", d)
+            // 登录成功：返回用户信息； 
+            // 登录失败：返回false
+            if(d){
+                // 获取用户信息
+                var user = sdk.getUser();
+                console.log("==用户信息==", user)
+            }else{
+                console.log("登陆失败：", d)
+            }
+        });
+
     },
 
     // called every frame
