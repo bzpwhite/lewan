@@ -48,7 +48,7 @@ var sdk = {
     BannerAd: null,
     VideoAd: null,
 
-    //.即将废弃
+    //.即将废弃，请不要操作此变量。
     userid: 0,
 
     /**
@@ -103,47 +103,52 @@ var sdk = {
                 }
             });
 
-            //2.统计：分享信息 测试：  uid=56032607&share_id=22&share_uid=56032607
-            var option = wx.getLaunchOptionsSync();
-            // console.log("==option==", option)
-            if (option.query.share_id && option.query.uid) {
-                option.query.share_uid = option.query.uid;
-                option.query.uid = this.userid;
-                // console.log('==3统计信息==',option)
-                this.Post(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
-                    // console.log("==3统计信息结果==", d)
+            if (this.getUser()) {
+                this.userid = this.getUser().uid;
+            }
+            if (this.userid) {
+                //2.统计：分享信息 测试：  uid=56032607&share_id=22&share_uid=56032607
+                var option = wx.getLaunchOptionsSync();
+                // console.log("==option==", option)
+                if (option.query.share_id && option.query.uid) {
+                    option.query.share_uid = option.query.uid;
+                    option.query.uid = this.userid;
+                    // console.log('==3统计信息==',option)
+                    this.Post(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
+                        // console.log("==3统计信息结果==", d)
+                    });
+                }
+                wx.onShow(function (option) {
+                    // console.log(option)
+                    if (option.query.uid) {
+                        option.query.share_uid = option.query.uid;
+                        option.query.uid = self.userid;
+                        // console.log('==4统计信息==',option)
+                        self.Post(self.ip3 + self.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
+                            // console.log("==4统计信息结果==", d)
+                        });
+                    }
+                });
+
+                //5.统计：每次打开小游戏调用
+                wx.getSystemInfo({
+                    success: function success(res) {
+                        var loginData = res;
+                        loginData.uid = self.userid;
+                        loginData.share_uid = option.query.share_uid;
+                        loginData.scene = option.scene;
+                        wx.getNetworkType({
+                            success: function success(res2) {
+                                loginData.network_type = res2.networkType;
+                                // console.log("======loginData=======", loginData)
+                                self.Get(self.ip3 + self.Logcommon, { log_type: "LoginData", data: JSON.stringify(loginData) }, function (d) {
+                                    // console.log("==5.统计：每次打开小游戏调用==", d)
+                                });
+                            }
+                        });
+                    }
                 });
             }
-            wx.onShow(function (option) {
-                // console.log(option)
-                if (option.query.uid) {
-                    option.query.share_uid = option.query.uid;
-                    option.query.uid = self.userid;
-                    // console.log('==4统计信息==',option)
-                    self.Post(self.ip3 + self.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
-                        // console.log("==4统计信息结果==", d)
-                    });
-                }
-            });
-
-            //5.统计：每次打开小游戏调用
-            wx.getSystemInfo({
-                success: function success(res) {
-                    var loginData = res;
-                    loginData.uid = self.userid;
-                    loginData.share_uid = option.query.share_uid;
-                    loginData.scene = option.scene;
-                    wx.getNetworkType({
-                        success: function success(res2) {
-                            loginData.network_type = res2.networkType;
-                            // console.log("======loginData=======", loginData)
-                            self.Get(self.ip3 + self.Logcommon, { log_type: "LoginData", data: JSON.stringify(loginData) }, function (d) {
-                                // console.log("==5.统计：每次打开小游戏调用==", d)
-                            });
-                        }
-                    });
-                }
-            });
         }
     },
 
@@ -820,18 +825,18 @@ var sdk = {
      * @api {微信登录} 微信登录 WeChatLogin（登录）
      * 
      * @apiSuccessExample {json} 示例:
-     *   //.调用sdk登录
-     *   sdk.WeChatLogin((d)=>{
-     *       // 登录成功：返回用户信息； 
-     *       // 登录失败：返回false
-     *       if(d){
-     *           // 获取用户信息
-     *           var user = sdk.getUser();
-     *           console.log("==用户信息==", user)
-     *       }else{
-     *           console.log("登陆失败：", d)
-     *       }
-     *   });
+     * // 2.登录页：获取用户信息
+     *   var user = sdk.getUser();
+     *   if(user){
+     *       console.log("用户信息：", user)
+     *   }else{
+     *       //.调用sdk登录
+     *       sdk.WeChatLogin((d)=>{
+     *           console.log("用户信息：", d)
+     *           // 登录成功：返回用户信息； 
+     *           // 登录失败：返回false
+     *       });
+     *   }
      * 
      */
     WeChatLogin: function WeChatLogin(callback) {
@@ -906,6 +911,10 @@ var sdk = {
                                                             wx.hideToast();
                                                             maskNode.destroy();
                                                             self.button.hide();
+                                                            //.登录成功，重新初始化
+                                                            self.userid = data.d.uid;
+                                                            self.init({}, function (d) {});
+
                                                             callback(data.d);
                                                         } else {
                                                             // console.log('==登录接口请求失败==', data)

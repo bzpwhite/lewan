@@ -13,35 +13,25 @@ cc.Class({
     onLoad: function onLoad() {
         cc.debug.setDisplayStats(false);
 
-        // .初始化游戏
-        // sdk.init({
-        //     debug: true,        //.是否开启调试
-        // }, (res)=>{
-        //     // console.log('sdk初始化结果：', res)
-        //     var d1 = sdk.getConfig1();
-        //     console.log("运营配置：", d1)
-
-        //     var d2 = sdk.getConfig2();
-        //     console.log("程序配置：", d2)
-
-        //     // var obj = d1.hz3_d;
-        //     // wx.navigateToMiniProgram(obj)
-
-        // })
-
-        //.调用sdk登录
-        sdk.WeChatLogin(function (d) {
-            // console.log("登陆结果：", d)
-            // 登录成功：返回用户信息； 
-            // 登录失败：返回false
-            if (d) {
-                // 获取用户信息
-                var user = sdk.getUser();
-                console.log("==用户信息==", user);
-            } else {
-                console.log("登陆失败：", d);
-            }
+        // 1.启动页：初始化游戏
+        sdk.init({
+            debug: true //.是否开启调试
+        }, function (res) {
+            console.log('sdk初始化结果：', res);
         });
+
+        // 2.登录页：获取用户信息
+        var user = sdk.getUser();
+        if (user) {
+            console.log("用户信息：", user);
+        } else {
+            //.调用sdk登录
+            sdk.WeChatLogin(function (d) {
+                console.log("用户信息：", d);
+                // 登录成功：返回用户信息； 
+                // 登录失败：返回false
+            });
+        }
     },
 
     // called every frame

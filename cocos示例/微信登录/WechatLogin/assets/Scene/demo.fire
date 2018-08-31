@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.40029985007496255,
-      "y": 0.40029985007496255,
+      "x": 0.5059970014992504,
+      "y": 0.5059970014992504,
       "z": 1
     },
     "_quat": {
@@ -359,8 +359,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 390.09,
-      "height": 60
+      "width": 585.13,
+      "height": 100
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -375,8 +375,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.5,
+      "y": 0.5,
       "z": 1
     },
     "_rotationX": 0,
@@ -407,8 +407,8 @@
     "_useOriginalSize": false,
     "_string": "微信登录demo",
     "_N$string": "微信登录demo",
-    "_fontSize": 60,
-    "_lineHeight": 60,
+    "_fontSize": 90,
+    "_lineHeight": 100,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -444,7 +444,6 @@
       "__id__": 2
     },
     "_enabled": true,
-    "login": null,
     "_id": "c3hXM5LyRPo72j9OLSOBq3"
   }
 ]

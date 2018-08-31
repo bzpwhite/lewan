@@ -215,24 +215,11 @@
     "type": "微信登录",
     "url": "微信登录",
     "title": "WeChatLogin（登录）",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Object",
-            "optional": false,
-            "field": "buttonConfig",
-            "description": "<p>登录按钮配置，参考：https://developers.weixin.qq.com/minigame/dev/document/open-api/user-info/wx.createUserInfoButton.html</p>"
-          }
-        ]
-      }
-    },
     "success": {
       "examples": [
         {
           "title": "示例:",
-          "content": "//调用sdk登录\nsdk.WeChatLogin({\n    buttonConfig:{\n        type: 'image',\n        image: 'https://laixiao.github.io/lewan/html/img/btn_start.png',\n        style: {  width: 382, height: 164, top: res.screenHeight/2-164/2, left: res.screenWidth/2-382/2 }\n    }\n}, (d)=>{\n    console.log(\"登陆状态：\", d)\n});",
+          "content": "// 2.登录页：获取用户信息\n  var user = sdk.getUser();\n  if(user){\n      console.log(\"用户信息：\", user)\n  }else{\n      //.调用sdk登录\n      sdk.WeChatLogin((d)=>{\n          console.log(\"用户信息：\", d)\n          // 登录成功：返回用户信息； \n          // 登录失败：返回false\n      });\n  }",
           "type": "json"
         }
       ]

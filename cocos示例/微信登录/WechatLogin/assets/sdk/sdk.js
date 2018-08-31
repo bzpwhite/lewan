@@ -22,9 +22,11 @@ var sdk = {
     mta: mta,
     ip1: "https://login.llewan.com:1799",
     ip2: "https://game.llewan.com:1899",
-
     ip3: "https://log.llewan.com:1999",
     ip4: "https://res.llewan.com:2099",
+    loginBg: "https://res.g.llewan.com/uploadfile/common/20180831/20180831173032_3279.png",
+    loginBt: "https://res.g.llewan.com/uploadfile/common/20180831/20180831180006_1583.png",
+
     debug: false,//是否开启调试
 
     login: '/Login/common',
@@ -40,7 +42,7 @@ var sdk = {
     BannerAd: null,
     VideoAd: null,
 
-    //.即将废弃
+    //.即将废弃，请不要操作此变量。
     userid: 0,
 
     /**
@@ -49,13 +51,13 @@ var sdk = {
      * @api {初始化sdk} 使用sdk前，必须先初始化一次才能使用 init（初始化sdk）
      *
      * @apiParam {Boolean} [debug=false] 是否开启调试
-     * @apiParam {Boolean} [userid] 用户的id（兼容旧游戏，新游戏废弃）
+     * @apiParam {int} [userid] 用户的id（兼容旧游戏，新游戏废弃）
      * 
      * @apiSuccessExample {json} 示例:
      * //.初始化游戏
      *   sdk.init({
      *      debug: true,        //.是否开启调试
-     *      userid: 110         //.用户的id（兼容旧游戏，新游戏废弃）
+     *      userid: 56032607    //.用户的id（兼容旧游戏，新游戏废弃）
      *   }, (res)=>{
      *       console.log('sdk初始化结果：', res)
      *   })
@@ -69,7 +71,7 @@ var sdk = {
             this.userid = args.userid;
         }
         
-        // this.checkUpdate();
+        this.checkUpdate();
         
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
             //1.初始化后台配置信息
@@ -95,30 +97,58 @@ var sdk = {
                 }
             });
             
-            //2.统计接口
-            var option = wx.getLaunchOptionsSync();
-            option.query.share_uid = option.query.uid;
-            option.query.uid = this.userid;
-            // console.log('==3统计信息==',option)
-            this.Get(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: option }, function (d) {
-                // console.log("==3统计信息结果==", d)
-            });
-            wx.onShow((option)=>{
-                // console.log(option)
-                if(option.query.uid){
+            if(this.getUser()){
+                this.userid = this.getUser().uid;
+            }
+            if(this.userid){
+                //2.统计：分享信息 测试：  uid=56032607&share_id=22&share_uid=56032607
+                var option = wx.getLaunchOptionsSync();
+                // console.log("==option==", option)
+                if(option.query.share_id && option.query.uid){
                     option.query.share_uid = option.query.uid;
-                    option.query.uid = self.userid;
-                    // console.log('==4统计信息==',option)
-                    self.Get(self.ip3 + self.Logcommon, { log_type: "ShareEnter", data: option }, function (d) {
-                        // console.log("==4统计信息结果==", d)
+                    option.query.uid = this.userid;
+                    // console.log('==3统计信息==',option)
+                    this.Post(this.ip3 + this.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
+                        // console.log("==3统计信息结果==", d)
                     });
                 }
-            })
+                wx.onShow((option)=>{
+                    // console.log(option)
+                    if(option.query.uid){
+                        option.query.share_uid = option.query.uid;
+                        option.query.uid = self.userid;
+                        // console.log('==4统计信息==',option)
+                        self.Post(self.ip3 + self.Logcommon, { log_type: "ShareEnter", data: JSON.stringify(option) }, function (d) {
+                            // console.log("==4统计信息结果==", d)
+                        });
+                    }
+                })
+
+                //5.统计：每次打开小游戏调用
+                wx.getSystemInfo({
+                    success(res){
+                        var loginData = res;
+                        loginData.uid = self.userid;
+                        loginData.share_uid = option.query.share_uid;
+                        loginData.scene = option.scene;
+                        wx.getNetworkType({
+                            success(res2){
+                                loginData.network_type = res2.networkType;
+                                // console.log("======loginData=======", loginData)
+                                self.Get(self.ip3 + self.Logcommon, { log_type: "LoginData", data: JSON.stringify(loginData) }, function (d) {
+                                    // console.log("==5.统计：每次打开小游戏调用==", d)
+                                });
+                            }
+                        })
+                    }
+                })
+            }
+
         }
 
         
     },
-    //.根据权重随机获取指定type类型的分享信息。
+    //.根据权重随机获取指定type类型的分享信息。（没有this.ShareList数据不能调用）
     getShareByWeight(type){
         if(this.ShareList.length > 0){
             //1.获取某种type的集合
@@ -199,7 +229,7 @@ var sdk = {
                 //.分享统计 测试：  uid=11&share_id=22
                 var option = {'uid': sdk.userid, 'share_id': shareInfo.sysid };
                 // console.log('==1统计信息==', { log_type: "ShareClick", data: option })
-                self.Get(self.ip3 + self.Logcommon, { log_type: "ShareClick", data: option }, function (d) {
+                self.Get(self.ip3 + self.Logcommon, { log_type: "ShareClick", data: JSON.stringify(option) }, function (d) {
                     // console.log("==1统计信息结果==", d)
                 });
 
@@ -257,7 +287,7 @@ var sdk = {
             //.分享统计 测试： uid=11&share_id=22
             var option = {'uid': sdk.userid, 'share_id': shareInfo.sysid };
             // console.log('==2统计信息==', { log_type: "ShareClick", data: option })
-            self.Get(self.ip3 + self.Logcommon, { log_type: "ShareClick", data: option }, function (d) {
+            self.Get(self.ip3 + self.Logcommon, { log_type: "ShareClick", data: JSON.stringify(option) }, function (d) {
                 // console.log("==2统计信息结果==", d)
             });
         }
@@ -349,7 +379,8 @@ var sdk = {
         reqData.version = sdk_conf.version;
         var ts = new Date().getTime();
         reqData.ts = ts;
-        reqData.sign = md5(ts.toString().substr(0,4)+sdk_conf.game.substr(0,2)+sdk_conf.version.substr(0,1)+ '$5dfjr$%dsadsfdsii');
+        //数据验证签名。规则为：MD5(ts.substr(9,4)+game.substr(0,2)+version.substr(0,1)+key),时间戳后4位、data前3位、key（服务端提供）然后进行MD5加密
+        reqData.sign = md5(ts.toString().substr(9,4)+sdk_conf.game.substr(0,2)+sdk_conf.version.substr(0,1)+ '$5dfjr$%dsadsfdsii');
         
         url += "?";
         for (var item in reqData) {
@@ -400,7 +431,7 @@ var sdk = {
         reqData.version = sdk_conf.version;
         var ts = new Date().getTime();
         reqData.ts = ts;
-        reqData.sign = md5(ts.toString().substr(0,4)+sdk_conf.game.substr(0,2)+sdk_conf.version.substr(0,1)+ '$5dfjr$%dsadsfdsii');
+        reqData.sign = md5(ts.toString().substr(9,4)+sdk_conf.game.substr(0,2)+sdk_conf.version.substr(0,1)+ '$5dfjr$%dsadsfdsii');
         
         //1.拼接请求参数
         var param = "";
@@ -444,6 +475,7 @@ var sdk = {
      * sdk.checkUpdate();
      */
     checkUpdate() {
+        var self = this;
         if (cc.sys.platform === cc.sys.WECHAT_GAME && typeof wx.getUpdateManager === 'function') {
             const updateManager = wx.getUpdateManager()
             updateManager.onCheckForUpdate(function (res) {
@@ -519,12 +551,13 @@ var sdk = {
      * @api {获取本地用户信息} 获取本地用户信息（登录成功后，会在本地存储用户信息） getUser（获取用户信息）
      * 
      * @apiSuccessExample {json} 示例:
+     * //.不存在返回null
      * var user = sdk.getUser();
      */
     getUser(){
         var userinfo = this.getItem('userinfo');
         if(userinfo){
-            return userinfo;
+            return JSON.parse(userinfo);
         }else{
             return null;
         }
@@ -657,9 +690,10 @@ var sdk = {
      * 
      * @apiSuccessExample {json} 示例:
      * wx.getFriendCloudStorage({
-     *       keyList: ["yw_score"],
+     *       keyList: ["score"],
      *       success(res){
-     *           var ListData = sdk.sortList(res.data, 'yw_score', true));
+     *           var ListData = sdk.sortList(res.data, 'score', true));
+     *           console.log("=排序后的数据=", ListData);
      *       },
      *       fail(){
      *           console.log(res)
@@ -767,25 +801,24 @@ var sdk = {
      * @apiGroup C
      * @apiName WeChatLogin
      * @api {微信登录} 微信登录 WeChatLogin（登录）
-     * @apiParam {String} loginImg 登录按钮图片
-     * @apiParam {String} imgWidth 图片宽度
-     * @apiParam {String} imgHeight 图片高度
      * 
      * @apiSuccessExample {json} 示例:
-     * //.登录按钮图片、图片宽度、图片高度
-     *   sdk.WeChatLogin({loginImg: 'https://laixiao.github.io/lewan/html/img/btn_start.png', imgWidth:382, imgHeight: 164}, (d)=>{
+     *   //.调用sdk登录
+     *   sdk.WeChatLogin((d)=>{
+     *       // 登录成功：返回用户信息； 
+     *       // 登录失败：返回false
      *       if(d){
-     *           console.log(d)
+     *           // 获取用户信息
+     *           var user = sdk.getUser();
+     *           console.log("==用户信息==", user)
      *       }else{
-     *           console.log("登陆失败，请重试")
+     *           console.log("登陆失败：", d)
      *       }
      *   });
      * 
-     * 
      */
-    WeChatLogin(obj, callback){
+    WeChatLogin(callback){
         var self = this;
-        
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
             var options = wx.getLaunchOptionsSync();
             
@@ -794,64 +827,94 @@ var sdk = {
             var source_id2 = options.query.source_id2;      //.用户来源子id
             var share_id = options.query.share_id;          //.分享素材ID
             
-            var userinfo = this.getItem('userinfo');
+            var userinfo = this.getUser();
+
             if(userinfo){
                 callback(userinfo)
             }else{
+                //.登录遮罩背景
+                var maskNode = new cc.Node('Sprite');
+                maskNode.parent = cc.director.getScene().getChildByName('Canvas');
+                maskNode.addComponent(cc.BlockInputEvents)
+                var sp = maskNode.addComponent(cc.Sprite);
+                maskNode.opacity = 178;
+                maskNode.color = new cc.Color(25,88,95,255);
+                sp.sizeMode = cc.Sprite.SizeMode.CUSTOM;
+                self.createImage(sp, self.loginBg);
+                maskNode.width = cc.view.getVisibleSize().width;
+                maskNode.height = cc.view.getVisibleSize().height;
+                // console.log(maskNode.width, maskNode.height)
+
+                //.微信登录按钮
                 if(self.button){
                     self.button.show();
                 }else{
-                    self.button = wx.createUserInfoButton(obj.buttonConfig)
-                    self.button.onTap((res1) => {
-                        // 处理用户拒绝授权的情况
-                        // if (res1.errMsg.indexOf('auth deny') > -1 || res1.errMsg.indexOf('auth denied') > -1 ) {
-                        //     wx.showToast();
-                        // }
-                        wx.showToast({title: '登录中...',icon:'loading',duration: 8});
-                        wx.getSetting({
-                            success(auths){
-                                if(auths.authSetting["scope.userInfo"]){
-                                    console.log('===已经授权===');
-                                    wx.login({
-                                        success(res2){ 
-                                            var reqData = {   
-                                                code: res2.code,
-                                                rawData: res1.rawData,
-                                                iv: res1.iv,
-                                                encryptedData: res1.encryptedData,
-                                                signature: res1.signature,
+                    wx.getSystemInfo({
+                        success(res){
+                            var width = 507/2;
+                            var height = 464/2;
+                            self.button = wx.createUserInfoButton({
+                                type: 'image',
+                                image: self.loginBt,
+                                style: {  width: width, height: height, left: res.screenWidth/2-width/2, top: res.screenHeight/2-height/2 }
+                            })
+                            self.button.onTap((res1) => {
+                                // 处理用户拒绝授权的情况
+                                // if (res1.errMsg.indexOf('auth deny') > -1 || res1.errMsg.indexOf('auth denied') > -1 ) {
+                                //     wx.showToast();
+                                // }
+                                wx.showToast({title: '登录中...',icon:'loading',duration: 8});
+                                wx.getSetting({
+                                    success(auths){
+                                        if(auths.authSetting["scope.userInfo"]){
+                                            console.log('===已经授权===');
+                                            wx.login({
+                                                success(res2){ 
+                                                    var reqData = {   
+                                                        code: res2.code,
+                                                        rawData: res1.rawData,
+                                                        iv: res1.iv,
+                                                        encryptedData: res1.encryptedData,
+                                                        signature: res1.signature,
 
-                                                referee_id: referee_id,
-                                                source_id: source_id,
-                                                source_id2: source_id2,
-                                                share_id: share_id
-                                            }
-                                            console.log('==登录参数==', reqData)
-                                            self.Post(self.ip1 + self.login, reqData, function(data){
-                                                console.log('==登录结果==', data)
-                                                if(data.c == 1){
-                                                    wx.hideToast();
-                                                    self.setItem('userinfo',data.d);
-                                                    self.button.hide();
-                                                    callback(data.d);
-                                                }else{
-                                                    console.log('==登录接口请求失败==', data)
+                                                        referee_id: referee_id,
+                                                        source_id: source_id,
+                                                        source_id2: source_id2,
+                                                        share_id: share_id
+                                                    }
+                                                    // console.log('==登录参数==', reqData)
+                                                    self.Post(self.ip1 + self.login, reqData, function(data){
+                                                        // console.log('==登录结果==', data)
+                                                        if(data.c == 1){
+                                                            self.setItem('userinfo', JSON.stringify(data.d));
+                                                            wx.hideToast();
+                                                            maskNode.destroy();
+                                                            self.button.hide();
+                                                            //.登录成功，重新初始化
+                                                            self.userid = data.d.uid;
+                                                            self.init({},(d)=>{})
+
+                                                            callback(data.d);
+                                                        }else{
+                                                            // console.log('==登录接口请求失败==', data)
+                                                            wx.showToast({title: '登录失败请重试'});
+                                                        }                
+                                                    });
+                                                },
+                                                fail(){
                                                     wx.showToast({title: '登录失败请重试'});
-                                                }                
-                                            });
-                                        },
-                                        fail(){
-                                            wx.showToast({title: '登录失败请重试'});
+                                                    callback(false)
+                                                },
+                                            })
+                                        }else{
                                             callback(false)
-                                        },
-                                    })
-                                }else{
-                                    callback(false)
-                                }
-                            }
-                        })        
+                                        }
+                                    }
+                                })        
+                            })
+                            self.button.show()
+                        }
                     })
-                    self.button.show()
                 }
             }
         }
@@ -970,54 +1033,87 @@ var sdk = {
         })
     },
     capture (camera, callback) {
-        //.要截取的范围（全屏）
-        let texture = new cc.RenderTexture();
-        // 如果截图内容中不包含 Mask 组件，可以不用传递第三个参数
-        let gl = cc.game._renderContext;
-        texture.initWithSize(cc.visibleRect.width, cc.visibleRect.height, gl.STENCIL_INDEX8);
-        camera.targetTexture = texture;
-        this.texture = texture;
+        if(cc.ENGINE_VERSION < "2.0.0"){
+            //1.9.3旧版本截图
+            var canvas = cc.game.canvas;
+            var width  = cc.winSize.width;
+            var height  = cc.winSize.height;
+
+            canvas.toTempFilePath({
+                x: 0,
+                y: 0,
+                width: width,
+                height: height,
+                destWidth: width,
+                destHeight: height,
+                success (res) {
+                    //.可以保存该截屏图片
+                    // console.log(res)
+                    //.保存到手机
+                    wx.saveImageToPhotosAlbum({
+                        filePath: res.tempFilePath,
+                        success(res2){
+                            console.log('==截图保存=success=',res2)
+                            callback(true)
+                        },
+                        fail(res2){
+                            console.log('==截图保存=fail=',res2)
+                            callback(null)
+                        }
+                    })
+                }
+            })
+        }else{
+            //2.0.1新版本截图
+            //.要截取的范围（全屏）
+            let texture = new cc.RenderTexture();
+            // 如果截图内容中不包含 Mask 组件，可以不用传递第三个参数
+            let gl = cc.game._renderContext;
+            texture.initWithSize(cc.visibleRect.width, cc.visibleRect.height, gl.STENCIL_INDEX8);
+            camera.targetTexture = texture;
+            this.texture = texture;
 
 
-        let width = this.texture.width;
-        let height = this.texture.height;
-        let canvas = document.createElement('canvas');
-        let ctx = canvas.getContext('2d');
-        canvas.width = width;
-        canvas.height = height;
-        camera.render();
-        let data = this.texture.readPixels();
-        let rowBytes = width * 4;
-        for (let row = 0; row < height; row++) {
-            let srow = height - 1 - row;
-            let imageData = ctx.createImageData(width, 1);
-            let start = srow*width*4;
-            for (let i = 0; i < rowBytes; i++) {
-                imageData.data[i] = data[start+i];
+            let width = this.texture.width;
+            let height = this.texture.height;
+            let canvas = document.createElement('canvas');
+            let ctx = canvas.getContext('2d');
+            canvas.width = width;
+            canvas.height = height;
+            camera.render();
+            let data = this.texture.readPixels();
+            let rowBytes = width * 4;
+            for (let row = 0; row < height; row++) {
+                let srow = height - 1 - row;
+                let imageData = ctx.createImageData(width, 1);
+                let start = srow*width*4;
+                for (let i = 0; i < rowBytes; i++) {
+                    imageData.data[i] = data[start+i];
+                }
+                ctx.putImageData(imageData, 0, row);
             }
-            ctx.putImageData(imageData, 0, row);
+            var dataURL = canvas.toDataURL("image/jpeg");
+            var tempFilePath = canvas.toTempFilePathSync({
+                x: 0,
+                y: 0,
+                width: width,
+                height: height,
+                destWidth: width,
+                destHeight: height,
+            });
+            //.保存到手机
+            wx.saveImageToPhotosAlbum({
+                filePath: tempFilePath,
+                success(res2){
+                    console.log('==截图保存=success=',res2)
+                    callback(true)
+                },
+                fail(res2){
+                    console.log('==截图保存=fail=',res2)
+                    callback(null)
+                }
+            })
         }
-        var dataURL = canvas.toDataURL("image/jpeg");
-        var tempFilePath = canvas.toTempFilePathSync({
-            x: 0,
-            y: 0,
-            width: width,
-            height: height,
-            destWidth: width,
-            destHeight: height,
-        });
-
-        wx.saveImageToPhotosAlbum({
-            filePath: tempFilePath,
-            success(res2){
-                console.log('==截图保存=success=',res2)
-                callback(true)
-            },
-            fail(res2){
-                console.log('==截图保存=fail=',res2)
-                callback(null)
-            }
-        })
         
     }
     
