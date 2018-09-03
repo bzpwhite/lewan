@@ -33,27 +33,10 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-
-        // //.初始化游戏
-        // sdk.init({
-        //     debug: true,        //.是否开启调试
-        //     userid: 56032607    //.用户的id（兼容旧游戏，新游戏废弃）
-        // }, (res)=>{
-        //     // console.log('sdk初始化结果：', res)
-
-        //     //.获取后台运营配置
-        //     var d1 = sdk.getConfig1();
-        //     console.log("运营配置：", d1)
-
-        //     //.获取后台程序配置
-        //     var d2 = sdk.getConfig2();
-        //     console.log("程序配置：", d2)
-
-        //     //.监听：用户点击右上角分享
-        //     // sdk.onShareAppMessage({type: 0, query: "" });
-
-        // })
-
+   
+        //.极简版（默认底部Banner）
+        // var bannerAd = sdk.createBannerAd({});
+        // bannerAd.show()
 
     },
 
@@ -63,10 +46,14 @@ cc.Class({
 
     // update (dt) {},
 
-    //2.主动拉起分享
-    share(){
-        console.log("=====主动拉起分享=====")
-        // sdk.shareAppMessage({type: 1, query: "nick=55" });
+    Test(){
+        sdk.Screenshot((d)=>{
+            if(d){
+                console.log("图片保存成功：", d)
+            }else{
+                console.log("图片保存失败：", d)
+            }
+        })
 
     },
 

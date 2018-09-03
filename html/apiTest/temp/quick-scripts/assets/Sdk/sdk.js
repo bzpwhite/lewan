@@ -592,7 +592,7 @@ var sdk = {
     /**
      * @apiGroup C
      * @apiName getItem
-     * @api {get} 数据存储 getItem（取）
+     * @api {数据存储} 数据存储 getItem（取）
      * @apiParam {String} key 键
      * @apiParam {String} value 值
      * 
@@ -949,26 +949,44 @@ var sdk = {
      * @apiParam {String} style banner 广告组件的样式
      * 
      * @apiSuccessExample {json} 示例:
-     * //.参考文档：https://developers.weixin.qq.com/minigame/dev/document/ad/wx.createBannerAd.html
-     *  var bannerAd = sdk.createBannerAd({
-     *      style:{
-     *          left: 0,
-     *          top: 0,
-     *          width: 100,
-     *          height: 200
-     *      }
-     *  });
+     *  //.参考文档：https://developers.weixin.qq.com/minigame/dev/document/ad/wx.createBannerAd.html
+     *  //var bannerAd = sdk.createBannerAd({
+     *  //    style:{
+     *  //        left: 0,
+     *  //        top: 0,
+     *  //        width: 100,
+     *  //        height: 200
+     *  //    }
+     *  //});
+     * 
+     *  //.极简版（默认底部Banner）
+     *  var bannerAd = sdk.createBannerAd({});
      *  bannerAd.show()
      * 
      */
     createBannerAd: function createBannerAd(obj) {
+        var self = this;
         if (cc.sys.platform === cc.sys.WECHAT_GAME) {
             if (this.BannerAd) {
                 return this.BannerAd;
             } else {
+                if (!obj.style) {
+                    obj.style = {};
+                    var phone = wx.getSystemInfoSync();
+                    this.w = phone.screenWidth / 2;
+                    this.h = phone.screenHeight;
+                    obj.style.left = 0;
+                    obj.style.top = 0;
+                    obj.style.width = 300;
+                }
                 this.BannerAd = wx.createBannerAd({
                     adUnitId: sdk_conf.bannerAdUnitId,
                     style: obj.style
+                });
+                this.BannerAd.onResize(function (res) {
+                    console.log("BannerAd广告缩放事件：", res);
+                    self.BannerAd.style.left = self.w - self.BannerAd.style.realWidth / 2 + 0.1;
+                    self.BannerAd.style.top = self.h - self.BannerAd.style.realHeight + 0.1;
                 });
                 this.BannerAd.onLoad(function (res) {
                     console.log("BannerAd广告加载事件：", res);
@@ -976,6 +994,7 @@ var sdk = {
                 this.BannerAd.onError(function (res) {
                     console.log("BannerAd广告错误事件：", res);
                 });
+
                 return this.BannerAd;
             }
         }
@@ -1014,11 +1033,10 @@ var sdk = {
     * @apiGroup C
     * @apiName Screenshot
     * @api {微信小游戏截图保存} 微信小游戏截图保存 Screenshot（截图）
-    * @apiParam {cc.Camera} camera 摄像头组件	
     * 
     * @apiSuccessExample {json} 示例:
     *   //.摄像机组件、回调
-    *   sdk.Screenshot(this.camera, (d)=>{
+    *   sdk.Screenshot((d)=>{
     *       if(d){
     *           console.log("图片保存成功：", d)
     *       }else{
@@ -1027,26 +1045,42 @@ var sdk = {
     *   })
     * 
     */
-    Screenshot: function Screenshot(camera, callback) {
+    Screenshot: function Screenshot(callback) {
         var self = this;
         //1.判断是否授权
         wx.getSetting({
             success: function success(res) {
                 // console.log("授权状态", res.authSetting['scope.writePhotosAlbum'])
                 if (res.authSetting['scope.writePhotosAlbum']) {
-                    self.capture(camera, callback);
+                    self.capture(callback);
                 } else {
                     // console.log("未授权", res)
                     wx.authorize({
                         scope: 'scope.writePhotosAlbum',
                         success: function success(res2) {
-                            console.log("success res2", res2);
-                            self.Screenshot(camera, callback);
+                            // console.log("success res2",res2)
+                            self.Screenshot(callback);
                         },
                         fail: function fail(res2) {
-                            wx.showToast({ title: '请重新授权' });
-                            callback(null);
-                            console.log("fail res2", res2);
+                            // console.log("重新授权")
+                            wx.showModal({
+                                title: '提示',
+                                content: '请开启保存到相册功能',
+                                showCancel: false,
+                                success: function success() {
+                                    wx.openSetting({
+                                        success: function success(res3) {
+                                            // console.log("===重新授权===", res3)
+                                            if (res3.authSetting['scope.writePhotosAlbum']) {
+                                                self.Screenshot(callback);
+                                            } else {
+                                                wx.showToast({ title: "授权失败" });
+                                                callback(null);
+                                            }
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 }
@@ -1056,7 +1090,7 @@ var sdk = {
             }
         });
     },
-    capture: function capture(camera, callback) {
+    capture: function capture(callback) {
         if (cc.ENGINE_VERSION < "2.0.0") {
             //1.9.3旧版本截图
             var canvas = cc.game.canvas;
@@ -1089,6 +1123,10 @@ var sdk = {
             });
         } else {
             //2.0.1新版本截图
+            var cameraNode = new cc.Node('camera');
+            cameraNode.parent = cc.director.getScene().getChildByName('Canvas');
+            var camera = cameraNode.addComponent(cc.Camera);
+
             //.要截取的范围（全屏）
             var texture = new cc.RenderTexture();
             // 如果截图内容中不包含 Mask 组件，可以不用传递第三个参数
