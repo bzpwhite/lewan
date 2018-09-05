@@ -18,8 +18,8 @@
     **sdk地址：**
     https://laixiao.github.io/lewan/乐玩sdk.zip
 
-    **接入流程：**
-    https://laixiao.github.io/lewan/lewan-sdk-doc
+    **接入文档：**
+    https://laixiao.github.io/lewan/lewan-sdk
 
 + **二、初始化sdk**
 
