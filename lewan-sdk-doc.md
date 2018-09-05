@@ -16,6 +16,16 @@
 + **下载乐玩sdk并集成到小游戏**
 + **初始化sdk**
 
+配置sdk_conf.js文件
+```javascript
+    var sdk_conf = { 
+        game: 'huaxianqiuqiu',  //乐玩方提供：游戏唯一标识
+        version: '1.0.1',       //乐玩方提供：当前游戏版本
+        bannerAdUnitId: '',     //乐玩方提供：banner广告单元id
+        videoAdUnitId: '',      //乐玩方提供：video广告单元id
+    };
+```
+
 + **一、对接配置接口：**
 ```javascript
 {
@@ -67,6 +77,7 @@ sdk.shareAppMessage({type: 1, query: "xxx=xxx" });
 ```
 	
 + **三、对接广告接口**
+
     * Banner广告
 	```javascript
 		//var bannerAd = sdk.createBannerAd({
