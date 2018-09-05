@@ -57,7 +57,7 @@ if(d1.hz3){
 
 + **二、对接分享接口**
     
-	sdk初始化成功后，监听右上角分享按钮：
+sdk初始化成功后，监听右上角分享按钮：
 ```javascript
 sdk.onShareAppMessage({type: 0, query: "xxx=xxx" });
 ```
@@ -81,15 +81,14 @@ sdk.shareAppMessage({type: 1, query: "xxx=xxx" });
        //.极简版（默认底部Banner）
        var bannerAd = sdk.createBannerAd({});
        bannerAd.show()
-```
+    ```
 
 	* Video广告
-
 	```javascript
-	//.创建广告
-	var videoAd = sdk.createRewardedVideoAd();
-	//.显示广告
-	videoAd.load().then(() => videoAd.show());
+        //.创建广告
+        var videoAd = sdk.createRewardedVideoAd();
+        //.显示广告
+        videoAd.load().then(() => videoAd.show());
 	```
 
 
