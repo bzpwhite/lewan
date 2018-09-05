@@ -15,9 +15,11 @@
                 
 + **下载乐玩sdk并集成到小游戏**
 
-    **sdk下载地址：**
+    **sdk地址：**
+    https://laixiao.github.io/lewan/乐玩sdk.zip
 
-    https://laixiao.github.io/lewan/lewan-sdk
+    **接入流程：**
+    https://laixiao.github.io/lewan/lewan-sdk-doc
 
 + **初始化sdk**
 
