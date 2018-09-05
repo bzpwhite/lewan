@@ -19,22 +19,22 @@
 + **一、对接配置接口：**
 ```javascript
 {
-    "hz": 0,
-    "hz2": 0,
-    "hz3": 0,
-    "bannerAd": 0,
-    "videoAd": 0,
-    "fs": 0,
-    "sns": 0,
-    "kf": 0,
-    "gzh": 0,
-    "hz2_d": {
+    "hz": 0,//分享加10步
+    "hz2": 0,//跳游戏
+    "hz3": 0,//跳盒子
+    "bannerAd": 0,//banner广告
+    "videoAd": 0,//视频广告开关
+    "fs": 0,//看广告加10步
+    "sns": 0,//社交按钮
+    "kf": 0,//客服按钮
+    "gzh": 0,//公众号按钮
+    "hz2_d": {//跳游戏对应的参数
         "appId": "wxde2c29b8d9349652",
         "imageUrl": "https:\/\/res.g.llewan.com\/common\/256\/qieshuiguoicon.png",
         "path": "pages\/index\/index?channel=21&goAppid=wxf45b17ebcaef8085&goPath=QUESTIONsidEQUAL49",
         "extraData": "",
         "envVersion": "release"
-    },
+    },//跳盒子对应的参数
     "hz3_d": {
         "appId": "wxde2c29b8d9349652",
         "imageUrl": "https:\/\/res.g.llewan.com\/common\/youxihezi.png",
@@ -44,31 +44,6 @@
     }
 }
 ```
-| 字段  | 解释  |
-
-| ------------ | ------------ |
-
-| gzh  | 公众号按钮  |
-
-| kf  | 客服按钮  |
-
-| sns  |  社交按钮 |
-
-| fs  |  看广告加10步 |
-
-| videoAd  | 视频广告开关  |
-
-| bannerAd  | banner广告  |
-
-| hz3  |  跳盒子 |
-
-| hz3_d  |  跳盒子对应的参数 |
-
-|  hz2 | 跳游戏  |
-
-|  hz2_d | 跳游戏对应的参数  |
-
-|  hz | 分享加10步  |
 
 
 ```javascript
