@@ -13,7 +13,7 @@
 
 ### 接入方
                 
-+ **下载乐玩sdk并集成到小游戏**
++ **一、下载乐玩sdk并集成到小游戏**
 
     **sdk地址：**
     https://laixiao.github.io/lewan/乐玩sdk.zip
@@ -21,7 +21,7 @@
     **接入流程：**
     https://laixiao.github.io/lewan/lewan-sdk-doc
 
-+ **初始化sdk**
++ **二、初始化sdk**
 
     配置sdk_conf.js文件
     ```javascript
@@ -33,7 +33,7 @@
         };
     ```
 
-+ **一、对接配置接口：**
++ **三、对接配置接口：**
     ```javascript
     {
         "hz": 0,//分享加10步
@@ -72,7 +72,7 @@
     }
     ```
 
-+ **二、对接分享接口**
++ **四、对接分享接口**
     
     sdk初始化成功后，监听右上角分享按钮：
     ```javascript
@@ -83,7 +83,7 @@
     sdk.shareAppMessage({type: 1, query: "xxx=xxx" });
     ```
 	
-+ **三、对接广告接口**
++ **五、对接广告接口**
 
     * Banner广告
 	```javascript
