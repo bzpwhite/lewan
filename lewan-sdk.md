@@ -34,15 +34,6 @@ if(user){
 }
 ```
 
-**4.配置分享**
-```javascript
-//.sdk初始化成功后：监听右上角分享按钮
-sdk.onShareAppMessage({type: 0, query: "uid=520" });
-
-//.主动拉起分享
-//sdk.shareAppMessage({type: 1, query: "uid=520" });
-```
-
 ## 三、其它
 
 **sdk文档地址：**
