@@ -23,54 +23,54 @@
 
 + **初始化sdk**
 
-配置sdk_conf.js文件
-```javascript
-    var sdk_conf = { 
-        game: 'huaxianqiuqiu',  //乐玩方提供：游戏唯一标识
-        version: '1.0.1',       //乐玩方提供：当前游戏版本
-        bannerAdUnitId: '',     //乐玩方提供：banner广告单元id
-        videoAdUnitId: '',      //乐玩方提供：video广告单元id
-    };
-```
+    配置sdk_conf.js文件
+    ```javascript
+        var sdk_conf = { 
+            game: 'huaxianqiuqiu',  //乐玩方提供：游戏唯一标识
+            version: '1.0.1',       //乐玩方提供：当前游戏版本
+            bannerAdUnitId: '',     //乐玩方提供：banner广告单元id
+            videoAdUnitId: '',      //乐玩方提供：video广告单元id
+        };
+    ```
 
 + **一、对接配置接口：**
-```javascript
-{
-    "hz": 0,//分享加10步
-    "hz2": 0,//跳游戏
-    "hz3": 0,//跳盒子
-    "bannerAd": 0,//banner广告
-    "videoAd": 0,//视频广告开关
-    "fs": 0,//看广告加10步
-    "sns": 0,//社交按钮
-    "kf": 0,//客服按钮
-    "gzh": 0,//公众号按钮
-    "hz2_d": {//跳游戏对应的参数
-        "appId": "wxde2c29b8d9349652",
-        "imageUrl": "https:\/\/res.g.llewan.com\/common\/256\/qieshuiguoicon.png",
-        "path": "pages\/index\/index?channel=21&goAppid=wxf45b17ebcaef8085&goPath=QUESTIONsidEQUAL49",
-        "extraData": "",
-        "envVersion": "release"
-    },//跳盒子对应的参数
-    "hz3_d": {
-        "appId": "wxde2c29b8d9349652",
-        "imageUrl": "https:\/\/res.g.llewan.com\/common\/youxihezi.png",
-        "path": "pages\/index\/index?channel=21",
-        "extraData": "",
-        "envVersion": "release"
+    ```javascript
+    {
+        "hz": 0,//分享加10步
+        "hz2": 0,//跳游戏
+        "hz3": 0,//跳盒子
+        "bannerAd": 0,//banner广告
+        "videoAd": 0,//视频广告开关
+        "fs": 0,//看广告加10步
+        "sns": 0,//社交按钮
+        "kf": 0,//客服按钮
+        "gzh": 0,//公众号按钮
+        "hz2_d": {//跳游戏对应的参数
+            "appId": "wxde2c29b8d9349652",
+            "imageUrl": "https:\/\/res.g.llewan.com\/common\/256\/qieshuiguoicon.png",
+            "path": "pages\/index\/index?channel=21&goAppid=wxf45b17ebcaef8085&goPath=QUESTIONsidEQUAL49",
+            "extraData": "",
+            "envVersion": "release"
+        },//跳盒子对应的参数
+        "hz3_d": {
+            "appId": "wxde2c29b8d9349652",
+            "imageUrl": "https:\/\/res.g.llewan.com\/common\/youxihezi.png",
+            "path": "pages\/index\/index?channel=21",
+            "extraData": "",
+            "envVersion": "release"
+        }
     }
-}
-```
-例子：
+    ```
+    例子：
 
-```javascript
-var d1 = sdk.getConfig1();
-if(d1.hz3){
-	//.显示盒子
-}else{
-	//.隐藏盒子
-}
-```
+    ```javascript
+    var d1 = sdk.getConfig1();
+    if(d1.hz3){
+        //.显示盒子
+    }else{
+        //.隐藏盒子
+    }
+    ```
 
 + **二、对接分享接口**
     
