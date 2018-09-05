@@ -109,4 +109,4 @@ sdk.shareAppMessage({type: 1, query: "xxx=xxx" });
 ### 其它
 
 **sdk下载地址：**
-https://github.com/laixiao/lewan
+https://laixiao.github.io/lewan/lewan-sdk

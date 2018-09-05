@@ -48,3 +48,8 @@ sdk.onShareAppMessage({type: 0, query: "uid=520" });
 **sdk文档地址：**
 https://laixiao.github.io/lewan/html/api/index.html
 
+**sdk下载地址：**
+https://laixiao.github.io/lewan/乐玩sdk.zip
+
+**乐玩sdk接入流程：**
+https://laixiao.github.io/lewan/lewan-sdk-doc
