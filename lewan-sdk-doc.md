@@ -44,10 +44,9 @@
     }
 }
 ```
-
+例子：
 
 ```javascript
-//.例子：
 var d1 = sdk.getConfig1();
 if(d1.hz3){
 	//.显示盒子
