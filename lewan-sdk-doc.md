@@ -74,14 +74,14 @@
 
 + **二、对接分享接口**
     
-sdk初始化成功后，监听右上角分享按钮：
-```javascript
-sdk.onShareAppMessage({type: 0, query: "xxx=xxx" });
-```
-主动拉起分享：
-```javascript
-sdk.shareAppMessage({type: 1, query: "xxx=xxx" });
-```
+    sdk初始化成功后，监听右上角分享按钮：
+    ```javascript
+    sdk.onShareAppMessage({type: 0, query: "xxx=xxx" });
+    ```
+    主动拉起分享：
+    ```javascript
+    sdk.shareAppMessage({type: 1, query: "xxx=xxx" });
+    ```
 	
 + **三、对接广告接口**
 
