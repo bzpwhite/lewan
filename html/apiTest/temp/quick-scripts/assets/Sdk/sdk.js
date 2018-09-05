@@ -137,6 +137,9 @@ var sdk = {
                         loginData.uid = self.userid;
                         loginData.share_uid = option.query.share_uid;
                         loginData.scene = option.scene;
+                        loginData.source_id = option.query.source_id;
+                        loginData.source_id2 = option.query.source_id2;
+
                         wx.getNetworkType({
                             success: function success(res2) {
                                 loginData.network_type = res2.networkType;
