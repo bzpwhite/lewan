@@ -14,6 +14,11 @@
 ### 接入方
                 
 + **下载乐玩sdk并集成到小游戏**
+
+    **sdk下载地址：**
+
+    https://laixiao.github.io/lewan/lewan-sdk
+
 + **初始化sdk**
 
 配置sdk_conf.js文件
@@ -101,9 +106,3 @@ sdk.shareAppMessage({type: 1, query: "xxx=xxx" });
         //.显示广告
         videoAd.load().then(() => videoAd.show());
 	```
-
-
-### 其它
-
-**sdk下载地址：**
-https://laixiao.github.io/lewan/lewan-sdk
